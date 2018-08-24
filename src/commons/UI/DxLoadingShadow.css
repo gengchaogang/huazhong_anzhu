@@ -1,0 +1,19 @@
+.dxLoadingShadow{
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.1);
+}
+.dxLoadingShadow>.dxLoadingShadow_content{
+  display: inline-block;
+  font-size: 48px;
+  color: #43B38D;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-left: -24px;
+  margin-top: -36px;
+}

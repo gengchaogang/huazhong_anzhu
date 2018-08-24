@@ -1,0 +1,25 @@
+
+.checkable-tags .tag{
+  background: #fff;
+  border:1px solid #C6C6C6;
+  color:#666;
+  font-size: 14px;
+  text-align: center;
+  height:auto;
+  line-height: auto;
+  vertical-align: middle;
+  box-sizing: content-box;
+}
+
+.checkable-tags .tag:hover{
+  background-color:curentColor;
+  color:curentColor;
+}
+.checkable-tags .active{
+  background-color:curentColor;
+  color:curentColor;
+}
+.checkable-tags .active:hover{
+  background-color:curentColor;
+  color:curentColor;
+}

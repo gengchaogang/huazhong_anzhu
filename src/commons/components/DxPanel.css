@@ -1,0 +1,60 @@
+
+.dx-panel{
+  display: block;
+  background-color: transparent;
+  padding-top: 20px;
+}
+.dx-panel>.dx-panel-title-box{
+  display: block;
+  padding: 10px 20px;
+  /*border-radius: 5px 5px 0px 0px ;*/
+  background-color: #FFF;
+  margin-bottom: 2px;
+}
+.dx-panel>.dx-panel-title-box>.dx-panel-title{
+  display: block;
+  font-size: 16px;
+  color:#424f62;
+  font-family: '黑体';
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  border-left: 3px solid #46B38D;
+}
+.dx-panel>.dx-panel-content{
+  background-color: #FFF;
+  padding: 40px;
+}
+.dx-panel>.dx-panel-hasfooter-content{
+  border-radius: 0;
+  margin-bottom: 2px;
+}
+/*.dx-panel>.dx-panel-nofooter-content{
+  border-radius:0px 0px 5px 5px ;
+}*/
+.dx-panel>.dx-panel-footer{
+  background-color: #FFF;
+  padding: 20px;
+}
+.dx-panel>.dx-panel-hasfooter-footer{
+  /*display: block;*/
+  border-radius:0px 0px 5px 5px ;
+}
+.dx-panel>.dx-panel-nofooter-footer{
+  display: none;
+}
+
+
+/*响应式panel*/
+.flex_panel{
+  min-height: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.flex_panel .dx-panel-title-box{
+  flex:0 0 40px;
+  padding: 8px 20px;
+}
+.flex_panel .dx-panel-content{
+  flex:1;
+}

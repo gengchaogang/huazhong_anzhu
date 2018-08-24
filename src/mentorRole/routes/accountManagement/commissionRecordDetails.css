@@ -1,0 +1,9 @@
+.commissionRecordDetails{
+  font-size: 14px;
+}
+.commissionRecordDetails .reason{
+  color: #e4393c;
+}
+.commissionRecordDetails .ant-row div{
+  padding: 5px;
+}

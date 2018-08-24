@@ -1,0 +1,14 @@
+.labelValueList{
+
+}
+.labelValueList_item{
+  display: inline-block;
+  padding: 10px 20px;
+}
+.labelValueList_item_label{
+  display: inline-block;
+}
+.labelValueList_item_value{
+  display: inline-block;
+
+}

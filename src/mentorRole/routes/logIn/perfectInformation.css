@@ -1,0 +1,15 @@
+.perfectInformation .toNextButton{
+  width: 150px;
+  height:35px;
+  margin-top: 15px;
+  background-color: #45B38F;
+  color:#fff;
+  font-size: 16px;
+}
+.perfectInformation .tips{
+  font-size: 12px;
+  color: #C3C3C3
+}
+/*.perfectInformation .dx_upload_pic_upload_span{
+  display: none;
+}*/

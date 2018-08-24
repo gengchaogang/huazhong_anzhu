@@ -1,0 +1,16 @@
+.dealStatistics .cards{
+  background-color: #ECECEC;
+  padding: 20px;
+}
+.dealStatistics .counts{
+  line-height: 66px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+}
+.dealStatistics .searchForm{
+  margin: 10px 0;
+}
+.dealStatistics .rangePickerMarginRight{
+  margin-right:5px;
+}

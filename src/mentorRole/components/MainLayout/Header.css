@@ -1,0 +1,143 @@
+.ant-layout-header {
+  display: block;
+  height: 50px;
+  background-color: #FFF;
+  line-height: 50px;
+  padding:0 15px;
+}
+.ant-layout-header>.ant-menu{
+  display: inline-block;
+  height: 50px;
+  background-color: #FFF;
+  color: #333;
+  border-bottom: none;
+  float: right;
+}
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal{
+  height: 50px;
+  border-bottom: none;
+}
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal>.ant-menu{
+  border-radius: 0;
+}
+
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal>.ant-menu-submenu-title{
+  height: 50px;
+  background-color: #FFF;
+  color: #333;
+  font-size: 16px;
+}
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal>.ant-menu-submenu-title .anzhu-user-menu-icon{
+  position: relative;
+  left: 8px;
+  top:-1px;
+  color: #46B38D;
+  font-size: 12px;
+}
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal>.ant-menu-submenu-title:hover{
+  background-color: #CCCCCC;
+  color: #FFF;
+}
+.ant-layout-header>.ant-menu>.ant-menu-submenu-horizontal .ant-menu-item-active{
+  background-color: #CCCCCC;
+  color: #FFF;
+}
+.ant-layout-header>.ant-menu>.ant-menu-item{
+  height: 50px;
+  border-bottom: none;
+}
+
+.ant-layout-header>.dx-notification{
+  float: left;
+}
+
+.ant-layout-header>.ant-menu>.ant-menu-item:hover{
+  color: #FFF;
+  background-color: #CCCCCC;
+}
+.ant-layout-header>.ant-menu>.ant-menu-item-selected,
+.ant-layout-header>.ant-menu>.ant-menu-submenu-selected>.ant-menu-submenu-title{
+  color: #FFF;
+  background-color: #CCCCCC;
+}
+
+.index-information{
+  display: inline-block;
+  font-size: 14px;
+  padding-left:25px;
+  padding-right:25px;
+}
+.index-information:hover{
+  background-color: #46B38D;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.index-information .ant-scroll-number{
+  left: 21px;
+  top: -18px;
+  transform: scale(0.8);
+}
+.index-information .ant-badge{
+  margin-top: -4px;
+}
+
+.dx-layout-information{
+  float: right;
+}
+.ant-layout-header .dx-layout-information .poverUserButton{  
+  min-width:100px; 
+  text-align: center;
+  margin: 0px;
+  display: inline-block;
+  border-color:transparent;
+  background-color: transparent;
+  color:#595959;
+  padding-left:35px;
+  padding-right:35px;
+  display: inline-block;
+  border-radius: 0px;
+}
+.ant-layout-header .dx-layout-information .poverUserButton:hover{
+  background-color: #46B38D;
+  cursor: pointer;
+  color: #fff;
+}
+.popoverPersonal:hover{
+  cursor: pointer;
+  background-color: #46B38D;
+  color: #fff;
+}
+.userPopover .popoverPersonal{
+  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.ant-popover-inner-content{
+  padding: 0px;
+}
+.userPopover .ant-tooltip-inner{
+  background-color: #fff;
+  padding: 0px;
+  color: #595959;
+  padding: 5px;
+}
+.userPopover .ant-tooltip-arrow{
+  border-bottom-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.ant-layout-header .header-menu > li {
+  float: right;
+}*/

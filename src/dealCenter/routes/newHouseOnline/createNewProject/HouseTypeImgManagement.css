@@ -1,0 +1,20 @@
+.ant-btn-primary{
+  margin: 5px 10px;
+}
+.showImg{
+  position: relative;
+}
+.showImg .next{
+  text-align: right;
+}
+.createhousetype{
+  position: absolute;
+  right:0px;
+}
+.tableContent .ant-row{
+  line-height: 38px;
+}
+.tableContent .houseTypeName,.tableContent .checkable-tags,.tableContent .ant-col-md-6{
+  text-align: left;
+  margin-left: 50px;
+}

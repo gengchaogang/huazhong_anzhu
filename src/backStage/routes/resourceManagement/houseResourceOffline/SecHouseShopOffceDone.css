@@ -1,0 +1,11 @@
+.no-info-box > p {
+  text-align: center;
+}
+.no-info-box > p > i {
+  font-size: 150px;
+  color: #53bcff;
+}
+.no-info-box > div {
+  text-align: center;
+  font-size: 14px;
+}

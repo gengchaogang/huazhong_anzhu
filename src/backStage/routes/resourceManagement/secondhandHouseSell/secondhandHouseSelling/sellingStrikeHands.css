@@ -1,0 +1,11 @@
+.selling-strike-hands .no-info-box > p {
+  text-align: center;
+}
+.selling-strike-hands .no-info-box > p > i {
+  font-size: 150px;
+  color: #53bcff;
+}
+.selling-strike-hands .no-info-box > div {
+  text-align: center;
+  font-size: 14px;
+}

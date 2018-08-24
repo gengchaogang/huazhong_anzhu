@@ -1,0 +1,9 @@
+.storeRentedDetails .row{
+  padding: 5px 0
+}
+.storeRentedDetails .houseImgs .ant-col-2{
+  line-height: 150px
+}
+.storeRentedDetails .houseImgs .ant-col-22{
+white-space: nowrap; overflow-x: auto;width:800px;
+}

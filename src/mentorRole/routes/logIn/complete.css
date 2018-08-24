@@ -1,0 +1,17 @@
+.complete_img{
+  text-align: center;
+}
+.complete .ant-col-24{
+  text-align: center;
+}
+.complete .complete_button{
+  width: 150px;
+  height:35px;
+  margin-top: 15px;
+  background-color: #45B38F;
+  color:#fff;
+  font-size: 16px;
+}
+.complete .complete_button span{
+  margin: 0px
+}

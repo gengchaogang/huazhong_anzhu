@@ -1,0 +1,98 @@
+.creatGroupBuy{
+  position: relative;
+}
+.ant-select-enabled *{
+  border-radius: 0px;
+}
+.ant-select-enabled .ant-select-selection__rendered{
+  border-radius: 0px;
+}
+.creatGroupBuy_highNight{
+  background-color: #FE9A66;
+  color:#FFF;
+  padding:3px 5px;
+}
+.intentionListings .dx-table-pic{
+  width: 150px;
+  height:110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.filingBroker .dx-table-pic{
+  width: 100px;
+  height:100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.houseRecord-timeStamp{
+  display: inline-block;
+  padding-right: 10px;
+}
+.dealCenter-userMsgBox{
+
+}
+.dealCenter-userMsgBox-checkUserBox{
+
+}
+.dealCenter-userMsgBox-checkUserBox>.dealCenter-userMsgBox-checkUserBox-seachBox{
+  display: inline-block;
+  width: 300px;
+}
+.dealCenter-userMsgBox-userMsg{
+  width: 200px;
+  padding: 10px;
+}
+.dealCenter-intentionBuyBouse{
+
+}
+.dealCenter-intentionBuyBouse>.sort-address-msg>.ant-btn{
+  margin-left: 10px;
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+.dealCenter-intentionBuyBouse .dx-table-pic{
+  width: 110px;
+  height:100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.dealCenter-intentionBuyBouse .intentionBuyBouseTable-footer{
+  background-color: #FF6600;
+  color: #fff;
+}
+.dealCenter-chooseGroupBuyType .ant-radio-group>.ant-radio-button-wrapper{
+  border-radius: 0px;
+  background-color: #fff;
+  color: #666;
+}
+.dealCenter-chooseGroupBuyType .ant-radio-group>.ant-radio-button-wrapper-checked{
+  border-radius: 0px;
+  border-color: #46B38D;
+  color: #FFF;
+  background-color: #46B38D;
+  box-shadow:none;
+}
+.creatGroupBuy-implementBox{
+  text-align: right;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+.creatGroupBuy-implementBox>.ant-btn{
+  margin-left: 10px;
+}
+.creatGroupBuy-implementBox>.ant-btn-primary{
+  background-color: #46B38D;
+  border-color: #46B38D;
+}

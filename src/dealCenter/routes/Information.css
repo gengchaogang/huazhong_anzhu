@@ -1,0 +1,15 @@
+.anhzu_msg_operation{
+  width: 40px;
+  color: #43B38D;
+  cursor: pointer;
+}
+.anhzu_msg_content{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+  width: 450px;
+}
+.information_table_col:hover{
+  cursor: pointer;
+}

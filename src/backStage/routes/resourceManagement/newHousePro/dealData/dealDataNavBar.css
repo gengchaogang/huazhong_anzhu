@@ -1,0 +1,41 @@
+.dealDataNavBar{
+  margin: 10px 10px;
+}
+.dealDataNavBar .status{
+  color: #090;
+}
+.dealDataNavBar .operation{
+  color: #090;
+  cursor: pointer;
+}
+.dealDataNavBar .reject{
+  color: #e4393c;
+  cursor: pointer;
+}
+
+.dealDataNavBarTitle{
+  background-color: #ddd
+}
+.dealDataNavBarTitle p{
+  margin: 4px;
+}
+.dealDataNavBar .businessClassification{
+  margin:10px 4px;
+}
+.dealDataNavBar .businessClassification p{
+  margin-top: 5px;
+  display: inline-block;
+}
+.dealDataNavBar .businessClassification .ant-row {
+  display: inline-block;
+}
+.dealDataNavBar .ant-radio-group{
+  margin-left: 10px;
+}
+.dealDataNavBar .state{
+  margin:10px 4px;
+}
+.dealDataNavBar .ant-tabs{
+  display: inline-block!important;
+  top:18px;
+}

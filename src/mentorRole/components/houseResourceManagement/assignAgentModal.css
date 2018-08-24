@@ -1,0 +1,37 @@
+.assignAgentModal h3{
+  text-align: center;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+.assignAgentModal h3 span{
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+}
+.commonModalHeight{
+  background: #F4F6F8;
+}
+.commonModalHeight .zzjg{
+  padding: 10px;
+}
+.commonModalHeight .treeTable{
+  min-height: 300px;
+  padding: 10px;
+  background-color: #fff;
+}
+.commonModalHeight .treeTable h3{
+  margin-top: 8px;
+}
+.commonModalHeight .treeTable h3 span{
+  font-size: 16px;
+}
+.commonModalHeight .treeTable h3 a{
+  font-size: 16px;
+  margin-left: 5px;
+}
+#root #anzhu_web .commonModalHeight .ant-table .ant-table-tbody, .ant-modal .commonModalHeight .ant-table .ant-table-tbody{
+  border: none;
+}
+#root #anzhu_web .commonModalHeight .ant-table .ant-table-thead, .ant-modal .commonModalHeight .ant-table .ant-table-thead{
+  border: none;
+}

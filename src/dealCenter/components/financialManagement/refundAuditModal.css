@@ -1,0 +1,15 @@
+.RefundAuditModal {
+    min-width:1000px;
+}
+.RefundAuditModal .ant-modal-title{
+
+}
+.RefundAuditModal .ant-steps-title{
+
+}
+.RefundAuditModal td{
+    text-align: center;
+}
+.RefundAuditModal .rejectExplain{
+    color:#FF4F4F;
+}

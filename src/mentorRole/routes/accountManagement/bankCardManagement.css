@@ -1,0 +1,9 @@
+.bankCardManagement .title h4{
+  font-weight: normal;
+}
+.bankCardManagement .title .cardType{
+  color: #5B9FE2
+}
+.bankCardManagement .content .ant-row{
+  margin: 5px 0;
+}

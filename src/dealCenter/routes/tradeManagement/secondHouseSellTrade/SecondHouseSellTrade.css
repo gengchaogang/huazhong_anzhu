@@ -1,0 +1,30 @@
+.deal_operation{
+  color: #43B38D;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.secondHouseSellTrade{
+  position: relative;
+}
+.secondHouseSellTrade .ant-tabs{
+  background-color: #FFF;
+}
+.ant-popover .ant-popover-inner .ant-popover-inner-content .newhousedeal-operation-item{
+  text-align: center;
+}
+.deal_operation_noCursor{
+  color: #43B38D;
+  padding: 3px 5px;
+}
+.deal_reject_reson{
+  color: #FF6A6A;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.dx_block_label{
+  display: block;
+  padding: 3px 5px;
+}
+.secondHouseSellTrade_tab{
+  padding-top: 15px;
+}

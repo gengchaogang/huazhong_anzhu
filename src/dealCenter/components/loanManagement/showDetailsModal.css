@@ -1,0 +1,8 @@
+.showDetailsModal .title{
+  padding: 10px 0;
+}
+.auditInfo{
+  margin-right: 20px!important;
+  max-height: 300px;
+  overflow-y: auto;
+}

@@ -1,0 +1,31 @@
+.clientInfo{
+  display: inline-block;
+  margin: 10px 10px 10px 0px;
+  width: 215px;
+  height: 90px;
+  padding: 7px 10px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.clientInfo_list{
+  overflow-y: auto;
+  max-height: 220px;
+}
+.clientInfo_select,.clientInfo:hover{
+  border-color: #43B38D;
+}
+.clientInfo_select_icon{
+  position: absolute;
+  top:0px;
+  border-radius: 3px;
+  left:0px;
+  padding: 3px 5px;
+  background-color: rgba(0,0,0, 0.5);
+  color: #FFF;
+}
+.clientInfo_msg{
+  display: inline-block;
+  margin-left: 8px;
+}

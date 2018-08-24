@@ -1,0 +1,12 @@
+.dxConfirmModal_title{
+  font-size: 18px;
+  text-align: center;
+}
+.dxConfirmModal_description{
+  font-size: 14px;
+  text-align: center;
+}
+.dxConfirmModal_footer{
+  padding-top: 20px;
+  text-align: center;
+}

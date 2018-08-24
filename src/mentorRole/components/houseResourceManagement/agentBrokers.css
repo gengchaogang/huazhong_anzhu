@@ -1,0 +1,9 @@
+.agentBrokers table .avatar{
+	width: 50px;
+	height: 50px;
+	vertical-align: middle;
+	border-radius: 50%;
+	border:1px solid #aaa;
+	padding:1px;
+	margin-right: 10px;
+}

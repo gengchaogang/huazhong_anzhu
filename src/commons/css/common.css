@@ -1,0 +1,103 @@
+.list_Title {
+  color: #789;
+}
+.list_alignLeft{
+  text-align: left !important;
+}
+.list_alignCenter {
+  text-align: center !important;
+}
+
+.modalDivTop {
+  margin-top: 6px;
+}
+
+/** 通用Model 框样式 */
+.commonModalHeight {
+  min-height: 250px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/** 可以点击的 a 标签样式 */
+.clickA{
+  color: #009900;
+}
+
+/** 通过的字体颜色 */
+.passedTextColor{
+  color: #009900;
+}
+
+/** 驳回的字体颜色 */
+.rejectTextColor{
+  color: red;
+}
+
+
+
+/** ----------------------------Modal 样式start--------------------------- */
+.auditModal {
+    min-width:1000px;
+}
+.auditModal .ant-modal-title{
+
+}
+.auditModal .ant-steps-title{
+
+}
+.auditModal td{
+    text-align: center;
+}
+.auditModal .rejectExplain{
+    color:#FF4F4F;
+}
+.auditModal .refundReason{
+  display: block;
+  margin:7px 0px;
+  color: #009900;
+}
+.auditModal .imgUl li{
+  margin: 0 7px 7px 0px;
+}
+.auditModal .auditInfo{
+  margin:10px 0 7px 0;
+}
+
+
+
+/** ----------------------------Modal 样式end----------------------------- */
+
+ul.imgUl{
+    overflow: hidden;
+}
+ul.imgUl>li{
+    float: left;
+    width: 104px;
+    height: 104px;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    padding: 1px;
+    margin-right:6px;
+    text-align: center;
+}
+
+.toogleImgWidth {
+    width: 100px;
+}
+.toogleImgHeight {
+    height: 100px;
+}
+
+.showUpdateImg {
+  width: 100px;
+  height: 75px;
+}
+
+.ProjectPublishAuditModal h4{
+  margin:7px 0px;
+}
+
+.deleteText {
+  cursor: pointer;
+}

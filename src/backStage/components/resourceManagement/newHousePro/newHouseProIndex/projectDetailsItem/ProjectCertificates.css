@@ -1,0 +1,9 @@
+.spanImg{
+  width: 150px;
+  height: 105px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin:10px;
+}

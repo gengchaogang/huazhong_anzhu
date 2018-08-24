@@ -1,0 +1,11 @@
+.dealCenterOffLineModal .table{
+  margin-bottom:10px;
+}
+.dealCenterOffLineModal .toDetail{
+  cursor: pointer;
+  color: #090
+}
+.dealCenterOffLineModal .dxSteps{
+  max-width: 350px;
+  margin: 0px auto;
+}

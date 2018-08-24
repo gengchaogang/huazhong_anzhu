@@ -1,0 +1,15 @@
+.ProjectDealAuditModal {
+    min-width:900px;
+}
+.ProjectDealAuditModal .ant-modal-title{
+
+}
+.ProjectDealAuditModal .ant-steps-title{
+
+}
+.ProjectDealAuditModal td{
+    text-align: center;
+}
+.ProjectDealAuditModal .rejectExplain{
+    color:#FF4F4F;
+}

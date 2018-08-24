@@ -1,0 +1,12 @@
+.creatEmployee_buttonBox{
+  text-align: right;
+}
+.creatEmployee_buttonBox>.ant-btn{
+  margin-right: 20px;
+}
+.creatEmployee{
+  position: relative;
+}
+.creatEmployee .ant-form-extra{
+  line-height: 20px;
+}

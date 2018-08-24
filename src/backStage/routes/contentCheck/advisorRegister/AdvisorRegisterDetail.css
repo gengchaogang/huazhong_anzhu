@@ -1,0 +1,28 @@
+.pColor{
+  color: #FF0000;
+}
+.picShow{
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*border: 1px solid #000;*/
+}
+.picBigShow{
+  width: 480px;
+  height: 350px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*border: 1px solid #000;*/
+}
+.watchClickImg{
+  background-color:#FFFF00;
+  color:#FF4F00;
+  display: inline-block;
+  position: relative;
+  right: 180px;
+  top: -8px;
+  cursor: pointer;
+}

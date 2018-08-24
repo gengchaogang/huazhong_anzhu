@@ -1,0 +1,17 @@
+.selectProjectModal_search{
+  margin-bottom: 20px;
+}
+.selectProjectModal_list_item{
+  border-bottom: 1px solid #F2F2F2;
+  padding: 5px;
+  font-size: 18px;
+}
+.selectProjectModal_list_item:hover,
+.selectProjectModal_list_item_select{
+  background-color: #F6F8FC;
+  cursor: pointer;
+}
+.selectProjectModal_list{
+  max-height: 270px;
+  overflow-y: auto;
+}

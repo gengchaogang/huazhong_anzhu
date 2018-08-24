@@ -1,0 +1,24 @@
+.commissionRecord .money h2{
+  padding: 5px;
+}
+.commissionRecord .money h3{
+  padding: 5px;
+  font-weight: normal;
+}
+.commissionRecord .money hr{
+  margin: 20px 0;
+}
+.commissionRecord .table{
+  margin: 20px 0;
+}
+.commissionRecord .detaileInfors .label{
+  margin: 0 3px;
+}
+.commissionRecord .detaileInfors .searchByTime{
+  margin: 0 10px;
+}
+.dividingLine{
+  height:2px;
+  border:none;
+  border-top:2px dotted #185598;
+}

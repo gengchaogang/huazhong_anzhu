@@ -1,0 +1,87 @@
+.agentGroups{
+  font-size: 14px;
+}
+
+.agentGroups button{
+  margin: 0 10px
+}
+.agentGroups .header{
+  padding: 0px 0px 30px 0px;
+}
+.agentGroups .teamName{
+  width:150px;
+  display: inline;
+  padding-right: 20px;
+  font-size: 16px;
+}
+.byLink{
+  font-size: 14px;
+  padding:10px;
+  margin: 5px;
+}
+.byLink .ant-alert{
+  font-size: 14px;
+}
+.byQrCode{
+  font-size: 14px;
+  padding:10px;
+  margin: 5px;
+}
+.byQrCode .ant-alert{
+  font-size: 14px;
+}
+
+.payModal_qrCode{
+  margin: 5px 5px 0px 5px;
+}
+
+.agentGroups .buttons{
+  background-color: #EEEEEE;
+  line-height: 0px;
+  padding: 10px 10px;
+}
+.agentGroups .buttons .rf{
+  text-align: right;
+}
+.ant-form-item{
+  margin-bottom:10px;
+}
+
+
+/*经纪人管理*/
+.agentManagement{
+  padding-top:20px;
+}
+.treeDetails{
+  background-color: #fff;
+  padding: 20px 20px
+}
+.tree{
+  min-height: 500px;
+  background-color: #F4F6F8;
+  padding: 20px;
+}
+
+#root #anzhu_web .agentGroups .ant-table .ant-table-tbody, .agentGroups .ant-modal .ant-table .ant-table-tbody{
+  border: none;
+}
+#root #anzhu_web .agentGroups .ant-table .ant-table-thead, .agentGroups .ant-modal .ant-table .ant-table-thead{
+  border: none;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+
+/*添加经纪人*/
+.button_rf{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+/*调整分组*/
+/*.reGroups{
+  min-height: 200px;
+}*/
+.onOk{
+  margin-top: 20px;
+}
+.ant-select{display: block;}

@@ -1,0 +1,20 @@
+.tabs{
+  margin-top: 25px;
+}
+.rangePicker{
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #999999;
+}
+.flexPlat{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.certificate{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 480px;
+  height: 300px;
+  display: inline-block;
+}

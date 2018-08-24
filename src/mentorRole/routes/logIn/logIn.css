@@ -1,0 +1,315 @@
+.anzhu_login{
+  display: flex;
+  height: 100%;
+  flex-flow:column nowrap;
+  flex:1;
+}
+.anzhu_login_loginFail{
+  display: block;
+  /*padding: 15px;*/
+  color: #FF6A6A;
+}
+#root #anzhu_login .anzhu_login_loginBtn{
+  background-color: #42B38F;
+  border-color: #42B38F;
+  border-radius: 3px;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  height: 40px;
+}
+.anzhu_login_loginBtn:hover{
+  background-color: #46c3da;
+  border-color: #46c3da;
+  border-radius: 3px;
+  color: #fff;
+  margin: 0;
+}
+#root #anzhu_login .ant-checkbox-checked .ant-checkbox-inner:after,
+#root #anzhu_login .ant-checkbox-indeterminate .ant-checkbox-inner:after{
+  border-color: #42B38F;
+}
+#root #anzhu_login .ant-checkbox-checked .ant-checkbox-inner,
+#root #anzhu_login .ant-checkbox .ant-checkbox-inner:hover,
+#root #anzhu_login .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+#root #anzhu_login .ant-checkbox-focused .ant-checkbox-inner,
+#root #anzhu_login .ant-checkbox-indeterminate .ant-checkbox-inner{
+  border-color: #42B38F;
+  background-color: #FFF;
+  color: #42B38F;
+}
+.anzhu_login_header{
+  background-color: #FFF;
+  color: #000;
+  text-align:justify;
+}
+.anzhu_login_header_left{
+  display: inline-block;
+  float: left;
+}
+.anzhu_login_header_right{
+  display: inline-block;
+  float: right;
+}
+.anzhu_login_header_right>a{
+  color:#000;
+}
+.anzhu_login_body{
+  flex: 1;
+  background-position:top center;
+  background-repeat: no-repeat;
+  background-size:cover;/* 有浏览器兼容问题*/
+}
+.anzhu_login_footer{
+  text-align: center;
+  background-color: #313131;
+  color: #FFF;
+}
+.anzhu_login_loginBox_title{
+  font-weight: 900;
+  display: block;
+}
+.anzhu_login_loginBox{
+  background-color: #FFF;
+  position: absolute;
+  box-shadow: 3px 3px 5px #999;
+  top:50%;
+}
+/*
+*1024
+*/
+@media screen and (min-width: 1024px) {
+  .anzhu_login_header{
+    flex: 0 0 50px;
+    font-size: 16px;
+    line-height: 50px;
+  }
+  .anzhu_login_header_left{
+    margin-left: 100px;
+  }
+  .anzhu_login_logo{
+    font-size: 18px;
+  }
+  .anzhu_login_header_right{
+    margin-right:80px;
+  }
+  .anzhu_login_footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    flex: 0 0 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #313131;
+    font-size: 14px;
+    color: #FFF;
+    opacity: .8;
+  }
+  .anzhu_login_loginBox_title{
+    font-weight: 900;
+    font-size: 17px;
+    margin-bottom: 42px;
+  }
+  #root #anzhu_login .anzhu_login_body .ant-form-item{
+    margin-bottom:22px;
+  }
+  .anzhu_login_loginBtn{
+    font-size: 22px;
+    height: 40px;
+  }
+  .anzhu_login_loginBox{
+    text-align: center;
+    width: 500px;
+    height: 366px;
+    padding: 30px 20px 50px 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    right: 45%;
+    margin: -200px;
+  }
+}
+
+/*
+*1366
+*/
+@media screen and (min-width: 1366px) {
+  .anzhu_login_header{
+    flex: 0 0 60px;
+    background-color: #FFF;
+    font-size: 18px;
+    line-height: 60px;
+    color: #000;
+    text-align:justify;
+  }
+  .anzhu_login_header_left{
+    display: inline-block;
+    float: left;
+    margin-left: 120px;
+  }
+  .anzhu_login_logo{
+    font-size: 20px;
+  }
+  .anzhu_login_header_right{
+    display: inline-block;
+    margin-right:100px;
+    float: right;
+  }
+  .anzhu_login_header_right>a{
+    color:#000;
+  }
+  .anzhu_login_body{
+    flex: 1;
+    background-position:top center;
+    background-repeat: no-repeat;
+    background-size:cover;/* 有浏览器兼容问题*/
+  }
+  .anzhu_login_footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    flex: 0 0 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #313131;
+    font-size: 14px;
+    color: #FFF;
+    opacity: .8;
+  }
+  .anzhu_login_loginBox_title{
+    font-weight: 900;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 42px;
+  }
+
+  #root #anzhu_login .anzhu_login_body .ant-form-item{
+    margin-bottom:22px;
+  }
+
+  #root #anzhu_login .anzhu_login_loginBtn{
+    background-color: #42B38F;
+    border-color: #42B38F;
+    border-radius: 3px;
+    color: #fff;
+    width: 100%;
+    margin: 0;    
+    height: 40px;
+  }
+
+  .anzhu_login_loginBtn{
+    font-size: 22px;
+    height: 40px;
+  }
+  .anzhu_login_loginBox{
+    text-align: center;
+    width: 700px;
+    height: 406px;
+    padding: 50px 30px 70px 30px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    top:50%;
+    right: 40%;
+    margin-top: -201px;
+  }
+}
+/*
+*1920
+*/
+@media screen and (min-width: 1920px) {
+  .anzhu_login_header{
+    flex: 0 0 102px;
+    background-color: #FFF;
+    font-size: 20px;
+    line-height: 102px;
+    color: #000;
+    text-align:justify;
+  }
+  .anzhu_login_header_left{
+    display: inline-block;
+    float: left;
+    margin-left: 176px;
+  }
+  .anzhu_login_logo{
+    font-size: 24px;
+  }
+  .anzhu_login_header_right{
+    display: inline-block;
+    margin-right:144px;
+    float: right;
+  }
+  .anzhu_login_header_right>a{
+    color:#000;
+  }
+  .anzhu_login_body{
+    flex: 1;
+    background-position:top center;
+    background-repeat: no-repeat;
+    background-size:cover;/* 有浏览器兼容问题*/
+  }
+  .anzhu_login_footer{
+    flex: 0 0 80px;
+    text-align: center;
+    line-height: 80px;
+    background-color: #313131;
+    font-size: 16px;
+    color: #FFF;
+  }
+  .anzhu_login_loginBox_title{
+    font-weight: 900;
+    display: block;
+    font-size: 21px;
+    margin-bottom: 42px;
+  }
+  .daoshi_register{
+    font-size: 14px;
+    display: inline-block;
+    padding: 5px 8px;
+  }
+  #root #anzhu_login .anzhu_login_body .ant-form-item{
+    margin-bottom:22px;
+  }
+  .anzhu_login_loginBtn{
+    font-size: 22px;
+    height: 40px;
+  }
+  .anzhu_login_loginBox{
+    text-align: center;
+    width: 700px;
+    height: 450px;
+    padding: 75px 52px 93px 52px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.7);
+    position: absolute;
+    top:50%;
+    right: 40%;
+    margin-top: -255px;
+  }
+}
+.anzhu_login_img{
+  border-right: 2px solid #42B38F;
+  line-height: 120px;
+}
+.anzhu_login_img img{
+  padding-top: 50px;
+}
+.remenber{
+  text-align: left;
+}
+.lostPwd{
+  font-size: 14px;
+  text-align: right;
+}
+.anzhu_login .ant-radio-wrapper{
+  font-size: 14px;
+}
+#anzhu_login input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  border: 1px solid #CCC!important;
+}
+.anzhu_login .ant-input-lg{
+  height: 40px;
+}
+.login_bottom{
+  height: 56px;
+}

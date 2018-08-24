@@ -1,0 +1,24 @@
+.watchBigImg{
+  position: relative;
+  top:-8px;
+  right:98px;
+  background-color: #FFFF00;
+  color:#FF0000;
+  padding: 2px;
+  cursor: pointer;
+}
+.watchfeedbackUrl{
+  display: inline-block;
+  width: 490px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size:490px 400px;
+}
+.watchBigImgWrap .ant-modal-footer{
+  display: none;
+}
+.watchBigImgWrap .ant-modal-close{
+  position: relative;
+  top: 4px;
+  left:498px;
+}

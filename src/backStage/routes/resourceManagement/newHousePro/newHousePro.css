@@ -1,0 +1,9 @@
+.NewHousePro_container{
+	background-color: #fff;
+	padding:6px;
+
+}
+.NewHousePro_container .operation{
+	color: #009900;
+	cursor: pointer;
+}

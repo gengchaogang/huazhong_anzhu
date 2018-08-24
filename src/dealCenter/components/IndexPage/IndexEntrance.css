@@ -1,0 +1,28 @@
+.indexEntrance{
+  position: relative;
+  /*min-height: 70px;*/
+}
+/*@media screen and (min-width: 1200px) {
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(1),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(5){
+    padding-left: 0px !important;
+  }
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(4),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(8){
+    padding-right: 0px !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(1),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(4),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(7){
+    padding-left: 0px !important;
+  }
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(3),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(6),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(9){
+    padding-right: 0px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(1),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(3),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(5),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(7){
+    padding-left: 0px !important;
+  }
+  #root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(2),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(4),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(6),#root #anzhu_web .indexEntrance .ant-row .indexEntrance_item:nth-child(8){
+    padding-right: 0px !important;
+  }
+}*/

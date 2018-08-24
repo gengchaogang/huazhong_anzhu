@@ -1,0 +1,12 @@
+.storeSellingVideoAndImgs .title{
+  line-height: 56px;
+}
+.storeSellingVideoAndImgs .imgs{
+white-space: nowrap; overflow-x: auto;width:800px;
+}
+.storeSellingVideoAndImgs .imgs img{
+margin: 3px
+}
+.storeSellingVideoAndImgs .upload{
+margin: 30px 0;
+}

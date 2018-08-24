@@ -1,0 +1,11 @@
+.allSelecApartment{
+  margin-left: 10px;
+  color: #86ce75;
+}
+.houseEidt .ant-modal-body{
+  height: 300px;
+  overflow: auto;
+}
+.newhousedeal-edit{
+  margin-right: 5px;
+}

@@ -1,0 +1,22 @@
+.transactionBroker {
+  position: relative;
+  overflow: hidden;
+}
+
+.transactionBroker_img{
+  position: relative;
+  float: left;
+}
+
+.applicationNotes{
+  color:#aaa;
+  margin-left: 15px;
+}
+.distributionOfCommission{
+  padding:5px 0;
+  background-color: #ddd;
+}
+.detailsOfTheReleaseOfFunds{
+  padding:5px 0;
+  background-color: #ddd;
+}

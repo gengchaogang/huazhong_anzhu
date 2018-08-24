@@ -1,0 +1,13 @@
+
+.searchName {
+  width: 150px;
+}
+
+/** 列表页面头像图片样式 */
+.listUserHeaderImage {
+  width: 80px;
+}
+
+.iconCursor {
+  cursor: pointer;
+}

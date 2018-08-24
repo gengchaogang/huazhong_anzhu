@@ -1,0 +1,46 @@
+.ProjectPublishAuditModal {
+    min-width:850px;
+}
+.ProjectPublishAuditModal .ant-modal-title{
+
+}
+.ProjectPublishAuditModal .ant-steps-title{
+
+}
+.ProjectPublishAuditModal td{
+    text-align: center;
+}
+.ProjectPublishAuditModal .rejectExplain{
+    color:#FF4F4F;
+}
+
+ul.imgUl{
+    overflow: hidden;
+}
+ul.imgUl>li{
+    float: left;
+    width: 104px;
+    height: 104px;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    padding: 1px;
+    margin-right:6px;
+    text-align: center;
+}
+.toogleImgWidth {
+    width: 100px;
+}
+.toogleImgHeight {
+    height: 100px;
+}
+.ProjectPublishAuditModal h4{
+  margin:7px 0px;
+}
+.ProjectPublishAuditModal .dxSteps{
+  max-width: 350px;
+  margin: 0 auto;
+}
+.ProjectPublishAuditModal .auditInfo{
+  max-height: 300px;
+  overflow-y: auto;
+}

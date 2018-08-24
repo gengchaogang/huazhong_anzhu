@@ -1,0 +1,27 @@
+.inline{
+  display: inline-block;
+  margin-right: 50px;
+}
+.inline p{
+  margin: 5px 0;
+}
+.heidden{
+  visibility: hidden;
+}
+.gary{
+  color:#999999;
+}
+.inline .left{
+  margin-left: 25px;
+}
+.firstWord{
+  font-size: 14px;
+  font-weight: bold;
+}
+.time{
+  margin-bottom: 10px;
+}
+.green{
+  color: #42B38F;
+  cursor: pointer;
+}

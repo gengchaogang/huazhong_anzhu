@@ -1,0 +1,11 @@
+.commissionInstalled .tips div{
+  font-size: 14px;
+  margin: 5px 0px;
+  color: #999;
+}
+.commissionInstalled .tips{
+  margin-bottom: 20px;
+}
+.commissionInstalled .dx-panel>.dx-panel-content{
+  padding:20px 40px;
+}

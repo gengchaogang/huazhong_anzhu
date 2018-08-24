@@ -1,0 +1,12 @@
+.applicationAcceptance .button button{
+  margin: 0 5px;
+}
+.applicationAcceptance_modal label{
+  font-size: 14px;
+}
+.applicationAcceptance_modal ant-select-selection{
+  width: 100%;
+}
+.applicationAcceptance_modal .ant-form-item-control{
+  line-height: 35px;
+}

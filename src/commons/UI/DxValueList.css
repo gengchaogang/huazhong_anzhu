@@ -1,0 +1,14 @@
+.dx_valueList {
+    padding: 20px;
+    font-size: 14px;
+}
+.dx_valueList_item_value_tag{
+  background-color: #42B38F;
+  color: #fff;
+  padding: 3px 14px;
+  font-size: 14px;
+  height: auto;
+}
+.dx_valueList_item_value{
+  display: inline-block;
+}

@@ -1,0 +1,51 @@
+.dx-search-input{
+  /*display: inline-block;*/
+  margin-right: 10px;
+}
+.dq_flex{
+  width: 100%;
+  display: flex;
+}
+.dq_flex_left{
+  flex: 0 0 190px;
+  padding-right: 10px;
+}
+.dq_flex_right{
+  flex: 1;
+}
+/*.creatClientTableHouse{
+  background:url('../../../../img/house.png') no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 35px;
+
+}*/
+.creatClientTableHouse{
+  width: 150px;
+  height:110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.creatClient_choose_house{
+  margin-bottom: 10px;
+}
+.creatClient_choose_house .ant-btn{
+  margin-left: 10px;
+}
+.creatClient_box form .creatClient_choose_house .ant-cascader-picker{
+  width: auto;
+}
+/*隐藏表头*/
+/*.ant-table-body .ant-table-thead{
+  display: none;
+}*/
+.RemarksButton{
+  text-align: right;
+}
+.RemarksButton .ant-btn{
+  margin-left: 10px;
+}

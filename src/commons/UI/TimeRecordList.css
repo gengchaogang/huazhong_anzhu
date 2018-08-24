@@ -1,0 +1,23 @@
+.timeRecordList{
+  max-height: 250px;
+  overflow: auto;
+}
+.timeRecordList_date{
+  padding-right: 15px;
+}
+.timeRecordList_content{
+  padding-right: 15px;
+}
+.timeRecordList_remarks{
+  padding-right: 20px;
+}
+.timeRecordList_images{
+
+}
+.timeRecordList_content_color{
+  color:#FF6A6A;
+  padding-right: 15px;
+}
+.fontweight{
+  font-weight: bold;
+}

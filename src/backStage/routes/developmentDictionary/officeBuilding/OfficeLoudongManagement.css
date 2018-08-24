@@ -1,0 +1,21 @@
+.warningPrompt .ant-modal-header{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.warningPrompt .ant-modal>.ant-modal-content>.ant-modal-header>.ant-modal-title{
+  border-left: none;
+}
+.warningPrompt .ant-modal{
+  width:350px!important;
+}
+.warningPrompt .ant-modal-footer{
+  text-align: center;
+  margin-top: 10px;
+}
+.warningPrompt .ant-modal-body{
+  text-align: center;
+}
+.warningPrompt .warningWord{
+  font-size: 16px;
+  color: #ff6a6a;
+}

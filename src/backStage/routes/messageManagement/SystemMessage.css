@@ -1,0 +1,10 @@
+.abs-right_name{
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
+  /*width: 280px;*/
+  text-align: center;
+  /*min-width: 300px;
+  max-width: 480px;*/
+}

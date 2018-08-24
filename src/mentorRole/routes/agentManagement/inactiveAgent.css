@@ -1,0 +1,12 @@
+.inactiveAgent .search{
+  padding: 10px 0;
+}
+.inactiveAgent button{
+  margin: 0 5px;
+}
+.inactiveAgent .dx-panel>.dx-panel-content{
+  padding:20px 40px;
+}
+.inactiveAgent .ant-form{
+  margin-bottom: 15px
+}

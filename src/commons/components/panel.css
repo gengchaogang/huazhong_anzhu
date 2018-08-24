@@ -1,0 +1,60 @@
+
+.panel{
+  display: block;
+  background-color: transparent;
+  /*padding: 5px 0px;*/
+}
+.panel>.panel-title-box{
+  display: block;
+  height: 40px;
+  line-height: 24px;
+  padding: 3px 20px;
+  /*border-radius: 5px 5px 0px 0px ;*/
+  background-color: #FFF;
+  /*margin-bottom: 5px;*/
+}
+.panel>.panel-title-box>.panel-title{
+  display: block;
+  font-size: 16px;
+  font-family: '黑体';
+  padding-left: 8px;
+  border-left: 3px solid #46B38D;
+  margin-top: 3px;
+}
+.panel>.panel-content{
+  background-color: #FFF;
+  padding: 20px;
+}
+.panel>.panel-hasfooter-content{
+  border-radius: 0;
+  margin-bottom: 2px;
+}
+/*.panel>.panel-nofooter-content{
+  border-radius:0px 0px 5px 5px ;
+}*/
+.panel>.panel-footer{
+  background-color: #FFF;
+  padding: 20px;
+}
+.panel>.panel-hasfooter-footer{
+  /*display: block;*/
+  border-radius:0px 0px 5px 5px ;
+}
+.panel>.panel-nofooter-footer{
+  display: none;
+}
+
+
+/*响应式panel*/
+.flex_panel{
+  min-height: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.flex_panel .panel-title-box{
+  flex:0 0 40px;
+  padding: 8px 20px;
+}
+.flex_panel .panel-content{
+  flex:1;
+}

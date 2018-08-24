@@ -1,0 +1,16 @@
+.indexLogin{
+  padding: 10px;
+}
+.indexLogin>.indexLogin_address{
+  font-size: 20px;
+  letter-spacing:3px;
+  color: #363636;
+}
+.indexLogin>.indexLogin_department{
+  font-size: 14px;
+  color: #363636;
+}
+.indexLogin>.indexLogin_ip{
+  font-size: 12px;
+  color: #999;
+}

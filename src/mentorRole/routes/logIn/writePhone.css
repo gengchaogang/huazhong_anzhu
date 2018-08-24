@@ -1,0 +1,31 @@
+.writePhone .ant-form-item-label label{
+  font-size: 14px;
+}
+.writePhone .setting{
+  padding: 10px
+}
+.writePhone .setting .setting_loginName{
+  font-size: 16px;
+}
+.writePhone .tips{
+    display: inline-block;
+    color: #C3C3C3;
+    font-size: 12px;
+    line-height: 24px;
+}
+.writePhone .xuxian{
+  border-top: 2px dotted #ddd;
+  margin: 20px;
+}
+.writePhone .toNextButton{
+  width: 150px;
+  height:35px;
+  margin-top: 15px;
+  background-color: #45B38F;
+  color:#fff;
+  font-size: 16px;
+}
+.writePhone .ant-form-explain{
+  text-align:left;
+  margin-left: 10%;
+}

@@ -1,0 +1,10 @@
+.reportBroker .dx-panel-content{
+  height: 180px;
+}
+.timelineComponents .dx-panel-content{
+  max-height: 180px;
+  overflow-y: auto;
+}
+.dealCenter-doLookDetails{
+  position: relative;
+}

@@ -1,0 +1,8 @@
+.CreateProjectTable{
+  position: relative;
+  overflow: hidden;
+}
+.upOrDown{
+  float:right;
+  overflow: hidden;
+}

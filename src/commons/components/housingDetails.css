@@ -1,0 +1,13 @@
+.housingInfo {
+	padding-left: 8px;
+}
+.housingInfo>li {
+	line-height: 30px;
+}
+.housingDetails img {
+	width:10em;
+	margin:5px;
+	padding:5px;
+	border:1px solid #aaa;
+	border-radius:3px;
+}

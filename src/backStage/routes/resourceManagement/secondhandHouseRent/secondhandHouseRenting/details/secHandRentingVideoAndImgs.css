@@ -1,0 +1,12 @@
+.secHandRentingVideoAndImgs .title{
+  line-height: 56px;
+}
+.secHandRentingVideoAndImgs .imgs{
+white-space: nowrap; overflow-x: auto;width:800px;
+}
+.secHandRentingVideoAndImgs .imgs img{
+margin: 3px
+}
+.secHandRentingVideoAndImgs .upload{
+margin: 30px 0;
+}

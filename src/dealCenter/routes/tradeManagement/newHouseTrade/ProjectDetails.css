@@ -1,0 +1,29 @@
+.newHouseTrade_projectDetails{
+  min-height: 300px;
+}
+.newHouseTrade_projectDetails .ant-steps{
+  display: none;
+}
+.newHouseTrade_projectDetails_step{
+  background-color: #FFF;
+}
+.newHouseTrade_projectDetails .steps-content{
+  border: none;
+  background-color: transparent;
+}
+.newHouseTrade_projectDetails .steps-action{
+  text-align: right;
+}
+.newHouseTrade_projectDetails .steps-action .ant-btn{
+  margin: 5px;
+}
+.newHouseTrade_projectDetails .newHouseTrade_projectDetails_step{
+  padding: 20px;
+}
+.newHouseTrade_projectDetails .steps-content{
+  position: relative;
+  min-height: 300px;
+}
+.newHouseTrade_projectDetails .ant-pagination{
+  display: inline-block;
+}

@@ -1,0 +1,11 @@
+.pictureShow{
+  width: 88px;
+  height: 78px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 88px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 15px;
+  display: inline-block;
+}

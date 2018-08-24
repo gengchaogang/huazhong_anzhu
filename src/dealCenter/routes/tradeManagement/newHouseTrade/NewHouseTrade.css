@@ -1,0 +1,191 @@
+.newhousedeal{
+  margin-top: 10px;
+  position: relative;
+}
+.nh_showProject{
+  /*padding: 20px;*/
+  display: flex;
+}
+.newhousedeal_searchBox{
+  margin-bottom: 20px;
+  height: 30px;
+}
+.newhousedeal_searchBox .dx-search-btn-input{
+  /*height: 100%;*/
+}
+.newhousedeal_searchBox .dx-search-btn-input .ant-input-search{
+  height: 30px;
+}
+.newhousedeal_searchBox .dx-search-btn-input .dx-search-btn-input-btnbox{
+  flex:0 0 60px;
+}
+.newhousedeal_searchBox .dx-search-btn-input .dx-search-btn-input-btnbox .ant-btn{
+  width: 100%;
+  height: 30px;
+  font-size: 14px;
+}
+.newhousedeal_searchBox .dx-search-btn-input>.dx-search-btn-input-searchbox .ant-input-suffix{
+  top:17px;
+}
+.nh_showProject_pic{
+  flex:0 0 170px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: 170px;
+  background-position: center;
+}
+.nh_showProject_msg{
+  flex:1;
+}
+.nh_showProject_opt{
+  flex:0 0 80px;
+  display: flex;
+  align-items:flex-end;
+}
+.nh_showProject_opt .ant-btn{
+  position: relative;
+  z-index: 500;
+}
+.nh_showProject_projectName{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+.anzhu_nh_project_contrl{
+  position: relative;
+}
+.newhousedeal_noProject_shadow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.anzhu_panel{
+  padding: 20px;
+  background-color: #FFF;
+  margin-bottom: 20px;
+}
+
+.newhousedeal .newhousedeal-panel{
+  padding: 10px;
+  background-color: #FFF;
+}
+.report_reject_content{
+  min-height: 30px;
+}
+.newHouseTrade_groupBuyRefund_timeList .ant-timeline{
+  max-height: 200px;
+  overflow: auto;
+}
+/*.newhousedeal .newhousedeal-currenproject-btn{
+  width: 100%;
+  border-radius: 0px;
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+.newhousedeal .newhousedeal-currenproject-btn:hover{
+  background-color: #86ce75;
+  border-color: #86ce75;
+}*/
+.newhousedeal-operatingArea{
+  padding: 10px 0px;
+}
+.newhousedeal-operatingArea .ant-card{
+  border-radius: 3px;
+  background-color: #42B38F;
+}
+.newhousedeal-operatingArea .ant-card:hover{
+  background-color: #46C3DA;
+}
+.newhousedeal-operatingArea .ant-card>.ant-card-body{
+  text-align: center;
+  color:#fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+}
+.newhousedeal .newhousedeal-panel>.ant-radio-group>.ant-radio-button-wrapper{
+  border-radius: 0px;
+  background-color: #fff;
+  color: #666;
+}
+.newhousedeal .newhousedeal-panel>.ant-radio-group>.ant-radio-button-wrapper-checked{
+  border-radius: 0px;
+  border-color: #46B38D;
+  color: #FFF;
+  background-color: #46B38D;
+  box-shadow:none;
+}
+.newhousedeal-table thead th,.newhousedeal-table tbody td{
+  text-align: center;
+}
+.newhousedeal-table .ant-pagination-item-active{
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+.newhousedeal-main{
+  background-color: #FFF;
+  position: relative;
+}
+.newhousedeal-main>.ant-tabs .ant-tabs-nav-wrap .ant-tabs-tab{
+  border-radius: 0px;
+}
+.newhousedeal-main>.ant-tabs .ant-tabs-nav-wrap .ant-tabs-tab-active{
+  color: #46B38D;
+}
+.export-transaction-report{
+  position: absolute;
+  top:10px;
+  right: 20px;
+  cursor: pointer;
+}
+.export-transaction-report:hover{
+  color: #46B38D;
+}
+.newhousedeal-operation{
+  color:#46B38D;
+  cursor: pointer;
+}
+.newhousedeal-operation-item:hover{
+  background-color: #46B38D;
+  color: #fff;
+  cursor: pointer;
+}
+.newhousedeal-table .newhousedeal-operation{
+  padding: 0 10px;
+}
+
+.newhousedeal-sortBox{
+  display: flex;
+  width: 100%;
+}
+.newhousedeal-sortBox>.newhousedeal-sortBox-left{
+  flex:0 0 250px;
+  padding-right:10px;
+}
+.newhousedeal-sortBox>.newhousedeal-sortBox-right{
+  flex:1;
+}
+.newHouseTrade_refundModal_content_title{
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+}
+.newHouseTrade_refundModal_content .dx_upload_pic_list{
+  max-width: 600px;
+}
+.renderTradeExcel{
+  position: absolute;
+  right: 10px;
+  color: #46B38D;
+  cursor: pointer;
+  display: inline-block;
+  z-index: 300;
+  top: 7px;
+}

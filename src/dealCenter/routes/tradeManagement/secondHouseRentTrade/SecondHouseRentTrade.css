@@ -1,0 +1,9 @@
+.secondHouseRentTrade_tab{
+  padding-top: 15px;
+}
+.secondHouseRentTrade{
+  position: relative;
+}
+.secondHouseRentTrade .ant-tabs{
+  background-color: #FFF;
+}

@@ -1,0 +1,44 @@
+.accountManagement{
+  padding: 15px 20px;
+  background-color: #FFF;
+}
+.changePhone_loginPsd{
+  display: inline-block;
+}
+.changePhone_step1_content{
+  margin: 0 10px;
+}
+.changePhone_step1_content>p{
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.changePhone_row{
+  padding: 5px 0;
+}
+.changePhone_row .dxTimeButton{
+  margin: 0;
+  margin-left: 15px;
+}
+.changePhone_formBox{
+  width:400px;
+}
+.changePhone_formBox_step2{
+  vertical-align: top;
+}
+.changePhone_formBox_step2 .changePhone_formBox{
+  display: inline-block;
+  vertical-align: top;
+
+}
+.changePhone_formBox_step2 .changePhone_btnBox{
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 56px;
+  vertical-align: top;
+}
+.changePhone_formBox_step2 .changePhone_btnBox .dxTimeButton{
+  position: relative;
+  left: -128px;
+  top: -3px;
+}

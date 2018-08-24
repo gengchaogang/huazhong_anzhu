@@ -1,0 +1,32 @@
+div.searchBar{
+    margin-top:10px;
+    overflow: hidden;
+}
+div.searchBar .ant-calendar-picker{
+    width:inherit!important;
+}
+div.checkableTags{
+    margin: 8px 5px;
+    padding-top: 10px;
+    border: 1px solid #ccc;
+}
+div.checkableTags .ant-form-item-label{
+    text-align: left;
+    padding-left : 15px;
+}
+div.checkableTags .ant-form-item-label label{
+    font-weight: bold;
+    font-size: 14px;
+}
+div.checkableTags .checkable-tags .tag{
+    border:1px solid transparent;
+}
+div.checkableTags .ant-checkbox-group-item{
+    padding-left:8px;
+}
+
+div.allHousetabs{
+    margin-top:10px;
+    background-color: #fff;
+    padding:8px 5px;
+}

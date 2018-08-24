@@ -1,0 +1,160 @@
+/*input placeholder*/
+.createNewHouse input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+color: #666;
+}
+.createNewHouse input:-moz-placeholder, textarea:-moz-placeholder {
+color: #666;
+}
+.createNewHouse input::-moz-placeholder, textarea::-moz-placeholder {
+color: #666;
+}
+.createNewHouse input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+color: #666;
+}
+/**/
+.createNewHouse .ant-cascader-picker-arrow{
+  color:#42B38B;
+  font-size: 20px;
+  font-weight: bold;
+  right:12px;
+  margin-top:-4px;
+}
+
+.createNewHouse .ant-cascader-picker{
+  font-size: 14px;
+  background-color: #f1f1f1;
+  color:#333;
+  border-color:#C6C6C6;
+}
+
+.createNewHouse .ant-cascader-picker-label{
+  color:#333;
+}
+
+.createNewHouse .ant-cascader-picker-arrow-expand{
+  right:6px;
+}
+
+
+
+
+.createNewHouse .ant-select-selection{
+  background: #f1f1f1;
+  border:1px solid #C6C6C6;
+  font-size: 14px;
+  color:#333;
+}
+.createNewHouse .ant-input{
+  font-size: 14px;
+}
+.createNewHouse .ant-input-number-input{
+  background: #f1f1f1;
+  font-size: 14px;
+  color:#333;
+}
+
+.createNewHouse .ant-select-arrow{
+  font-size: 20px;
+  font-weight: bold;
+  color:#42B38B;
+  margin-top:-8px;
+  right:4px;
+
+}
+.createNewHouse .ant-select-arrow-expand{
+  margin-top: -4px;
+}
+.createNewHouse .ant-form-item-label label{
+  font-size: 14px;
+}
+
+.createNewHouse .ant-select-selection__placeholder{
+  font-size: 14px;
+  color:#666;
+}
+
+.createNewHouse .ant-calendar-picker-input{
+  font-size: 14px;
+  color:#333;
+  border-color: #c6c6c6;
+  background: #f1f1f1;
+}
+
+.createNewHouse .ant-calendar-picker-input:hover{
+  border-color:#999;
+}
+
+.createNewHouse .ant-radio-inner{
+  border-color:#c6c6c6;
+  background:#f1f1f1;
+}
+.createNewHouse .ant-radio-inner:after{
+  background: #42B38B;
+}
+
+
+
+
+/*my classes*/
+.createNewHouse .myinput{
+  background: #f1f1f1;
+  border:1px solid #C6C6C6;
+  font-size: 14px;
+  color:#333;
+}
+
+.createNewHouse .title-bar{
+  font-size: 14px;
+  color:#444;
+  margin-top:4px;
+  margin-bottom: 4px;
+}
+
+.createNewHouse  .font-normal{
+  font-style: normal;
+  font-size: 14px;
+  color:#444;
+  margin:4px;
+}
+
+
+
+.createNewHouse  .center-font{
+  font-size: 14px;
+  text-align: center;
+  margin-top: 92px;
+}
+
+
+.createNewHouse .textarea{
+  font-size: 14px;
+
+}
+
+.createNewHouse .panelHeader{
+  font-size: 16px;
+  font-weight: 600;
+}
+.createNewHouse .panel{
+  background: #EAEEF2;
+}
+
+.createNewHouse .submitButton{
+  background:#42B38B;
+  color:#fff;
+  font-size: 16px;
+  border-color:transparent;
+}
+
+.createNewHouse .input-lg{
+
+}
+.createNewHouse .input-md{
+
+}
+.createNewHouse .input-sm{
+
+}
+.createNewHouse .input-xs{
+
+}

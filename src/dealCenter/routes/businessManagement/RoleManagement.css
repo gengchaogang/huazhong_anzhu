@@ -1,0 +1,16 @@
+.roleManagement_tableTitle>span{
+  margin-right: 15px;
+}
+.roleManagement .permissions{
+  padding: 5px;
+  margin: 0 2px;
+  border-radius: 3px;
+  background-color: #bfbfbf;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.roleManagement td.roolItems{
+  text-align: left !important;
+}

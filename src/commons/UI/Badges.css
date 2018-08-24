@@ -1,0 +1,33 @@
+.badgesDivMain{
+  display: block;
+  padding: 0px;
+  background-color: #ccc;
+  height: 80px;
+  padding: 10px;
+  cursor: pointer;
+}
+.badgesDivMain .dxBages{
+  display: inline-block;
+  position: relative;
+  top: 7px;
+  float: right;
+  margin-right: 3px;
+}
+.badgesDivMain .dx-table-pic{
+  display: inline-block;
+  width: 60px;
+  height:80px;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 60px;
+  border-radius: 5px;
+  margin: 0 auto;
+
+}
+.badgesDivMain .dxBagesNumber{
+  font-size: 22px;
+  text-align: right;
+}
+.dxBagesWord,.dxBagesNumber{
+  color: #fff;
+}

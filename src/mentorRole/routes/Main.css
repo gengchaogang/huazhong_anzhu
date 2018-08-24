@@ -1,0 +1,1004 @@
+/*
+*整体样式控制
+*/
+html,body{
+  background-color: #ebf0f1;
+}
+#root{
+  display: block;
+  color: #333;
+}
+/*表格行 加粗*/
+.anzhu_table_col_bold {
+  font-weight: bold;
+}
+/*
+*左侧菜单栏样式
+*/
+.ant-layout-aside{
+  display: block;
+  position: relative;
+  min-height: 100%;
+}
+.ant-layout-aside>.ant-layout-sider{
+  display: inline-block;
+  position: absolute;
+  min-height: 100%;
+  width: 256px;
+}
+.ant-layout-aside>.ant-layout-main{
+  display: block;
+  margin-left: 256px;
+  min-height: 100%;
+}
+.ant-layout-main>.ant-layout-container{
+  padding:10px 28px 10px 28px;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+    background-color: #43B38D;
+}
+/*
+*主体显示区域样式
+*/
+/*popover*/
+.ant-popover{
+  z-index: 50;
+}
+
+
+
+
+#root>.ant-breadcrumb{
+  background: #ddd;
+  display: block;
+  font-size: 14px;
+  padding: 5px 0;
+}
+#root #anzhu_web>.ant-breadcrumb .ant-breadcrumb-link{
+margin-left: 10px;
+}
+/*
+*steps样式控制
+*/
+/*进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-head-inner,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-head-inner{
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+/*未进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner{
+  border-color: #46B38D;
+}
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner > .ant-steps-icon,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner > .ant-steps-icon{
+  color: #46B38D;
+}
+/*进度条*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-tail > i,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-tail > i{
+  height: 2px;
+  background-color: #46B38D;
+}
+/*未进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-tail > i,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-tail > i{
+  height: 2px;
+}
+
+
+/*
+*表格及其上方的tabs样式整体控制
+*/
+#root #anzhu_web .ant-tabs-top .ant-tabs-bar,
+.ant-modal .ant-tabs-top .ant-tabs-bar{
+  margin-bottom: 0;
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab,
+.ant-modal .ant-tabs-top .ant-tabs-tab{
+  background-color: #C4CBD4;
+  border-radius: 3px;
+  border-bottom:1px solid #D9D9D9;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #fff;
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab-active,
+.ant-modal .ant-tabs-top .ant-tabs-tab-active{
+  background-color: #fff;
+  border-bottom:1px solid #fff;
+  color: #333;
+}
+/*tab下的表格样式*/
+#root #anzhu_web .ant-tabs .ant-table .ant-table-thead > tr > th,
+.ant-modal .ant-tabs .ant-table .ant-table-thead > tr > th{
+  background-color: transparent;
+  padding: 8px;
+}
+#root #anzhu_web .ant-tabs .ant-table,
+.ant-modal .ant-tabs .ant-table{
+  border-collapse:collapse;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+}
+#root #anzhu_web .ant-tabs .ant-table .ant-table-thead,
+.ant-modal .ant-tabs .ant-table .ant-table-thead{
+  border-bottom: none;
+  border-top: none;
+}
+#root #anzhu_web .ant-tabs .ant-table th,#root #anzhu_web .ant-table td,
+.ant-modal .ant-tabs .ant-table th,.ant-modal .ant-table td{
+  text-align: center;
+  vertical-align: middle;
+}
+#root #anzhu_web .ant-tabs .ant-table .ant-table-row:hover,
+.ant-modal .ant-tabs .ant-table .ant-table-row:hover{
+  background-color: #ebf0f1;
+}
+#root #anzhu_web .ant-tabs .ant-pagination-item-active,
+.ant-modal .ant-tabs .ant-pagination-item-active{
+  background-color: #42B38F;
+  border-color: #42B38F;
+}
+/*antd表格样式*/
+#root #anzhu_web .ant-table .ant-table-thead > tr > th,
+.ant-modal .ant-table .ant-table-thead > tr > th{
+  background-color: transparent;
+  padding: 8px;
+}
+#root #anzhu_web .ant-table,
+.ant-modal .ant-table{
+  border-bottom: 1px solid #bfbfbf;
+}
+#root #anzhu_web .ant-table-placeholder,
+.ant-modal .ant-table-placeholder{
+  border-right: 1px solid #bfbfbf;
+  border-left: 1px solid #bfbfbf;
+}
+#root #anzhu_web .ant-table table,
+.ant-modal .ant-table table{
+  border-collapse:collapse;
+}
+#root #anzhu_web .ant-table .ant-table-thead,
+.ant-modal .ant-table .ant-table-thead{
+  border: 1px solid #bfbfbf;
+}
+#root #anzhu_web .ant-table .ant-table-tbody,
+.ant-modal .ant-table .ant-table-tbody{
+  border: 1px solid #bfbfbf;
+  border-bottom:none;
+}
+#root #anzhu_web .ant-table .ant-table-title,
+.ant-modal .ant-table .ant-table-title{
+  padding: 8px;
+  font-size: 14px;
+}
+#root #anzhu_web .ant-table th,#root #anzhu_web .ant-table td,
+.ant-modal .ant-table th,#root #anzhu_web .ant-table td{
+  text-align: center;
+  vertical-align: middle;
+}
+#root #anzhu_web .ant-table .ant-table-row:hover,
+.ant-modal .ant-table .ant-table-row:hover{
+  background-color: #ebf0f1;
+}
+#root #anzhu_web .ant-pagination-item-active,
+.ant-modal .ant-pagination-item-active{
+  background-color: #42B38F;
+  border-color: #42B38F;
+}
+
+/*
+*表单样式整体控制（仅限制于antd的表单元素，原生表单元素不控制）
+*/
+
+/*主按钮*/
+#root #anzhu_web .ant-btn-primary,
+.ant-modal .ant-btn-primary{
+  font-size: 15px;
+  background-color: #42B38F;
+  border-color: #42B38F;
+  border-radius: 3px;
+  color: #fff;
+  margin-top: 3px;
+}
+#root #anzhu_web .ant-btn-primary:hover,
+.ant-modal .ant-btn-primary:hover{
+  font-size: 15px;
+  background-color: #67D0AC;
+  border-color: #67D0AC;
+  border-radius: 3px;
+  color: #fff;
+}
+
+/*副按钮*/
+#root #anzhu_web .ant-btn-ghost,
+.ant-modal .ant-btn-ghost{
+  font-size: 15px;
+  background-color: #fff;
+  border-color: #42B38F;
+  color: #42B38F;
+}
+#root #anzhu_web .ant-btn-ghost:hover,
+.ant-modal .ant-btn-ghost:hover{
+  font-size: 15px;
+  background-color: #FFF;
+  border-color: #42B38F;
+  color: #B3B3B3;
+}
+/*经纪人管理的buttons*/
+#root #anzhu_web .ant-btn-agent_Buttons,
+.ant-modal .ant-btn-agent_Buttons{
+  font-size: 14px;
+  background-color: #fff;
+  border-color: #E2E2E2;
+  color: #3E3E3E;
+}
+#root #anzhu_web .ant-btn-agent_Buttons:hover,
+.ant-modal .ant-btn-agent_Buttons:hover{
+  font-size: 14px;
+  background-color: #43B38D;
+  border-color: #43B38D;
+  color: #fff;
+}
+/*重置按钮*/
+#root #anzhu_web .ant-btn-reset,
+.ant-modal .ant-btn-reset{
+  font-size: 15px;
+  background-color: #fff;
+  border-color: #43B38D;
+  color: #43B38D;
+  margin-top: 3px;
+}
+#root #anzhu_web .ant-btn-reset:hover,
+.ant-modal .ant-btn-reset:hover{
+  font-size: 15px;
+  background-color: #fff;
+  border-color: #66D1AD;
+  color: #66D1AD;
+}
+/*普通按钮*/
+#root #anzhu_web .anzhu_button,
+.ant-modal .anzhu_button{
+  font-size: 15px;
+  background-color: #C4CBD4;
+  border-color: #C4CBD4;
+  border-radius: 3px;
+  color: #FFF;
+}
+#root #anzhu_web .anzhu_button:hover,
+.ant-modal .anzhu_button:hover{
+  font-size: 15px;
+  background-color: #FFF;
+  border-color: #C4CBD4;
+  border-radius: 3px;
+  color: #C4CBD4;
+}
+/*红色提示按钮*/
+#root #anzhu_web .anzhu_redButton,
+.ant-modal .anzhu_redButton{
+  background-color: #FFF;
+  border-color: #FF6a6a;
+  color: #FF6a6a;
+}
+#root #anzhu_web .anzhu_redButton:hover,
+.ant-modal .anzhu_redButton:hover{
+  background-color: #FF6a6a;
+  border-color: #FF6a6a;
+  color: #FFF;
+}
+/*anzhu_buttonGroup表单组*/
+#root #anzhu_web .anzhu_buttonGroup,
+.ant-modal .anzhu_buttonGroup{
+  padding: 10px;
+}
+#root #anzhu_web .anzhu_buttonGroup>.ant-btn,
+.ant-modal .anzhu_buttonGroup>.ant-btn{
+  margin-right: 15px;
+}
+
+
+/*单选按钮*/
+#root #anzhu_web .ant-radio .ant-radio-inner:after,
+.ant-modal .ant-radio .ant-radio-inner:after{
+  opacity:1;
+  background-color: #CCC;
+  border-color: #CCC;
+}
+#root #anzhu_web .ant-radio.ant-radio-checked .ant-radio-inner:after,
+.ant-modal .ant-radio.ant-radio-checked .ant-radio-inner:after{
+  background-color: #42B38F;
+}
+
+/*多选按钮*/
+#root #anzhu_web .ant-checkbox-checked .ant-checkbox-inner:after,
+#root #anzhu_web .ant-checkbox-indeterminate .ant-checkbox-inner:after,
+.ant-modal .ant-checkbox-checked .ant-checkbox-inner:after,
+.ant-modal .ant-checkbox-indeterminate .ant-checkbox-inner:after{
+  border-color: #42B38F;
+}
+#root #anzhu_web .ant-checkbox-checked .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox .ant-checkbox-inner:hover,
+#root #anzhu_web .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox-focused .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox-indeterminate .ant-checkbox-inner,
+.ant-modal .ant-checkbox-checked .ant-checkbox-inner,
+.ant-modal .ant-checkbox .ant-checkbox-inner:hover,
+.ant-modal .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-modal .ant-checkbox-focused .ant-checkbox-inner,
+.ant-modal .ant-checkbox-indeterminate .ant-checkbox-inner{
+  border-color: #42B38F;
+  background-color: #FFF;
+  color: #42B38F;
+}
+
+/*下拉选择框*/
+/*普通下拉选择框*/
+#root #anzhu_web .ant-select .ant-select-selection,
+.ant-modal .ant-select .ant-select-selection{
+  border-radius: 3px;
+}
+#root #anzhu_web .ant-select .ant-select-selection:hover,
+#root #anzhu_web .ant-select-open .ant-select-selection,
+#root #anzhu_web .ant-select-focused .ant-select-selection,
+#root #anzhu_web .ant-select-selection:focus,
+#root #anzhu_web .ant-select-selection:active,
+.ant-modal .ant-select .ant-select-selection:hover,
+.ant-modal .ant-select-open .ant-select-selection,
+.ant-modal .ant-select-focused .ant-select-selection,
+.ant-modal .ant-select-selection:focus,
+.ant-modal .ant-select-selection:active{
+  border-color: #42B38F;
+}
+/*下拉选择框下三角*/
+#root #anzhu_web .ant-select .ant-select-arrow,
+.ant-modal .ant-select .ant-select-arrow{
+  color:#42B38F;
+}
+/*禁用下拉选择框*/
+#root #anzhu_web .ant-select-disabled .ant-select-selection,
+.ant-modal .ant-select-disabled .ant-select-selection{
+  background-color: #C4CBD4;
+  border-color: #C4CBD4;
+  color: #FFF;
+}
+
+/*输入框*/
+/*普通输入框*/
+#root #anzhu_web .ant-input,
+.ant-modal .ant-input{
+  border-radius: 3px;
+}
+#root #anzhu_web .ant-input:hover,
+#root #anzhu_web .ant-input:focus,
+.ant-modal .ant-input:hover,
+.ant-modal .ant-input:focus{
+  border-color: #42B38F;
+}
+
+/*
+*模态框
+*/
+/*关闭按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-close{
+  width: 18px;
+  height: 18px;
+  border: 1px solid #FF6A6A;
+  border-radius: 18px;
+  padding: 1px;
+  background: #FF6A6A;
+  top: 1px;
+  right: 1px;
+}
+.ant-modal>.ant-modal-content>.ant-modal-close>.ant-modal-close-x{
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  color: #FFF;
+}
+/*头部*/
+.ant-modal>.ant-modal-content>.ant-modal-header>.ant-modal-title{
+  border-left: 2px solid #43B38D;
+  padding-left: 10px;
+}
+/*脚部*/
+.ant-modal>.ant-modal-content>.ant-modal-footer{
+  direction: rtl;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer .ant-btn-loading{
+  direction: ltr;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns .ant-btn-loading{
+  direction: ltr;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn{
+  margin: 0 5px;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns{
+  direction: rtl;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns>.ant-btn{
+  margin: 0 5px;
+}
+/*取消按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-ghost{
+  background-color: #fff;
+  border-color: #43B38D;
+  /*43B38D
+66D1AD*/
+  color: #43B38D;
+}
+#root #anzhu_web .ant-btn-ghost:hover, .ant-modal .ant-btn-ghost:hover{
+  background-color: #FFF;
+  border-color: #66D1AD;
+  color: #66D1AD;
+}
+/*确定按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary{
+  background-color: #43B38D;
+  border-color: #43B38D;
+  color: #FFF;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary:hover{
+  background-color: #46C3DA;
+  border-color: #46C3DA;
+}
+
+
+
+/*导师平台全局样式*/
+
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab{
+  border: none;
+  margin-right:0px;
+}
+/*tabs底色*/
+.ant-tabs-nav-scroll{
+  background: linear-gradient(#eee, #ddd);
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab, .ant-modal .ant-tabs-top .ant-tabs-tab{
+  border-radius: 0px;
+  border-top: 2px solid #eee;
+  background: linear-gradient(#eee, #ddd);
+  color: #696969;
+}
+/*tabs选中项*/
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab-active, .ant-modal .ant-tabs-top .ant-tabs-tab-active{
+  background: linear-gradient(#fff, #fff);
+  border-left:1px solid #bfbfbf;
+  border-top: 2px solid #090;
+}
+#root .searchBar{
+  background: #fff;
+  padding-top: 10px;
+}
+#root .searchBar .ant-row{
+  margin-left: 10px;
+}
+/*添加按钮*/
+.addHouse{
+  margin: 10px 0 0 0;
+  padding: 5px 30px;
+  background-color: #fff;
+  color: #fff;
+}
+.addHouse button{
+  border: 1px solid #43B38D;
+  background: #43B38D;
+  color: #fff
+}
+.ant-btn:hover, .ant-btn:focus, .ant-btn:active, .ant-btn.active{
+  background-color: #67D0AC;
+  color: #fff;
+  border: 1px solid #67D0AC;
+}
+.mentorTabs{
+  padding:0 5px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+/*table*/
+.ant-table{
+  font-size: 14px;
+}
+.ant-pagination{
+  font-size: 14px;
+}
+/*搜索经纪人按钮*/
+.searchAgent{
+  border: 1px solid #86CE75;
+  font-size: 12px;
+  margin: 0 3px;
+  background: #86CE75 no-repeat 3px 9px;
+  color: #fff;
+}
+.searchAgent:hover, .searchAgent:focus, .searchAgent:active, .searchAgent.active{
+  background: #76BB65 no-repeat 3px 9px;
+  border: 1px solid #76BB65;
+  color: #fff;
+}
+/*编辑按钮*/
+/*.edit{
+  border: 1px solid #46C3DA;
+  font-size: 12px;
+  margin: 0 3px;
+  background: #46C3DA no-repeat 2px 8px;
+  color: #fff;
+}*/
+/*.edit:hover, .edit:focus, .edit:active, .edit.active{
+  border: 1px solid #39B0C6;
+  background: #39B0C6 no-repeat 2px 8px;
+  color: #fff;
+}*/
+/*删除按钮*/
+/*.delete{
+  border: 1px solid #FF6A6A;
+  font-size: 12px;
+  margin: 0 3px;
+  background: #FF6A6A no-repeat 2px 8px;
+  color: #fff;
+}*/
+/*.delete:hover, .delete:focus, .delete:active, .delete.active{
+  background: #EB5C5C no-repeat 2px 8px;
+  border: 1px solid #EB5C5C;
+  color: #fff;
+}*/
+.indexpage_row{
+  margin-top: 15px;
+  margin-right:5px;
+}
+.indexpage_data{
+  margin-top: 10px;
+  margin-right:5px;
+}
+/*searchName*/
+#root .searchName{
+  width: 100%;
+}
+.ant-form-item{
+  font-size: 12px;
+}
+.ant-input-lg{
+  height: 40px;
+}
+.ant-select-lg .ant-select-selection--single{
+  height: 40px;
+}
+.ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+  height: 40px;
+}
+.formLabel{
+  font-size: 14px;
+  margin-right: 8px;
+  color: #5F5F5F;
+  line-height: 40px;
+}
+/*steps的背景颜色*/
+.ant-steps{
+  background: #fff;
+  margin-bottom: 20px;
+}
+.createSecondHandSellResource{
+  background: none;
+}
+/*房源样式*/
+/*房源基本信息*/
+.houseInfos{
+  background: #fff;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+.houseInfos label{
+  font-size: 14px;
+}
+.houseInfos .firstRow{
+  padding-top: 30px;
+  margin-bottom: 0px;
+}
+.houseInfos .ant-form-item{
+  height: 61px;
+}
+/*房源特色*/
+.houseCharacteristics{
+  height: 80px;
+  background: #fff;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+.houseCharacteristics .ant-form-item{
+  margin-bottom: 0px;
+}
+.houseCharacteristics .checkable-tags{
+  padding: 20px 0px 0 0;
+}
+/*核心卖点*/
+.coreSelling{
+  font-size: 16px;
+  margin-top: 3px;
+  background: #fff;
+}
+.coreSelling .firstRow{
+  padding-top: 30px;
+}
+.coreSelling .tips{
+  color: #666;
+}
+.ant-input{
+  font-size: 14px;
+}
+/*底部按钮 居左*/
+.operation_button{
+  background: #fff;
+  margin-top: 3px;
+  padding: 10px 20px;
+  margin-bottom:30px;
+}
+/*底部按钮 居左*/
+.operation_button_center{
+  background: #fff;
+  margin-top: 3px;
+  padding: 10px 20px;
+  margin-bottom:30px;
+  text-align: center;
+}
+/*自定义required*/
+.ant-form-item-required .upperLimit{
+  font-size: 14px;
+  color: #666;
+}
+/*面包屑导航*/
+.ant-breadcrumb{
+  padding: 10px 20px;
+  background: #EEEEEE;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+  font-size: 14px;
+}
+.ant-breadcrumb a{
+  color: #43B38D;
+}
+.ant-breadcrumb a:hover{
+  color: #43B38D;
+  text-decoration: underline;
+}
+.ant-breadcrumb > span:last-child a{
+  color: #666;
+}
+/*container padding-right*/
+/*.ant-layout-main>.ant-layout-container{
+  padding:0px 30px 10px 15px;
+}*/
+/*左侧导航栏固定定位*/
+.ant-layout-aside> .ant-layout-sider{
+  position: fixed;
+}
+
+
+
+/*房源图片*/
+.houseReImgs{
+  margin-top: 3px;
+  background: #fff;
+}
+.houseReImgs .firstRow{
+padding-top: 30px;
+}
+.houseImgs .dx_upload_pic{
+  padding: 10px 30px 20px 30px;
+}
+.houseImgs .dx_upload_pic_list {
+  height: auto;
+  max-width: inherit;
+}
+.houseImgs .tips{
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #666;
+}
+.houseImgs .ant-upload.ant-upload-select-picture-card{
+  height:136px;
+}
+.houseImgs .ant-upload.ant-upload-select-picture-card > .ant-upload{
+  padding:45px 20px;
+}
+.houseImgs .dx_upload_pic_upload_msg>span:last-child{
+  display: none;
+}
+.houseImgs .dx_upload_pic_item_operating{
+  text-align: right;
+}
+/*业主信息*/
+.ownerInfos .ant-form-item{
+  margin-bottom: 0px;
+  height: 61px;
+}
+.ownerInfos label{
+  font-size: 14px;
+}
+.ownerInfos_basicMessage{
+  background: #fff;
+  margin-top: 3px;
+  font-size: 14px;
+}
+.ownerInfos_basicMessage .firstRow{
+  padding-top: 30px;
+}
+.ownerInfos_basicMessage{
+  margin-bottom: 20px;
+}
+
+.ownerInfos_idImgs{
+  margin-top: 3px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.ownerInfos_idImgs .dx_upload_pic{
+  padding: 10px 30px 20px 30px;
+
+}
+.ownerInfos_idImgs .dx_upload_pic_list {
+  height: auto;
+  max-width: inherit;
+}
+.ownerInfos_idImgs .tips{
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #666;
+}
+.ownerInfos_idImgs .ant-upload.ant-upload-select-picture-card{
+  height:136px;
+}
+.ownerInfos_idImgs .ant-upload.ant-upload-select-picture-card > .ant-upload{
+  padding:45px 20px;
+}
+.ownerInfos_idImgs .dx_upload_pic_upload_msg>span:last-child{
+  display: none;
+}
+.ownerInfos_idImgs .dx_upload_pic_item_operating{
+  text-align: right;
+}
+.ownerInfos_idImgs .firstRow{
+  padding-top: 30px;
+}
+.houseId{
+  background: #fff;
+  margin-top: 3px;
+  margin-bottom: 30px;
+}
+.houseId .firstRow{
+  padding-top: 30px;
+}
+
+/*指派经纪人*/
+.cooperativePromotion{
+  background: #fff;
+  margin-top: 3px;
+  margin-bottom: 20px;
+  padding-bottom:20px;
+}
+.cooperativePromotion .firstRow{
+  padding-top: 30px;
+}
+.cooperativePromotion .ant-checkbox-wrapper{
+  font-size: 14px;
+}
+.cooperativePromotion label{
+  font-size: 14px;
+}
+.cooperativePromotion .tips{
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+.assignAgent_table{
+  background: #fff;
+  margin-top: 3px;
+}
+.assignAgent_table .ant-table{
+  /*padding:0 20px;*/
+}
+.assignAgent p{
+  text-align: left;
+}
+
+
+/*选择经纪人*/
+.commonModalHeight h3{
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.ant-modal-title{
+  font-size: 16px;
+}
+
+
+/*操作按钮*/
+.operation{
+  height: auto;
+  margin-top: 10px;
+}
+.operation span{
+  display: inline-block;
+  width: 90px;
+  height: 25px;
+}
+.operation span.edit{
+  width: 60px;
+}
+.operation span.delete{
+  width: 60px;
+}
+.mentorRole-houseSell .operation span{
+  margin-top: 3px
+}
+
+/*下拉框line-height*/
+.ant-select-lg .ant-select-selection__rendered{
+  line-height: 40px;
+}
+/*属性结构*/
+.ant-tree{
+  font-size: 14px;
+}
+.broker_check{
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+}
+.broker_checkmen{
+  display: inline-block;
+  width: 92px;
+  height: 25px;
+}
+.broker_active{
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+}
+.broker_delete{
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+}
+
+.ant-table-row-expand-icon{
+  display: none
+}
+
+/*创建房源的help*/
+.houseDetailAddress{
+  color: #FFC400;
+}
+
+/*导师平台数据加载*/
+.mentorDataLoading{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
+}
+.ant-table-body{
+  border-right:1px solid #BFBFBF;
+  transition:opacity 0.3s ease;
+}
+/*导师平台喇叭*/
+.coreSellingPoint_tips{
+  margin-left: 20px;
+}
+
+/*#root canvas{
+  display: inline-block;
+}*/
+/*房源按钮样式*/
+.searchIcon{
+  background: url('../assets/images/mentorRole.png') -20px -19px;
+  cursor: pointer;
+}
+.searchIcon:hover{
+  background: url('../assets/images/mentorRole.png') -20px -63px;
+  cursor: pointer;
+}
+.edit{
+  background: url('../assets/images/mentorRole.png') -125px -19px;
+  cursor: pointer;
+}
+.edit:hover{
+  background: url('../assets/images/mentorRole.png') -125px -63px;
+  cursor: pointer;
+}
+.delete{
+  background: url('../assets/images/mentorRole.png') -199px -19px;
+  cursor: pointer;
+}
+.delete:hover{
+  background: url('../assets/images/mentorRole.png') -199px -63px;
+  cursor: pointer;
+}
+.assignedBroker{
+  background: url('../assets/images/mentorRole.png') -319px -207px;
+  cursor: pointer;
+}
+.assignedBroker:hover{
+  background: url('../assets/images/mentorRole.png') -319px  -251px;
+  cursor: pointer;
+}
+.broker_check{
+  background: url('../assets/images/mentorRole.png') -20px -400px;
+  cursor: pointer;
+}
+.broker_checkmen{
+  background: url('../assets/images/mentorRole.png') -172px -400px;
+  cursor: pointer;
+}
+.broker_check:hover{
+  background: url('../assets/images/mentorRole.png') -20px  -444px;
+  cursor: pointer;
+}
+.broker_active{
+  background: url('../assets/images/mentorRole.png') -97px -400px;
+  cursor: pointer;
+}
+.broker_active:hover{
+  background: url('../assets/images/mentorRole.png') -97px  -444px;
+  cursor: pointer;
+}
+.broker_delete{
+  background: url('../assets/images/mentorRole.png') -199px -19px;
+  cursor: pointer;
+}
+.broker_delete:hover{
+  background: url('../assets/images/mentorRole.png') -199px -63px;
+  cursor: pointer;
+}
+/*房源管理中小区楼栋房号不可选Select样式*/
+#root #anzhu_web .houseResource .ant-select-disabled .ant-select-selection, .ant-modal .ant-select-disabled .ant-select-selection{
+  background-color:#fff;
+  border-color:#fff;
+  border: 1px solid #d9d9d9;
+  color: #333;
+}
+
+/*提示框脚部button间距*/
+.promptModal_footer button{
+  margin: 0 5px;
+}
+
+/*6种交易详情下的buttons*/
+#root .details_buttons{
+  margin-top: 20px;
+}
+#root .details_buttons button{
+  margin-right: 10px;
+}
+#root .ant-radio-wrapper{
+  margin-bottom: 30px!important;
+}
+.listUserHeaderImage{
+  height: 50px;
+  width: 50px!important;
+  border-radius: 50%;
+}

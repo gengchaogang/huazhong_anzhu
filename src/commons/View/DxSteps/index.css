@@ -1,0 +1,109 @@
+.dxSteps{
+  position: relative;
+}
+.dxSteps_itemBigBox{
+  z-index: 1;
+  position: relative;
+}
+.dxSteps_itemBox{
+  display: flex;
+  flex:1;
+  justify-content:space-between;
+}
+.dxStepsItem{
+  text-align: center;
+}
+.dxStepsItem_circular{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #46B38D;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+}
+.dxStepsItem_number{
+  font-size: 18px;
+  color: #FFF;
+}
+.dxStepsItem_title{
+  font-size: 14px;
+  padding-top:10px;
+  display: block;
+}
+.dxStepsItem_description{
+  font-size: 14px;
+  padding-top:10px;
+  display: block;
+}
+/*进行中*/
+.dxStepsItem_type_process .dxStepsItem_circular{
+  background-color: #46B38D;
+}
+.dxStepsItem_type_process .dxStepsItem_number{
+  color: #FFF;
+}
+.dxStepsItem_type_process .dxStepsItem_title,
+.dxStepsItem_type_process .dxStepsItem_description{
+  color: #333;
+}
+/*错误*/
+.dxStepsItem_type_error .dxStepsItem_circular{
+  background-color: #FF6A6A;
+}
+.dxStepsItem_type_error .dxStepsItem_number{
+  color: #FFF;
+}
+.dxStepsItem_type_error .dxStepsItem_title,
+.dxStepsItem_type_error .dxStepsItem_description{
+  color: #FF6A6A;
+}
+/*等待*/
+.dxStepsItem_type_wait .dxStepsItem_circular{
+  background-color: #FFF;
+  border: 2px solid #46B38D;
+}
+.dxStepsItem_type_wait .dxStepsItem_number{
+  color: #46B38D;
+}
+.dxStepsItem_type_wait .dxStepsItem_title,
+.dxStepsItem_type_wait .dxStepsItem_description{
+  color: #333;
+}
+
+.dxSteps_linesBigBox{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:20px;
+  z-index: 0;
+  left:0;
+}
+.dxSteps_linesBox{
+  margin: 0 25px;
+  display: flex;
+  flex:1;
+}
+.dxStepsItem_line{
+  flex: 1;
+  height: 10px;
+  display: flex;
+  /*position: relative;*/
+  background-color: #F8F8F8;
+}
+.dxStepsItem_line_item{
+  flex: 1;
+}
+.dxStepsItem_line_item_finish{
+  background-color: #46B38D;
+}
+.dxStepsItem_line_item_process{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #46B38D;
+}
+.dxStepsItem_line_item_error{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #FF6A6A;
+}

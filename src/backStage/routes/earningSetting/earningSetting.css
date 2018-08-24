@@ -1,0 +1,28 @@
+/*新建佣金配比页面*/
+.createMatchProject .ant-btn{
+    /*margin: 8px 8px 8px 0;*/
+}
+.createMatchProject .ant-form .tip{
+    color: #aaaaaa;
+}
+.createMatchProject .ant-form .ant-cascader-picker{
+    max-width: 400px;
+}
+.createMatchProject  .ant-form-item-control {
+    max-width: 400px;
+}
+.createMatchProject .ant-checkbox-wrapper>span{
+    vertical-align: middle;
+}
+.createMatchProject .ant-form div>p{
+    color: #666666;
+}
+.createMatchProject .brokerageScheme{
+    margin:40px 0;
+}
+.createMatchProject .serviceChargeScheme .ant-form-item{
+    margin-bottom: 0;
+}
+.selectTrading{
+  width:284px;
+}

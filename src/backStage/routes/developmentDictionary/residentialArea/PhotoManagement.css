@@ -1,0 +1,11 @@
+.uploadPic{
+  background-repeat: no-repeat;
+  width: 168px;
+  height: 88px;
+  display: inline-block;
+  margin-right: 10px;
+  background-size: 168px;
+}
+.goBack{
+  text-align: right;
+}

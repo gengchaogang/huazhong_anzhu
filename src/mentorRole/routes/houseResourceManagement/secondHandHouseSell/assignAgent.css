@@ -1,0 +1,24 @@
+.assignAgent .button button{
+  margin: 0 10px;
+}
+.assignAgent_table .showModal{
+  padding: 10px 0px 10px 5px;
+  /*padding-left: 20px;*/
+}
+.assignAgent .operation .span{
+  cursor: pointer;
+}
+.assignAgent .showModal{
+  background-color: #EEEEEE;
+}
+#root #anzhu_web .showModal .ant-table .ant-table-tbody,.showModal .ant-modal .ant-table .ant-table-tbody{
+  border: none
+}
+#root #anzhu_web .showModal .ant-table-placeholder,.showModal .ant-modal .ant-table-placeholder{
+    border: none
+}
+.commissionType{
+  display: inline-block;
+  margin-left: 10px;
+  width: 250px
+}

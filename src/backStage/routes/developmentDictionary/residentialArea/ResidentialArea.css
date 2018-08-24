@@ -1,0 +1,25 @@
+.searchInput{
+  display: inline-block;
+  width: 300px;
+  margin-left: 5px;
+}
+.cascd{
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.reside{
+  margin-left: 5px;
+}
+.newhousedeal-table .ant-pagination-item-active{
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+.operationColor{
+  color: #42B38F;
+  margin-right: 5px;
+}
+.operationColor:hover{
+  cursor: pointer;
+}

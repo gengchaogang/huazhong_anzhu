@@ -1,0 +1,358 @@
+.indexpage .number{
+  font-size: 24px;
+  font-weight: bold;
+}
+.indexpage .title{
+  font-size: 16px;
+}
+.indexpage .detail{
+  font-size: 16px;
+  color: #ddd;
+}
+.indexpage .ant-col-10{
+  text-align: right;
+}
+.indexpage .ant-card{
+  margin: 4px 0px;
+}
+.indexpage .pie .title, .indexpage .pie .title-sell, .indexpage .pie .title-rent{
+  color: #fff;
+  padding-left: 30px;
+  background-color: #85DB9F;
+  height: 34px;
+  line-height: 34px;
+}
+.indexpage .pie .title-sell{
+  font-size: 16px;
+  color: #fff;
+  padding-left: 30px;
+  background-color: #85C1DB;
+}
+ .indexpage .pie .title-rent{
+   font-size: 16px;
+   color: #fff;
+   padding-left: 30px;
+   background-color: #F7877A;
+}
+.indexpage .pie{
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.indexpage .brokersNumber{
+  min-height: 238px;
+}
+.indexpage .bar{
+  height: 412px;
+  background-color: #fff
+}
+.indexpage .panel{
+  margin: 8px 0 0 0;
+}
+.indexpage .ant-radio-group{
+  display: block;
+  text-align: center;
+  margin: 0px 0 10px 0;
+}
+@media screen and (min-width: 1366px) {
+  .indexpage .ant-checkbox-group{
+    line-height: 22px;
+    margin: 0 10px;
+  }
+  .indexpage .ant-radio-button-wrapper{
+    padding: 0 22px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .indexpage .ant-checkbox-group{
+    line-height: 22px;
+    margin: 0 10px;
+  }
+  .indexpage .ant-radio-button-wrapper{
+    padding: 0 22px;
+  }
+}
+.indexpage .ant-radio-button-wrapper-checked{
+  background-color: #42B38D;
+  border-color: #42B38D;
+  color: #fff;
+  box-shadow:none;
+}
+.indexpage .ant-form-item{
+  margin:0 10px 10px 10px;
+}
+.indexpage .title-data{
+  padding: 5px 0 5px 10px;
+  font-size: 18px;
+}
+.indexpage .rank .dx-panel-title-box{
+  height: 40px;
+  margin-top: 5px;
+  padding-top:10px;
+  margin-bottom: 0px;
+}
+.indexpage .ant-table{
+  font-size: 14px;
+  border: none;
+}
+.indexpage .zhanwei{
+  border: none;
+  background-color: #fff;
+}
+#root #anzhu_web .indexpage .ant-table .ant-table-tbody{
+  border: none;
+}
+#root #anzhu_web .indexpage .ant-table{
+  border: none;
+}
+
+.dealData{
+  background: #fff;
+  min-height: 256px;
+}
+.indexpage .brokerIndex .ant-radio-button-wrapper{
+  padding: 0 7px;
+}
+.indexpage .brokerIndex .dealData .title{
+  padding-left: 30px;
+  /* font-size: 16px; */
+  color: #fff;
+  height: 34px;
+  line-height: 34px;
+  background-color: #85DB9F;
+}
+.indexpage .brokerIndex .detailMessage{
+  min-height: 229px
+}
+.indexpage .brokerIndex .dealData .detailMessage{
+  padding: 10px 25px;
+  text-align: left;
+}
+
+.indexpage .brokerIndex .dealData .ant-radio-group{
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+.indexpage .brokerIndex .dealData .detailMessage span{
+  font-size: 14px;
+  display: inline-block;
+  padding: 3px 0;
+}
+.businessData{
+  background: #fff;
+  min-height: 256px;
+}
+.indexpage .brokerIndex .businessData .title{
+  padding-left: 30px;
+  /* font-size: 18px; */
+  color: #fff;
+  height: 34px;
+  line-height: 34px;
+  background-color: #85C1DA;
+}
+
+.indexpage .brokerIndex .businessData .detailMessage{
+  padding: 10px 25px;
+  text-align: left;
+}
+
+.indexpage .brokerIndex .businessData .ant-radio-group{
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+.indexpage .brokerIndex .businessData .detailMessage span{
+  font-size: 14px;
+  display: inline-block;
+  padding: 3px 0;
+}
+
+.indexpage .brokerIndex .data_RadioButton .ant-radio-button-wrapper{
+  padding: 0 18px;
+}
+.indexpage .brokerIndex .rank_RadioButton .ant-radio-button-wrapper{
+  padding: 0 23px;
+}
+.indexpage .data_RadioButton{
+  text-align: left;
+}
+.indexpage .brokerIndex .dx-panel{
+  padding-top: 0px;
+}
+.indexpage .brokerIndex .dx-panel>.dx-panel-content{
+  padding: 15px;
+}
+.indexpage .brokerIndex .bar{
+  margin: 0;
+}
+.indexpage .mentorIndex .ant-card-body{
+  text-align: right;
+  padding: 10px;
+  min-height: 169px;
+}
+
+.indexpage .dx-panel>.dx-panel-content{
+  padding: 15px;
+}
+.indexpage .dx-panel{
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.indexpage .dx-panel .dx-panel-content{
+  min-height: 372px;
+}
+.yesterdayDeal{
+  margin-top: 100px;
+}
+.yesterdayDeal span{
+  display: block;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.saleDetails{
+  font-size: 14px;
+  padding: 10px 0 0px 30px;
+}
+
+/*昨日业务成交Cards里面的Icon*/
+.indexpage .addNewBroker{
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+  background: url('../../../public/images/mentorRole.png') -20px -108px no-repeat;
+}
+.indexpage .addNewHouse{
+  background: url('../../../public/images/mentorRole.png') -220px -108px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .addNewCustomer{
+  background: url('../../../public/images/mentorRole.png') -20px -208px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .viewHouse{
+  background: url('../../../public/images/mentorRole.png') -220px -208px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .newHouseFollow{
+  background: url('../../../public/images/mentorRole.png') -120px -208px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .reportCustomer{
+  background: url('../../../public/images/mentorRole.png') -320px -108px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .tabkeCustomer{
+  background: url('../../../public/images/mentorRole.png') -120px -108px no-repeat;
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  float: right;
+}
+.indexpage .dataInfos{
+  margin-right: 10px;
+}
+.indexpage .form_item{
+  display: inline-block;
+}
+/*@media screen and (min-width: 1024px) {
+  .indexpage .yesterdaysDeal{
+    display: inline-table;
+    width: 425px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .indexpage .rightMargin{
+    margin-right:24px;
+  }
+  .indexpage .newHouseSell{
+    margin-right:24px;
+  }
+}*/
+@media screen and (min-width: 1366px) {
+  .indexpage .yesterdaysDeal{
+    display: inline-table;
+    width: 515px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .indexpage .rightMargin{
+    margin-right:16px;
+  }
+  .indexpage .newHouseSell{
+    margin-right:16px;
+  }
+}
+
+@media screen and (min-width: 1600px){
+  .indexpage .yesterdaysDeal{
+    display: inline-table;
+    width: 415px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  .indexpage .rightMargin{
+    margin-right:17px;
+  }
+  .indexpage .newHouseSell{
+    margin-left: 17px;
+  }
+  .indexpage .newHouseSell{
+    margin-right: 0px;
+  }
+  .indexpage .secondHouseSell{
+    margin-right: 17px;
+  }
+}
+
+@media screen and (min-width: 1920px){
+  .indexpage .yesterdaysDeal{
+    display: inline-table;
+    width: 522px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+
+
+/*@media screen and (max-width: 1222px) {
+  .indexpage .yesterdaysDeal{
+    display: inline-table;
+    width: 435px;
+    margin: 20px 10px 8px 10px;
+  }
+}*/
+
+/*@media screen and (max-width: 1366px) {
+  .indexpage .personalData_dealData{
+    display: inline-table;
+    width: 500px;
+    margin: 20px 10px 8px 10px;
+  }
+
+}*/
+.indexpage .brokerIndex .brokerInfos{
+  background: #fff;
+  min-height: 269px;
+}
+.indexpage .brokerIndex .brokerInfos span{
+  font-size: 14px;
+  padding: 3px 0;
+}
+.indexpage .brokerIndex .brokerInfos img{
+  margin: 15px 0 15px 0;
+}

@@ -1,0 +1,9 @@
+.timeAxisList{
+  font-size: 14px;
+  padding-bottom:20px;
+  overflow-y: auto;
+  max-height: 290px;
+}
+.timeAxisListItem{
+  padding-bottom: 20px;
+}

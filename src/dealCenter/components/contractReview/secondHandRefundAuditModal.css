@@ -1,0 +1,26 @@
+.secondHandRefundAuditModal {
+    min-width:1000px;
+}
+.secondHandRefundAuditModal .ant-modal-title{
+
+}
+.secondHandRefundAuditModal .ant-steps-title{
+
+}
+.secondHandRefundAuditModal td{
+    text-align: center;
+}
+.secondHandRefundAuditModal .rejectExplain{
+    color:#FF4F4F;
+}
+.secondHandRefundAuditModal .refundReason{
+  display: block;
+  margin:7px 0px;
+  color: #009900;
+}
+.secondHandRefundAuditModal .imgUl li{
+  margin: 0 7px 7px 0px;
+}
+.secondHandRefundAuditModal .auditInfo{
+  margin:10px 0 7px 0;
+}

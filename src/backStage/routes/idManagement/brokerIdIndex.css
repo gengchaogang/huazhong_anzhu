@@ -1,0 +1,11 @@
+.brokerIdIndex {
+   background-color: #FFFFFF;
+    padding: 20px;
+}
+/*.brokerIdIndex .ant-table-body .ant-table-tbody td span{
+    color:red;
+}*/
+.opration{
+  color: #42B38F;
+  cursor: pointer;
+}

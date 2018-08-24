@@ -1,0 +1,10 @@
+.accountSetting{
+  padding: 30px 20px;
+  background: #fff;
+}
+.accountSetting .ant-input-lg{
+  height: 40px;
+}
+.accountSetting .ant-form-item{
+  margin-bottom: 20px;
+}

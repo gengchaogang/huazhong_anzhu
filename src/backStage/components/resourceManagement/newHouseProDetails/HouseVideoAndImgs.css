@@ -1,0 +1,46 @@
+.datailP{
+  margin: 5px 0;
+}
+.outFiles{
+  display: inline-block;
+  width: 150px;
+  height: 105px;
+  border: 1px solid #ccc;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-top: 5px ;
+  margin-right: 5px ;
+}
+.outFilesLogo{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-right: -15px;
+}
+.line{
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 15px;
+}
+.flex{
+  display: flex;
+  max-width: 600px;
+  justify-content: space-around;
+  align-items:center ;
+}
+.broker{
+  display: flex;
+  justify-content: space-around;
+  align-items:center ;
+}
+.buttonRadio{
+  margin: 5px 0;
+}
+.flexbtween{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 200px;
+}

@@ -1,0 +1,18 @@
+.dx_panel_mini{
+  margin-bottom: 20px;
+}
+.dx_panel_mini_title_box {
+  padding: 10px 20px;
+  background-color: #46B38D;
+}
+.dx_panel_mini_title {
+    font-size: 14px;
+    color: #FFF;
+}
+.dx_panel_mini_content{
+  border: 2px solid #EEECEC;
+  border-top: none;
+}
+.dx_panel_mini_hasPadding .dx_panel_mini_content{
+  padding: 40px;
+}

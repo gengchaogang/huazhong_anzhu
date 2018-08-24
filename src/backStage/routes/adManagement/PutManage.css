@@ -1,0 +1,8 @@
+.putManagement .operation{
+  padding:0px 4px;
+  color:#009900;
+  cursor: pointer;
+}
+.putManageButtons{
+  text-align: right;
+}

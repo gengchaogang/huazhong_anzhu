@@ -1,0 +1,9 @@
+.peoplePosition .tree{
+  max-width: 390px;
+  display: inline-block;
+  float: left;
+}
+
+.peoplePosition .ant-col-14{
+  display:inline;
+}

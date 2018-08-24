@@ -1,0 +1,10 @@
+.employeeInformation_footer{
+  padding: 20px 0;
+}
+.employeeInformation_footer .ant-btn{
+  margin-right: 20px;
+}
+.employeeInformation .ant-table td:nth-child(1){
+  border-right: 1px solid #BFBFBF;
+  font-weight: bold;
+}

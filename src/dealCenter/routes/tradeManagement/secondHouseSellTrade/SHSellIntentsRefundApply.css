@@ -1,0 +1,11 @@
+.shSellIntentsRefundApply .dxSteps {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.shSellIntentsRefundApply .dx_upload_pic_list{
+  max-width:inherit;
+  /*padding: 20px;*/
+  height: inherit;
+}

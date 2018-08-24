@@ -1,0 +1,80 @@
+.dx-search-input{
+  display: block;
+  position: relative;
+}
+.dx-search-input>.ant-input-search-wrapper{
+  display: block;
+}
+.dx-search-btn-input-searchbox>.ant-input-preSuffix-wrapper>.ant-input-search{
+  border-radius: 0px;
+  border-color: #EEEEEE;
+}
+.dx-search-btn-input-searchbox>.ant-input-preSuffix-wrapper>.ant-input-search:focus{
+  border-color: #46B38D;
+}
+.dx-search-input>.dx-search-input-icon-hidden{
+  display: none;
+}
+.dx-search-input>.dx-search-input-icon-show{
+  display: inline-block;
+}
+
+
+
+/*带按钮的搜索框*/
+.dx-search-btn-input{
+  display: flex;
+  justify-content: space-between;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox{
+  flex: 1;
+  position: relative;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox .ant-input-suffix{
+  top:15px;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.ant-input-search-wrapper{
+  display: block;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.ant-input-search-wrapper>.ant-input-search{
+  padding-left: 30px;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.ant-input-search-wrapper>.ant-input-search:focus{
+  border-color: #46B38D;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.ant-input-search-wrapper>.ant-input-search-icon{
+  right: inherit;
+  left: 10px;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.dx-search-input-icon-hidden{
+  display: none;
+}
+.dx-search-btn-input>.dx-search-btn-input-searchbox>.dx-search-input-icon{
+  position: absolute;
+  top:10px;
+  right: 5px;
+  cursor: pointer;
+  color: #666;
+  z-index: 10;
+}
+.dx-search-btn-input>.dx-search-btn-input-btnbox{
+  flex-grow:0;
+}
+#root #anzhu_web .dx-search-btn-input>.dx-search-btn-input-btnbox>.dx-search-btn-input-btn,
+.ant-modal .dx-search-btn-input>.dx-search-btn-input-btnbox>.dx-search-btn-input-btn{
+  border-radius: 0px;
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+#root #anzhu_web .dx-search-btn-input>.dx-search-btn-input-btnbox>.dx-search-btn-input-btn:hover,.ant-modal .dx-search-btn-input>.dx-search-btn-input-btnbox>.dx-search-btn-input-btn:hover{
+  border-radius: 0px;
+  background-color: #86CE75;
+  border-color: #86CE75;
+}
+.dx-search-btn-input .ant-input-preSuffix-wrapper .ant-input:not(:last-child){
+  padding-left:30px;
+}
+.dx-search-btn-input .ant-input-preSuffix-wrapper .ant-input-suffix{
+  left: 10px;
+  width: 14px;
+}

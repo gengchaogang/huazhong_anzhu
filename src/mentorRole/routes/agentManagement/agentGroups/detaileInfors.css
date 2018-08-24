@@ -1,0 +1,31 @@
+.detaileInfors h3{
+  font-weight: normal;
+}
+.detaileInfors img{
+  border-radius: 50%;
+}
+.detaileInfors p{
+  font-size: 17px;
+  padding: 5px 0;
+}
+.detaileInfors hr{
+  margin:5px 0
+}
+.detaileInfors .personal .ant-col-2{
+  padding:3px;
+  color:#999
+}
+.detaileInfors .personal .ant-col-8{
+  padding:3px;
+    color:#999
+}
+.detaileInfors .basicMessage{
+  font-size: 14px;
+}
+.detaileInfors .basicMessage .ant-col-10{
+  padding:3px;
+  color:#999
+}
+.detaileInfors .toBack{
+  margin: 10px 0px;
+}

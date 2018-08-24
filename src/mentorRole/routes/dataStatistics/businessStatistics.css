@@ -1,0 +1,13 @@
+.businessStatistics .searchForm{
+    margin: 10px 0;
+}
+.businessStatistics .cards{
+    background-color: #ECECEC;
+    padding: 20px;
+}
+.businessStatistics .rangePickerMarginRight{
+  margin-right: 5px;
+}
+.businessStatistics .ant-card{
+  cursor: pointer;
+}

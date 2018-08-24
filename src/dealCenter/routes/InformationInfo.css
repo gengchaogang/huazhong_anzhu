@@ -1,0 +1,13 @@
+.anzhu_msgInfo_title{
+  display: block;
+  font-size: 14px;
+  /*font-weight: bold;*/
+}
+.anzhu_msgInfo_timer{
+  display: block;
+  font-size: 14px;
+}
+.anzhu_msgInfo_content{
+  display: block;
+  font-size: 14px;
+}

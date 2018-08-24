@@ -1,0 +1,39 @@
+.feedback .operation{
+  color: #090;
+  cursor: pointer;
+}
+.feedback .ant-form{
+  margin-bottom: 20px;
+}
+.feedbackP{
+  margin-bottom:10px;
+}
+.feedbackneirong{
+  width: 450px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*text-align: center;*/
+}
+.abs-right_name{
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
+  /*width: 285px;*/
+  text-align: center;
+  /*min-width: 300px;
+  max-width: 480px;*/
+}
+.ant-tooltip .ant-tooltip-inner{
+  width: 200px;
+  text-align: center;
+  word-wrap:break-word;
+}
+.feedbackUrl{
+  display: inline-block;
+  width: 120px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-size:120px 74px;
+}

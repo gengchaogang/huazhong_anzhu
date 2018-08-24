@@ -1,0 +1,86 @@
+/*::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background-color:#F8F8F8;}
+::-webkit-scrollbar-thumb{background-color:#43B38D; border-radius: 10px;}*/
+.creatTransactions{
+  position: relative;
+}
+.creatTransactions .dx_upload_pic_list {
+  max-width: 700px;
+}
+.creatTransactions .dx_upload_pic_list{
+  max-width: 700px;
+}
+.newHouseTrade_creatTransaction_title{
+  display: block;
+  font-size: 14px;
+}
+.actualTransactionListings{
+  display: inline-block;
+  margin-right: 10px;
+  width: 280px;
+}
+/*.ant-input{
+  display: inline;
+}*/
+/*.groupPurchaseContracts{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url('../../../../img/house.png') no-repeat;
+  background-size: 50px;
+}*/
+
+.groupPurchaseContracts{
+  width: 150px;
+  height:110px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110px;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  display:inline-block;
+}
+.purchasedDiscount{
+  color: red;
+}
+.businessDiscount .ant-table-content .ant-table-thead th{
+  text-align: center;
+}
+.businessDiscount .ant-table-content .ant-table-tbody td{
+  text-align: center;
+}
+.groupBuyingLocking{
+  color: #FC9191;
+}
+.groupBuyingLockingHouse .groupBuyingLockingMain,.groupBuyingLockingMainIntroduce{
+  display: inline-block;
+  margin-right: 15px;
+}
+.groupBuyingLockingHouse .groupBuyingLockingMain .groupBuyingLockingword{
+  text-align: center;
+}
+.groupBuyingLockingHouse .groupBuyingLockingMain,.groupBuyingLockingMainIntroduce div{
+  margin-bottom: 10px;
+}
+.groupBuyingLockingHouse .groupBuyingLockingMainIntroduce{
+  position: relative;
+  bottom: 40px;
+}
+
+.watchAgentHouseRecord .dx-table-pic{
+  width: 110px;
+  height:100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.watchAgentHouseRecord .dx-panel-nofooter-content{
+  height: 210px;
+  overflow: auto;
+}

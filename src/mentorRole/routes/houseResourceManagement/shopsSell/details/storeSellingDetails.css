@@ -1,0 +1,9 @@
+.storeSellingDetails .row{
+  padding: 5px 0
+}
+.storeSellingDetails .houseImgs .ant-col-2{
+  line-height: 150px
+}
+.storeSellingDetails .houseImgs .ant-col-22{
+white-space: nowrap; overflow-x: auto;width:800px;
+}

@@ -1,0 +1,24 @@
+.secondHandDealAuditModal {
+    min-width:900px;
+    max-height: 200px;
+}
+.secondHandDealAuditModal .ant-modal-title{
+
+}
+.secondHandDealAuditModal .ant-steps-title{
+
+}
+.secondHandDealAuditModal td{
+    text-align: center;
+}
+.secondHandDealAuditModal .rejectExplain{
+    color:#FF4F4F;
+}
+
+.shDiv{
+  margin-top: 5px;
+}
+
+.marginTop {
+  margin-top: 8px;
+}

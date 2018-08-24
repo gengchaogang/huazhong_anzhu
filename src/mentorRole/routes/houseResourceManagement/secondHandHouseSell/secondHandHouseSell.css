@@ -1,0 +1,37 @@
+.mentorRole-houseSell{
+  padding: 10px 0;
+}
+.mentorRole-houseSell .tabs{
+  padding: 10px 0;
+}
+.mentorRole-houseSell .operation span{
+  display: inline-block;
+  margin:0 3px;
+  color: #fff;
+  cursor: pointer;
+}
+.mentorRole-houseSell .operation .entrust,.mentorRole-houseSell .operation .setHouseState{
+  height: 25px;
+  line-height: 25px;
+  color:#fff;
+  position: relative;
+  top:-8px;
+  font-size: 12px;
+}
+.mentorRole-houseSell .operation .entrust{
+  background-color: #B59AC8;
+  width:60px;
+}
+.mentorRole-houseSell .operation .setHouseState{
+  background-color: #FE6869;
+  width:70px;
+}
+.mentorRole-houseSell .addHouse .selectItem{
+  color: #000;
+  margin-left: 10px;
+}
+.mentorRole-houseSell .addHouse .selectItemDiv{
+  display: inline-block;
+  margin-left: 20px;
+}
+

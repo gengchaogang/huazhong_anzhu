@@ -1,0 +1,43 @@
+.editor{
+  background-color: #fff;
+}
+.rootBm{
+  display: inline-block;
+}
+.personnelManage .personnelManageDxTree{
+  background-color: #fff;
+  height: 820px;
+  margin-right:10px;
+}
+.personnelManageBottom{
+  border-bottom: 1px solid #BFBFBF;
+}
+.personnelManageRight{
+  background-color: #fff;
+  height: 820px;
+  padding-left:8px;
+  padding-right: 10px;
+}
+.personnelManageBM{
+  font-size: 18px;
+  margin-left: 5px;
+}
+.rootBm .ant-btn-ghost{
+  margin: 5px 10px;
+}
+.personnelManageUrl{
+  display: inline-block;
+  width: 30px;
+  height: 28px;
+  background-size: 30px 28px;
+  background-repeat: no-repeat;
+}
+.saveUser{
+  display: inline-block;
+  position: relative;
+  top: 64px;
+  left: 191px;
+}
+.saveUser .ant-btn-primary{
+  font-size: 15px;
+}

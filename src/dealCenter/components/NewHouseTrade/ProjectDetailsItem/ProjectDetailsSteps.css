@@ -1,0 +1,83 @@
+.projectDetailsSteps_box{
+  display: flex;
+  width: 100%;
+  height: 118px;
+}
+.projectDetailsSteps_box .proInfo_item{
+  flex:1;
+  display: flex;
+  align-items:center;
+}
+.projectDetailsSteps_box .proInfo_item:hover{
+  cursor: pointer;
+}
+.projectDetailsSteps_box .proInfo_item .proInfo_item_content{
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+}
+.projectDetailsSteps_box .proInfo_item .proInfo_item_content .proInfo_item_pic{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_basicInfo,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_basicInfo{
+  background-position: -350px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_basicInfo{
+  background-position: -350px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_proPics,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_proPics{
+  background-position: -178px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_proPics{
+  background-position: -178px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_housesPics,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_housesPics{
+  background-position: -67px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_housesPics{
+  background-position: -67px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_housesTable,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_housesTable{
+  background-position: -293px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_housesTable{
+  background-position: -293px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_housesDiscount,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_housesDiscount{
+  background-position: -121px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_housesDiscount{
+  background-position: -121px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_pic.proInfo_housesAptitude,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_content .proInfo_item_pic.proInfo_housesAptitude{
+  background-position: -235px -173px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_content .proInfo_item_pic.proInfo_housesAptitude{
+  background-position: -235px -115px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active .proInfo_item_content .proInfo_item_title,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover .proInfo_item_title{
+  color: #FFF;
+  font-size: 16px;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default .proInfo_item_title{
+  color: #455162;
+  font-size: 16px;
+}
+
+.projectDetailsSteps_box .proInfo_item.proInfo_item_active,.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover{
+  background-color: #45B38F;
+}
+.projectDetailsSteps_box .proInfo_item.proInfo_item_default{
+  background-color: #FFF;
+}
+/*.projectDetailsSteps_box .proInfo_item.proInfo_item_default:hover{
+  background-color: #45B38F;
+  cursor: pointer;
+}*/
+/*.projectDetailsSteps_box .proInfo_item.proInfo_basicInfo{
+  background-position: -351px -174px;
+  background-size: 24px;
+}*/

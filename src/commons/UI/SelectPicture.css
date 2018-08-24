@@ -1,0 +1,116 @@
+.selectPicture{
+  overflow: hidden;
+}
+.selectPicture .upload-box{
+  display: inline-block;
+  /*border:2px dotted #ccc;*/
+  /*align-items: center;*/
+  position: relative;
+  margin:8px;
+  float: left;
+}
+.selectPicture .upload-box .ant-upload-drag-container{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*.selectPicture .upload-box .ant-upload-drag:hover{
+  border-color:currentColor;
+}*/
+
+.selectPicture  .upload-discrib{
+  text-align: right;
+  font-size: 14px;
+  margin:2px;
+}
+.selectPicture  .upload-discrib>li{
+  line-height: 1.4em;
+}
+
+
+
+.selectPicture .upload-btn{
+  text-align: center;
+  position: relative;
+  border: 1px dotted #ddd;
+}
+.selectPicture .upload-btn:hover{
+  border-color: #ccc;
+}
+
+.selectPicture .upload-btn .plus{
+  font-size: 24px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+
+
+.selectPicture .uploadImg{
+  position: relative;
+  /*display: inline-block;*/
+  margin:4px;
+  float:left;
+  border:1px solid #eee;
+  box-sizing: border-box;
+}
+
+.selectPicture .uploadImg .img-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectPicture .uploadImg .img-responsive{
+  max-width:100%;
+  height:auto;
+  width:auto;
+  max-height: 100%;
+  border:none;
+}
+
+
+.selectPicture .uploadImg .img-delete{
+  color:rgb(252,115,109);
+  margin:0 4px;
+}
+.selectPicture .uploadImg .img-handle{
+  margin:0 4px;
+  color:#42B38B;
+}
+.selectPicture .uploadImg .face{
+  position: absolute;
+  top:0;
+  right:-2px;
+  color:#333;
+  font-size: 14px;
+  padding:4px;
+  display: none;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: rgba(200,200,200,0.8);
+}
+.selectPicture .uploadImg .img-name-box{
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-align: left;
+  padding: 0 4px;
+  line-height: 2.4em;
+  height:2.4em;
+  box-sizing: border-box;
+}
+.selectPicture .uploadImg .img-name{
+  font-size: 1.2em;
+}

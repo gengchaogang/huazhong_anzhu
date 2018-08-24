@@ -1,0 +1,41 @@
+.broker_header{
+
+}
+.broker_footer{
+
+}
+.broker_body{
+}
+.reportBrokerItem_content{
+
+}
+.colums-broker{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  border: 1px solid #ccc;
+}
+.flex_panel .broker_content{
+  text-align: center;
+}
+.flex_panel .broker_content .colums-broker{
+  display: inline-block;
+}
+.flex_panel .broker_content .broker_body{
+  text-align: left;
+  padding-top: 10px;
+  display: inline-block;
+}
+.reportBroker_pic{
+  display: inline-block;
+  vertical-align: top;
+}
+.broker_body{
+  display: inline-block;
+  vertical-align: top;
+  padding: 4px 0px;
+  margin-left: 10px;
+}

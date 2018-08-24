@@ -1,0 +1,12 @@
+.searchInput{
+  display: inline-block;
+  width: 300px;
+}
+.saleingShop{
+  color: #43B38D;
+}
+.storeRent .operation{
+  margin:0 5px;
+  color: #090;
+  cursor: pointer;
+}

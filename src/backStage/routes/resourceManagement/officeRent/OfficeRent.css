@@ -1,0 +1,17 @@
+.searchInput{
+  display: inline-block;
+  width: 300px;
+}
+.saleingShop{
+  color: #43B38D;
+}
+.officeRent .operation{
+  margin:0 5px;
+  color: #090;
+  cursor: pointer;
+}
+.operationColor{
+  color: #42B38F;
+  cursor: pointer;
+  margin: 0 5px;
+}

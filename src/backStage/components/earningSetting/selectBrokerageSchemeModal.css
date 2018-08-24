@@ -1,0 +1,10 @@
+/*选择佣金方案模态框用*/
+.ant-modal-body .ant-table-tbody>tr>td{
+    text-align: center;
+}
+.ant-modal-body .ant-table {
+    margin-top: 20px;
+}
+.dx-search-input{
+    max-width: 400px;
+}

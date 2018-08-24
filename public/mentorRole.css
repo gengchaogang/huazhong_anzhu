@@ -1,0 +1,56 @@
+/*.searchIcon{
+  background: url('./images/mentorRole.png') -20px -19px;
+  cursor: pointer;
+}
+.searchIcon:hover{
+  background: url('./images/mentorRole.png') -20px -63px;
+  cursor: pointer;
+}
+.edit{
+  background: url('./images/mentorRole.png') -125px -19px;
+  cursor: pointer;
+}
+.edit:hover{
+  background: url('./images/mentorRole.png') -125px -63px;
+  cursor: pointer;
+}
+.delete{
+  background: url('./images/mentorRole.png') -199px -19px;
+  cursor: pointer;
+}
+.delete:hover{
+  background: url('./images/mentorRole.png') -199px -63px;
+  cursor: pointer;
+}
+.assignedBroker{
+  background: url('./images/mentorRole.png') -319px -207px;
+  cursor: pointer;
+}
+.assignedBroker:hover{
+  background: url('./images/mentorRole.png') -319px  -251px;
+  cursor: pointer;
+}
+.broker_check{
+  background: url('./images/mentorRole.png') -20px -400px;
+  cursor: pointer;
+}
+.broker_check:hover{
+  background: url('./images/mentorRole.png') -20px  -444px;
+  cursor: pointer;
+}
+.broker_active{
+  background: url('./images/mentorRole.png') -97px -400px;
+  cursor: pointer;
+}
+.broker_active:hover{
+  background: url('./images/mentorRole.png') -97px  -444px;
+  cursor: pointer;
+}
+.broker_delete{
+  background: url('./images/mentorRole.png') -199px -19px;
+  cursor: pointer;
+}
+.broker_delete:hover{
+  background: url('./images/mentorRole.png') -199px -63px;
+  cursor: pointer;
+}*/

@@ -1,0 +1,21 @@
+.organizeStructureManagement{
+  display: flex;
+  flex-flow:row nowrap;
+}
+.organizeStructureManagement>.organizeStructureManagement_left{
+  flex: 0 0 200px;
+  padding: 10px;
+  background-color: #FFF;
+}
+.organizeStructureManagement>.organizeStructureManagement_right{
+  flex: 1;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #FFF;
+}
+.organizeStructureManagement>.organizeStructureManagement_right .operationObjectName{
+  font-size: 18px;
+}
+.organizeStructureManagement_tableTitle>span{
+  margin-right: 15px;
+}

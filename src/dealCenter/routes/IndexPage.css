@@ -1,0 +1,86 @@
+.indexLogin_box{
+  background-color: #fff;
+}
+
+.dxpanel_noPadding_top{
+  padding-top: 0;
+}
+.watchHouse{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:#DADADA;
+  padding:5px;
+  border-radius:5px;
+}
+.ant-col-xs-11 .buttons:first-child{
+  margin-left: 0px;
+}
+
+.watchHouseMain .box{
+  display: flex;
+  justify-content:space-between;
+}
+
+.barChartBorder{
+  text-align: center;
+}
+.barChartBorder .ant-card{
+  display: inline-block;
+  border: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.ant-layout-content .ant-card{
+  border-radius:5px;
+}
+.buttonsDiv{
+  display: flex;
+  justify-content:space-between;
+}
+/*.bageOutSide .badgesMain{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 12px;
+}*/
+.bageOutSide{
+  padding: 10px 0;
+}
+.bageOutSide .badgesDivMain .dx-table-pic{
+  width: 60px;
+  height: 60px;
+  background-size:240px;
+}
+.bageOutSide .badgesDivMain:hover{
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+  z-index: 1;
+}
+.indexPage .dx-panel-content{
+  background-color: transparent;
+  padding: 20px 10px;
+  padding-bottom: 0;
+}
+.bageOutSide .badge_reporting .dx-table-pic{
+  background-position: 0 0px;
+}
+.bageOutSide .badge_complete_transaction .dx-table-pic{
+  background-position: -60px 0px;
+}
+.bageOutSide .badge_rent .dx-table-pic{
+  background-position: -120px 0px;
+}
+.bageOutSide .badge_management .dx-table-pic{
+  background-position: -180px 0px;
+}
+.bageOutSide .badge_loan .dx-table-pic{
+  background-position: 0 -60px;
+}
+.bageOutSide .badge_transfer .dx-table-pic{
+  background-position: -60px -60px;
+}
+.bageOutSide .badge_contract .dx-table-pic{
+  background-position: -120px -60px;
+}
+.bageOutSide .badge_finance .dx-table-pic{
+  background-position: -180px -60px;
+}

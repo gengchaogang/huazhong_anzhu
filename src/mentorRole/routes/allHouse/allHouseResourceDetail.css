@@ -1,0 +1,124 @@
+.houseInfoTop{
+    background-color: #fff;
+    margin-top:15px;
+    padding:0 20px 10px;
+}
+.houseInfoTop .detailName{
+    font-size: 20px;
+    padding-top:10px;
+}
+.houseInfoTop  .detailParts{
+    padding:10px 0;
+    overflow: hidden;
+}
+.houseInfoTop  .detailParts li{
+    float: left;
+    text-align: center;
+}
+.houseInfoTop  .detailParts li:nth-child(n+2){
+    border-left: 1px solid #d9d9d9;
+}
+.houseInfoTop  .detailParts li .detailPartsValue{
+    color:#F56866;
+    font-size: 16px;
+    padding:5px 15px;
+}
+
+.houseInfoTop .detailPartsPanel{
+    float:right;
+    margin:30px 20px 0;
+    border:1px solid #d9d9d9;
+}
+.houseInfoTop .detailPartsPanel .detailPartsPanelHeader{
+    background-color: #EDF3F3;
+    padding:3px 0;
+    text-align: center;
+    border-bottom: 1px solid #d9d9d9;
+    font-weight: bold;
+}
+.houseInfoTop .detailPartsPanel .detailPartsPanelContent{
+    padding:8px 25px;
+}
+.houseInfoTop .detailPartsPanel .detailPartsPanelContent>p{
+    height: 20px;
+    line-height: 20px;
+}
+.houseInfoTop .detailPartsPanel .detailPartsPanelContent>p>span{
+    color:rgb(77, 112, 201);
+}
+.houseInfoTop .detailPartsPanel .detailPartsPanelContent>p>.openTel{
+    height: 20px;
+    line-height: 20px;
+    margin-left:15px;
+    background-color: rgb(66, 179, 139);
+    color:#fff;
+    padding:0 10px;
+}
+
+div.detailTabs{
+    margin-top:10px;
+    background-color: #fff;
+    padding:8px 5px;
+}
+
+span.panelSubTitle{
+    color:#ccc;
+    font-size: 14px;
+}
+/* 房屋信息tab   .houseDetailInfo */
+div.detailTabs div.houseDetailInfo{
+    width:100%;
+    border:1px solid #bfbfbf;
+    border-top:none;
+    padding:20px;
+}
+/* div.houseDetailInfo p{
+    color:#333;
+} */
+div.houseDetailInfo p>span{
+    color:rgb(126, 126, 126);
+}
+div.houseDetailInfo p.infoLine{
+    height:30px;
+    line-height: 30px;
+}
+div.houseDetailInfo .sellInfoMain{
+    overflow: hidden;
+    padding:15px 0 0;
+    min-height: 220px;
+}
+div.sellInfoMain .left,div.sellInfoMain .right{
+    float:left;
+}
+div.sellInfoMain .left{
+    width:80px;
+    line-height: 2;
+}
+div.sellInfoMain .right{
+    width:calc( 100% - 80px);
+    line-height: 2;
+}
+
+/* 房源图片部分   .houseDetailPic */
+div.houseDetailPic{
+    width:100%;
+    padding:15px;
+    border:1px solid #bfbfbf;
+    border-top:none;
+}
+
+div.userInfo>div{
+    float: left;
+    margin:0 20px;
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+}
+div.houseDetailPic div.userPic{
+    padding:10px 0;
+}
+div.houseDetailPic div.userPic img{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+}

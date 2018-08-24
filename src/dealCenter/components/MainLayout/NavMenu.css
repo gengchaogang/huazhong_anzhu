@@ -1,0 +1,115 @@
+
+
+
+.anzhu_menu_icon{
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  left: 51px;
+}
+.menu_icon_logo{
+  margin: 0px 25px;
+  background-repeat: no-repeat;
+  background-position: -69px -406px;
+}
+.menu_icon_sy{
+  background-position: -197px -274px;
+}
+.menu_icon_jygl{
+  background-position: -69px -230px;
+}
+.menu_icon_sfds{
+  background-position: -113px -230px;
+}
+.menu_icon_cwgl{
+  background-position: -113px -274px;
+}
+.menu_icon_dkgl{
+  background-position: -335px -230px;
+}
+.menu_icon_ghgl{
+  background-position: -203px -230px;
+}
+.menu_icon_htsh{
+  background-position: -160px -227px;
+}
+.menu_icon_sjfx{
+  background-position: -69px -272px;
+}
+.menu_icon_qygl{
+  background-position: -249px -230px;
+}
+.menu_icon_czrz{
+  background-position: -155px -274px;
+}
+.menu_icon_htmb{
+  background-position: -291px -230px;
+}
+.menu_icon_ins{
+  background-position: -238px -272px;
+}
+.ant-layout-sider>.ant-menu>.ant-menu-item,.ant-layout-sider>.ant-menu>.ant-menu-submenu>.ant-menu-submenu-title{
+  padding-left: 100px !important;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-layout-logo{
+  display: block;
+  height: 50px;
+  position: relative;
+  top:0;
+  z-index: 100;
+  font-size: 30px;
+  color: #FFF;
+  background-color: #424F62;
+  font-weight: bold;
+  text-align: center;
+  line-height: 47px;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu{
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding-top: 50px;
+  height: 100%;
+  color: #9c9fa1;
+  background-color: #424F62;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu-submenu-title,
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-item{
+  background-color: #404E60;
+  color: #FFF;
+  font-size: 16px;
+  border-left: 3px solid transparent;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu-submenu-title:hover,
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-selected>.ant-menu-submenu-title{
+  background-color: #363E4F;
+  color: #FFF;
+  /*border-left-color:#3C8DBC;*/
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-item-selected,
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-item:hover{
+  background-color: #363E4F;
+  color: #FFF;
+  /*border-left-color:#3C8DBC;*/
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu{
+  background-color: #2C3B41;
+  color: #FFF;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu>.ant-menu-item{
+  background-color: #2A303E;
+  color: #FFF;
+  font-size: 14px;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu>.ant-menu-item:hover{
+  background-color: #262834;
+  color: #FFF;
+}
+.ant-layout-aside>.ant-layout-sider>.ant-menu>.ant-menu-submenu-inline>.ant-menu>.ant-menu-item-selected{
+  background-color: #262834;
+  color: #FFF;
+}

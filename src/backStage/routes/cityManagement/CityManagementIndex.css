@@ -1,0 +1,19 @@
+.cityManagement-searchBox{
+  width: 350px;
+  padding: 10px 0;
+}
+.cityManagement-mainBox{
+  position: relative;
+}
+.cityManagement-mainBox>.anzhu_button{
+  position: absolute;
+  top:-3px;
+  right: 10px;
+  z-index: 100;
+}
+.addCityModal-tip{
+
+}
+.goBack{
+  text-align: right;
+}

@@ -1,0 +1,40 @@
+/**
+ * Created by Jason on 2017/1/5.
+ */
+.tuiKuanImgs {
+    overflow: hidden;
+}
+.tuiKuanImgs>li{
+    float:left;
+    width:100px;
+    height: 100px;
+    margin:2px;
+    padding:2px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+
+}
+.tuiKuanImgs>li>img{
+    display:table-cell;
+    vertical-align: middle;
+}
+.toogleImgWidth {
+    width:100%;
+}
+.toogleImgHeight {
+    height:100%;
+}
+/*子组件_申请成交弹出框_自身细节调节*/
+.ApplyDealShow_selfStyle>ul{
+    overflow: hidden;
+}
+.ApplyDealShow_selfStyle>ul>li{
+    float: left;
+    margin:0 10px 0 0;
+}
+.ApplyDealShow_selfStyle>ul>li>.selected{
+    color: #42B38F;
+}
+.ApplyDealShow_selfStyle>ul>li>.unselected{
+    color: #aaa;
+}

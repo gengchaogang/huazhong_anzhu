@@ -1,0 +1,18 @@
+.houseTypeModal{
+  float: right;
+}
+.modaClose{
+  text-align: left
+}
+.createhouse_modal_clearlaber label:after{
+  display: none;
+}
+.createhouse_modal_clearlaber .ant-form-item-label{
+  text-align: center;
+}
+.font-normal{
+ font-style: normal;
+ font-size: 14px;
+ color:#444;
+ margin:4px;
+}

@@ -1,0 +1,51 @@
+.detailsItemHouse_content{
+  display: flex;
+  min-height: 80px;
+  padding: 10px;
+}
+.detailsItemHouse_content_pic{
+  flex: 0 0 100px;
+  height: 60px;
+}
+.detailsItemHouse_content_pic .houseImgInfo{
+  width: 80px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.detailsItemHouse_content_pic .houseImgInfo>p{
+  padding: 3px 5px;
+}
+.detailsItemHouse_content_info{
+  flex: 1;
+}
+.detailsItemHouse_content_status{
+  flex: 0 0 300px;
+}
+/*.intentionHousewords{
+  text-align: left;
+}
+.houseFooter{
+  background-color: #FF6600;
+  padding: 3px;
+  color: #fff;
+}
+.houseFooterdiv{
+  margin-top: 5px;
+}
+.househeader{
+  background-color: #FF6600;
+  padding: 3px;
+  color: #fff;
+}
+.househeaderdiv{
+  margin-top: 5px;
+}*/
+.detailsItemHouse_content_pic>.dx_picList{
+  transform: scale(0.6);
+  position: relative;
+  top: -30px;
+}

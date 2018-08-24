@@ -1,0 +1,27 @@
+.classification{
+  margin: 15px 0px;
+}
+.tabs .balanceMark span{
+  margin-right: 35px;
+}
+.balanceMark{
+  margin-top: 15px;
+}
+.goback{
+  text-align: right;
+}
+.banklogo{
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+.marginflexspan{
+  display: inline-flex;
+  align-items: center;
+}
+.marginflexspan span{
+  margin-right: 15px;
+}

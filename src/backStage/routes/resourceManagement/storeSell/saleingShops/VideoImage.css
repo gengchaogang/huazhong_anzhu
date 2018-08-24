@@ -1,0 +1,20 @@
+.videoImageImg{
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  display: inline-block;
+}
+.videoImage{
+  display: inline-block;
+  position: relative;
+  top:-12px;
+  left: 10px;
+}
+.videoImage span {
+  margin-right: 16px;
+}
+.imgAdopt{
+  display: flex;
+  justify-content:space-between;
+}

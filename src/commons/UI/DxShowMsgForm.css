@@ -1,0 +1,21 @@
+.DxShowMsgForm{
+  padding: 10px;
+}
+.DxShowMsgForm_item{
+  padding: 6px 8px;
+}
+.DxShowMsgForm_item>.DxShowMsgForm_item_label{
+  font-weight: bold;
+}
+.DxShowMsgForm_item>.DxShowMsgForm_item_value{
+
+}
+.DxShowMsgForm_item_elm{
+  display: inline-block;
+}
+
+.DxShowMsgForm_item_tag{
+  background-color: #46B38D;
+  cursor: default;
+  color: #FFF;
+}

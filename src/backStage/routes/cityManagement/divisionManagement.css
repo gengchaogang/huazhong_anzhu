@@ -1,0 +1,28 @@
+.divisionManagement .divisionTitle>div{
+    margin: 8px 0;
+}
+
+.divisionManagement .divisionTitle>.containArea{
+    overflow: hidden;
+}
+.divisionManagement .divisionTitle>.containArea>p{
+    margin-right: 4px;
+    float: left;
+}
+.divisionManagement .divisionTitle>.containArea>ul{
+    float: left;
+    overflow: hidden;
+}
+.divisionManagement .divisionTitle>.containArea>ul>li{
+    margin-right: 10px;
+    float: left;
+}
+.divisionManagement>button {
+    margin-left: 0px;
+}
+.divisionManagement .containArea p {
+    line-height: 28px;
+}
+.goBack{
+  text-align: left;
+}

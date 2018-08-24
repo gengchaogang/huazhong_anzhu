@@ -1,0 +1,57 @@
+.nh_entrance{
+  background-color: #FFF;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.nh_entrance_border{
+  text-align: center;
+  height: 34px;
+}
+.nh_entrance_border>b{
+  display: inline-block;
+  margin: 0 auto;
+  height: 26px;
+  position: relative;
+  top:4px;
+  border-left: 1px solid #43B38D;
+}
+.nh_entrance_item{
+  height: 34px;
+  text-align: center;
+}
+.nh_entrance_item_content{
+  display: inline-block;
+  height: 34px;
+  color: #43B38D;
+  cursor: pointer;
+}
+.nh_entrance_item_pic{
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+}
+.nh_entrance_item_pic.nh_entrance_customer{
+  background-position: -176px -318px;
+}
+.nh_entrance_item_pic.nh_entrance_groupBuy{
+  background-position: -229px -318px;
+}
+.nh_entrance_item_pic.nh_entrance_commit{
+  background-position: -123px -318px;
+}
+.nh_entrance_item_pic.nh_entrance_proInfo{
+  background-position: -282px -318px;
+}
+.nh_entrance_item_pic.nh_entrance_houses{
+  background-position: -70px -318px;
+}
+.nh_entrance_item_title{
+  display: inline-block;
+  line-height: 34px;
+  height: 34px;
+  vertical-align: top;
+  font-size: 16px;
+}

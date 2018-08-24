@@ -1,0 +1,43 @@
+.textareaStyle .ant-input{
+  width: 800px;
+  height: 350px;
+}
+.titleStyle .ant-input{
+  width: 800px;
+}
+.picMessage .dx_upload_pic_upload_span{
+  visibility:hidden;
+}
+.picMessage .ant-dropdown-trigger{
+  visibility:hidden;
+}
+.sucai{
+  max-width: 800px;
+  height: 350px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+.showArtic{
+  margin-top: 10px;
+  max-width: 800px;
+}
+.showPic{
+  display: inline-block;
+  width: 95px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-size:95px 54px;
+}
+.isdeleted{
+  display: inline-block;
+  position: relative;
+  width: 95px;
+  height:18px;
+  background: #595959;
+  color: #fff;
+  top:38px;
+}
+.yishanchu{
+  color: #999999;
+}

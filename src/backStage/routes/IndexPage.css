@@ -1,0 +1,13 @@
+.bageOutSide{
+  padding: 10px 0;
+}
+.bageOutSide .badgesDivMain .dx-table-pic{
+  width: 60px;
+  height: 60px;
+  background-size:60px;
+}
+.text{
+  text-align: center;
+  margin-top: 15px;
+  font-size: 25px;
+}

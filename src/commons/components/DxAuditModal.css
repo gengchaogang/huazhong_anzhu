@@ -1,0 +1,30 @@
+.dxAuditModal .ant-modal-footer{
+  text-align: left;
+  border-top: none;
+}
+.dxAuditModal .ant-tabs.ant-tabs-card .ant-tabs-bar{
+  border: none;
+}
+.dxAuditModal .ant-tabs.ant-tabs-card  .ant-tabs-tab-active{
+  background-color: #ececed;
+  border-radius: 3px 3px 0px 0px;
+  color: #333;
+  border-color: transparent;
+}
+.dxAuditModal .ant-tabs.ant-tabs-card .ant-tabs-content  .ant-tabs-tabpane{
+  padding: 20px;
+  border: 2px solid #ececed;
+}
+.dxAuditModal .dx_upload_pic_list{
+  max-width: inherit;
+  max-height: inherit;
+}
+.dxAuditModal .ant-tabs.ant-tabs-card .ant-tabs-content  .ant-tabs-tabpane .ant-form-item-control>input{
+  border: none;
+}
+.dxAuditModal .ant-tabs.ant-tabs-card .ant-tabs-content  .ant-tabs-tabpane .ant-form-item-control>input:focus{
+  box-shadow:none;
+}
+.dxAuditModal_content{
+  padding-top: 20px;
+}

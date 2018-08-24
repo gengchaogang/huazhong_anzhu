@@ -1,0 +1,17 @@
+.time_line_panel .dx-panel-content{
+  padding-bottom: 0;
+}
+.time_line_panel .ant-timeline{
+  max-height: 200px;
+  overflow-y: auto;
+}
+.time_line_panel .ant-timeline-item-last{
+  padding-bottom: 0;
+}
+.timeRecordList_content_color{
+  color:#FF6A6A;
+  padding-right: 15px;
+}
+.timeRecordList_content{
+  padding-right: 15px;
+}

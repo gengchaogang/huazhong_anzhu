@@ -1,0 +1,547 @@
+/*
+*整体样式控制
+*/
+html,body{
+  background-color: #F0F4FB;
+}
+body{
+  /*overflow: auto !important;*/
+  /*min-width: 1024px;*/
+  /*text-align: center;*/
+}
+#root{
+  /*display: inline-block;
+  max-width: 1366px;
+  min-width: 1000px;*/
+  color: #333;
+}
+/* 底部按钮布局*/
+.anzhu_bottom_area{
+  padding-top: 20px;
+}
+/*
+*左侧菜单栏样式
+*/
+.ant-layout-aside{
+  display: block;
+  position: relative;
+  min-height: 100%;
+}
+.ant-layout-content{
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 1600px){
+  .ant-layout-aside{
+    max-width: 1400px;
+    margin:0 auto;
+  }
+}
+.ant-layout-aside>.ant-layout-sider{
+  display: inline-block;
+  position: absolute;
+  /*left: 0;*/
+  min-height: 100%;
+  width: 256px;
+}
+.ant-layout-aside>.ant-layout-main{
+  display: block;
+  margin-left: 256px;
+  min-height: 100%;
+}
+.ant-layout-main>.ant-layout-container{
+  padding:10px 15px;
+  padding-right: 0px;
+}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+    width: 8px;
+    height: 8px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+    background-color: #43B38D;
+}
+/*
+*主体显示区域样式
+*/
+/*popover*/
+.ant-popover{
+  z-index: 50;
+}
+
+
+
+
+#root #anzhu_web>.ant-breadcrumb{
+  display: block;
+  font-size: 14px;
+  padding: 5px 0;
+}
+/*
+*steps样式控制
+*/
+/*进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-head-inner,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-head-inner{
+  background-color: #46B38D;
+  border-color: #46B38D;
+}
+/*未进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner{
+  border-color: #46B38D;
+}
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner > .ant-steps-icon,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-head-inner > .ant-steps-icon{
+  color: #46B38D;
+}
+/*进度条*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-tail > i,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-tail > i{
+  height: 2px;
+  background-color: #46B38D;
+}
+/*未进行*/
+#root #anzhu_web .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-tail > i,
+.ant-modal .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-tail > i{
+  height: 2px;
+}
+
+
+/*
+*表格及其上方的tabs样式整体控制
+*/
+#root #anzhu_web .ant-tabs-top .ant-tabs-bar,
+.ant-modal .ant-tabs-top .ant-tabs-bar{
+  margin-bottom: 0;
+}
+#root #anzhu_web .ant-tabs-content{
+  transition: none;
+}
+#root #anzhu_web .ant-tabs.ant_tabs_anzhu{
+  background-color: #FFF;
+}
+#root #anzhu_web .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-container{
+  background-color: #F0F4FB;
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab,
+.ant-modal .ant-tabs-top .ant-tabs-tab{
+  background-color: #46B38D;
+  border-radius: 3px;
+  border-bottom:1px solid #D9D9D9;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: #fff;
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab.ant-tabs-tab-disabled,
+.ant-modal .ant-tabs-top .ant-tabs-tab.ant-tabs-tab-disabled{
+  background-color: #C4CBD4;
+  border: none;
+  color: #FFF;
+  cursor: not-allowed;
+  pointer-events:auto;
+}
+#root #anzhu_web .ant-tabs-top .ant-tabs-tab-active,
+.ant-modal .ant-tabs-top .ant-tabs-tab-active{
+  background-color: #fff;
+  /*border-bottom:1px solid #fff;*/
+  border: none;
+  color: #46B38D;
+}
+/*表格行 加粗*/
+.anzhu_table_col_bold {
+  font-weight: bold;
+}
+/*tab下的表格样式*/
+#root #anzhu_web .ant-tabs .ant-table .ant-table-thead > tr > th,
+.ant-modal .ant-tabs .ant-table .ant-table-thead > tr > th{
+  background-color: #FFF;
+  padding: 8px;
+}
+/*#root #anzhu_web .ant-tabs .ant-table,
+.ant-modal .ant-tabs .ant-table{
+  border-collapse:collapse;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+}*/
+/*#root #anzhu_web .ant-tabs .ant-table .ant-table-thead,
+.ant-modal .ant-tabs .ant-table .ant-table-thead{
+  border-bottom: none;
+  border-top: none;
+}*/
+#root #anzhu_web .ant-tabs .ant-table th,#root #anzhu_web .ant-table td,
+.ant-modal .ant-tabs .ant-table th,.ant-modal .ant-table td{
+  text-align: center;
+  vertical-align: middle;
+}
+/*#root #anzhu_web .ant-tabs .ant-pagination-item-active,
+.ant-modal .ant-tabs .ant-pagination-item-active{
+  background-color: #42B38F;
+  border-color: #42B38F;
+}*/
+/*antd表格样式*/
+#root #anzhu_web .ant-table .ant-table-thead > tr > th,
+.ant-modal .ant-table .ant-table-thead > tr > th{
+  background-color: #FFF;
+  padding: 8px;
+}
+/*#root #anzhu_web .ant-table,
+.ant-modal .ant-table{
+  border-bottom: 1px solid #bfbfbf;
+}*/
+/*#root #anzhu_web .ant-table-placeholder,
+.ant-modal .ant-table-placeholder{
+  border-right: 1px solid #bfbfbf;
+  border-left: 1px solid #bfbfbf;
+}*/
+#root #anzhu_web .ant-table table,
+.ant-modal .ant-table table{
+  border-collapse:collapse;
+}
+/*#root #anzhu_web .ant-table .ant-table-thead,
+.ant-modal .ant-table .ant-table-thead{
+  border: 1px solid #bfbfbf;
+}*/
+/*#root #anzhu_web .ant-table .ant-table-tbody,
+.ant-modal .ant-table .ant-table-tbody{
+  border: 1px solid #bfbfbf;
+  border-bottom:none;
+}*/
+#root #anzhu_web .ant-table .ant-table-title,
+.ant-modal .ant-table .ant-table-title{
+  padding: 8px;
+  font-size: 14px;
+}
+#root #anzhu_web .ant-table th,#root #anzhu_web .ant-table td,
+.ant-modal .ant-table th,#root #anzhu_web .ant-table td{
+  text-align: center;
+  vertical-align: middle;
+}
+#root #anzhu_web .ant-table .ant-table-row:nth-child(odd),
+.ant-modal .ant-table .ant-table-row:nth-child(odd){
+  background-color: #F5F7FB;
+}
+#root #anzhu_web .ant-table .ant-table-row:nth-child(even),
+.ant-modal .ant-table .ant-table-row:nth-child(even){
+  background-color: #FFF;
+}
+#root #anzhu_web .ant-table .ant-table-row:hover,
+.ant-modal .ant-table .ant-table-row:hover{
+  background-color: #DDE5F3;
+}
+#root #anzhu_web .ant-pagination-item-active,
+.ant-modal .ant-pagination-item-active{
+  background-color: #42B38F;
+  border-color: #42B38F;
+}
+
+/*
+*表单样式整体控制（仅限制于antd的表单元素，原生表单元素不控制）
+*/
+/*修复表单验证addbon样式冲突*/
+#root #anzhu_web .dx_col_addonAfter .ant-form-item-control::after,
+.ant-modal .dx_col_addonAfter .ant-form-item-control::after{
+  right: -30px;
+}
+/*主按钮*/
+#root #anzhu_web .ant-btn-primary,
+.ant-modal .ant-btn-primary{
+  background-color: #42B38F;
+  border-color: #42B38F;
+  border-radius: 3px;
+  color: #fff;
+}
+#root #anzhu_web .ant-btn-primary:hover,
+.ant-modal .ant-btn-primary:hover{
+  background-color: #46c3da;
+  border-color: #46c3da;
+  border-radius: 3px;
+  color: #fff;
+}
+
+/*副按钮*/
+#root #anzhu_web .ant-btn-ghost,
+.ant-modal .ant-btn-ghost{
+  background-color: #B3B3B3;
+  border-color: #B3B3B3;
+  color: #FFF;
+  margin: 5px 10px;
+}
+#root #anzhu_web .ant-btn-ghost:hover,
+.ant-modal .ant-btn-ghost:hover{
+  background-color: #FFF;
+  border-color: #B3B3B3;
+  color: #B3B3B3;
+}
+/*普通按钮*/
+#root #anzhu_web .anzhu_button,
+.ant-modal .anzhu_button{
+  background-color: #C4CBD4;
+  border-color: #C4CBD4;
+  border-radius: 3px;
+  color: #FFF;
+}
+#root #anzhu_web .anzhu_button:hover,
+.ant-modal .anzhu_button:hover{
+  background-color: #FFF;
+  border-color: #C4CBD4;
+  border-radius: 3px;
+  color: #C4CBD4;
+}
+/*红色提示按钮*/
+#root #anzhu_web .anzhu_redButton,
+.ant-modal .anzhu_redButton{
+  background-color: #FFF;
+  border-color: #FF6a6a;
+  color: #FF6a6a;
+}
+#root #anzhu_web .anzhu_redButton:hover,
+.ant-modal .anzhu_redButton:hover{
+  background-color: #FF6a6a;
+  border-color: #FF6a6a;
+  color: #FFF;
+}
+
+/*anzhu_buttonGroup表单组*/
+#root #anzhu_web .anzhu_buttonGroup,
+.ant-modal .anzhu_buttonGroup{
+  padding: 10px;
+}
+#root #anzhu_web .anzhu_buttonGroup>.ant-btn,
+.ant-modal .anzhu_buttonGroup>.ant-btn{
+  margin-right: 15px;
+}
+
+
+/*单选按钮*/
+#root #anzhu_web .ant-radio .ant-radio-inner:after,
+.ant-modal .ant-radio .ant-radio-inner:after{
+  opacity:1;
+  background-color: #CCC;
+  border-color: #CCC;
+}
+#root #anzhu_web .ant-radio.ant-radio-checked .ant-radio-inner:after,
+.ant-modal .ant-radio.ant-radio-checked .ant-radio-inner:after{
+  background-color: #42B38F;
+}
+
+/*多选按钮*/
+#root #anzhu_web .ant-checkbox-checked .ant-checkbox-inner:after,
+#root #anzhu_web .ant-checkbox-indeterminate .ant-checkbox-inner:after,
+.ant-modal .ant-checkbox-checked .ant-checkbox-inner:after,
+.ant-modal .ant-checkbox-indeterminate .ant-checkbox-inner:after{
+  border-color: #42B38F;
+}
+#root #anzhu_web .ant-checkbox-checked .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox .ant-checkbox-inner:hover,
+#root #anzhu_web .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox-focused .ant-checkbox-inner,
+#root #anzhu_web .ant-checkbox-indeterminate .ant-checkbox-inner,
+.ant-modal .ant-checkbox-checked .ant-checkbox-inner,
+.ant-modal .ant-checkbox .ant-checkbox-inner:hover,
+.ant-modal .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-modal .ant-checkbox-focused .ant-checkbox-inner,
+.ant-modal .ant-checkbox-indeterminate .ant-checkbox-inner{
+  border-color: #42B38F;
+  background-color: #FFF;
+  color: #42B38F;
+}
+
+/*下拉选择框*/
+/*普通下拉选择框*/
+#root #anzhu_web .ant-select .ant-select-selection,
+.ant-modal .ant-select .ant-select-selection{
+  border-radius: 3px;
+}
+#root #anzhu_web .ant-select .ant-select-selection:hover,
+#root #anzhu_web .ant-select-open .ant-select-selection,
+#root #anzhu_web .ant-select-focused .ant-select-selection,
+#root #anzhu_web .ant-select-selection:focus,
+#root #anzhu_web .ant-select-selection:active,
+.ant-modal .ant-select .ant-select-selection:hover,
+.ant-modal .ant-select-open .ant-select-selection,
+.ant-modal .ant-select-focused .ant-select-selection,
+.ant-modal .ant-select-selection:focus,
+.ant-modal .ant-select-selection:active{
+  border-color: #42B38F;
+}
+/*下拉选择框下三角*/
+#root #anzhu_web .ant-select .ant-select-arrow,
+.ant-modal .ant-select .ant-select-arrow{
+  color:#42B38F;
+}
+/*禁用下拉选择框*/
+#root #anzhu_web .ant-select-disabled .ant-select-selection,
+.ant-modal .ant-select-disabled .ant-select-selection{
+  background-color: #C4CBD4;
+  border-color: #C4CBD4;
+  color: #FFF;
+}
+
+/*输入框*/
+/*普通输入框*/
+#root #anzhu_web .ant-input,
+.ant-modal .ant-input{
+  border-radius: 3px;
+}
+#root #anzhu_web .ant-input:hover,
+#root #anzhu_web .ant-input:focus,
+.ant-modal .ant-input:hover,
+.ant-modal .ant-input:focus{
+  border-color: #42B38F;
+}
+
+/*
+*模态框
+*/
+/*关闭按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-close{
+  width: 18px;
+  height: 18px;
+  border: 1px solid #FF6A6A;
+  border-radius: 18px;
+  padding: 1px;
+  background: #FF6A6A;
+}
+.ant-modal>.ant-modal-content>.ant-modal-close>.ant-modal-close-x{
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  color: #FFF;
+}
+/*头部*/
+.ant-modal>.ant-modal-content>.ant-modal-header>.ant-modal-title{
+  border-left: 2px solid #43B38D;
+  padding-left: 10px;
+}
+/*脚部*/
+.ant-modal>.ant-modal-content>.ant-modal-footer{
+  direction: rtl;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer .ant-btn-loading{
+  direction: ltr;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns .ant-btn-loading{
+  direction: ltr;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn{
+  margin: 0 5px;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns{
+  direction: rtl;
+}
+.ant-modal>.ant-modal-content>.ant-modal-body .ant-confirm-btns>.ant-btn{
+  margin: 0 5px;
+}
+/*取消按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-ghost{
+  background-color: #B3B3B3;
+  border-color: #B3B3B3;
+  color: #FFF;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-ghost:hover{
+  background-color: #FFF;
+  border-color: #B3B3B3;
+  color: #B3B3B3;
+}
+/*确定按钮*/
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary{
+  background-color: #43B38D;
+  border-color: #43B38D;
+  color: #FFF;
+}
+.ant-modal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary:hover{
+  background-color: #46C3DA;
+  border-color: #46C3DA;
+}
+/*时间轴*/
+#root #anzhu_web .ant-timeline-item-head,
+.ant-modal .ant-timeline-item-head{
+  border-color: #43B38D;
+  color: #43B38D;
+}
+
+/**     细微调整    **/
+.dx-panel-content .dx_valueList{
+  padding: 0;
+}
+.anzhu_form_layout_box{
+  width: 512px;
+}
+.anzhu_dx_container_box{
+  padding-top: 20px;
+}
+.ant_table_anzhu{
+  background-color: #FFF;
+}
+.ant-modal-content .ant-modal-body .ant-steps{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.red_cursor{
+  color: #FF6A6A;
+  cursor: pointer;
+}
+.blue_cursor{
+  color: #3584C8;
+  cursor: pointer;
+}
+.green_cursor{
+  color: #46B38D;
+  cursor: pointer;
+}
+/*审核页通用样式*/
+.applyInfoCom{
+  position: relative;
+}
+.applyInfoCom .dxSteps {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.applyInfoCom .dx_panel_mini .dx_valueList_padding_20{
+  padding-bottom:20px;
+}
+.applyInfoCom .timeAxisListItem_text_red{
+  color: #ff6a6a;
+}
+/*驳回按钮*/
+#root #anzhu_web .anzhu_btn_reject,
+.ant-modal .anzhu_btn_reject{
+  background-color: #FF6a6a;
+  border-color: #FF6a6a;
+  color: #FFF;
+  margin: 5px 10px;
+}
+#root #anzhu_web .anzhu_btn_reject:hover,
+.ant-modal .anzhu_btn_reject:hover,.secondHandRefundAuditModal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary.anzhu_btn_reject:hover{
+  background-color: #FF9F9F;
+  border-color: #FF9F9F;
+  color: #FFF;
+}
+.secondHandRefundAuditModal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary.anzhu_btn_reject,.ProjectPublishAuditModal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary.anzhu_btn_reject{
+  background-color: #FF6a6a;
+  border-color: #FF6a6a;
+  color: #FFF;
+}
+.secondHandRefundAuditModal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary.anzhu_btn_reject:hover,.ProjectPublishAuditModal>.ant-modal-content>.ant-modal-footer>.ant-btn-primary.anzhu_btn_reject:hover{
+  background-color: #FF9F9F;
+  border-color: #FF9F9F;
+  color: #FFF;
+}

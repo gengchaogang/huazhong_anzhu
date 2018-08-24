@@ -1,0 +1,29 @@
+.showDetailsModal .title{
+  padding: 10px 20px;
+  background-color:#46B38D;
+  color: #fff;
+  font-weight: normal;
+  margin: 10px;
+}
+.showDetailsModal .dxSteps{
+  max-width: 500px;
+  margin: 0 auto;
+}
+.secondHandRefundAuditModal {
+  /*max-height: 800px;
+  overflow-y: auto;*/
+}
+.showDetailsModal_list_bljd{
+  /*margin-right: 20px;*/
+  max-height: 300px;
+  /*overflow-y: auto;*/
+}
+.imgUl .dx_picList{
+  display: inline-block;
+}
+.transferInformation .ant-col-offset-1{
+  margin-bottom: 5px;
+}
+.showDetailsModal .complete{
+  margin:15px 0px;
+}

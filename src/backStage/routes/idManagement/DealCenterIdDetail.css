@@ -1,0 +1,16 @@
+.reason{
+  display: inline-block;
+  color: #FF0000;
+  margin-left: 20px;
+}
+.qiYeYingYeZhiZhao{
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 120px;
+  width: 180px;
+  height: 100px;
+}
+.textareaReason .ant-input{
+  width:480px;
+  max-width: 480px;
+}

@@ -1,0 +1,19 @@
+.container{
+	background-color: #fff;
+	padding:8px;
+}
+.buttonCreate {
+	overflow: hidden;
+}
+.buttonCreate>Button {
+	float:right;
+}
+.table {
+	margin-left: 10px;
+}
+.footer>Button {
+	margin-right: 10px;
+}
+.footer{
+	text-align: right;
+}

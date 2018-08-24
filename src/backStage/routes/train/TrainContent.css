@@ -1,0 +1,28 @@
+.train_left{
+  background-color: #fff;
+  max-width: 170px;
+  height: 650px;
+  overflow: auto;
+}
+.train_left p{
+  text-align: center;
+  font-size: 18px;
+}
+.train_right{
+  background-color: #fff;
+  height: 650px;
+  overflow: auto;
+}
+.train_right>span{
+  margin-left: 5px;
+}
+.train_right .clearfix{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.inlineBlock{
+  display: inline-block;
+}
+.inlineBlock .ant-btn-ghost{
+  margin:0 10px;
+}

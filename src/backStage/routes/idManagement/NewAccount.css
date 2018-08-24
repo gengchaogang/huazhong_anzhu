@@ -1,0 +1,48 @@
+.newAccountButton{
+  text-align: left;
+}
+.ant-upload-select-picture-card i {
+  font-size: 28px;
+  color: #999;
+}
+
+.ant-upload-select-picture-card .ant-upload-text {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+.uploadCreateZhangHao .dx_upload_pic_item_name_show{
+  display: none;
+}
+.uploadCreateZhangHao .ant-dropdown-link{
+  display: none;
+}
+.uploadCreateZhangHao .dx_upload_pic_upload_msg{
+  visibility: hidden;
+}
+.uploadCreateZhangHao .uploadCreateZhangHaoWord{
+  position: relative;
+  display: inline-block;
+  top: -30px;
+  left: 25px;
+}
+.upLoadDealCenter{
+  display: inline-block;
+}
+.upLoadDealWords{
+  position: relative;
+  top: -120px;
+}
+.upLoadDealCenter .dx_upload_pic_upload_msg{
+  visibility: hidden;
+}
+.licenseType .has-success.has-feedback:after{
+  position: relative;
+  left: 350px;
+  top: -38px;
+}
+.licenseType .has-error.has-feedback:after{
+  position: relative;
+  left: 350px;
+  top: -38px;
+}

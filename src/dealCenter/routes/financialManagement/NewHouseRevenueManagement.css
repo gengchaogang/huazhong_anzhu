@@ -1,0 +1,25 @@
+.newHouseAdd{
+  display: flex;
+  justify-content:space-between;
+}
+.cardnewHouseAdd{
+  flex-grow:1
+}
+.selectProject{
+  width: 200px;
+}
+
+.shtimeline {
+  margin-top: 5px;
+}
+
+.shdiv {
+  text-align: right;
+}
+
+.stateDiv{
+  width: 95%;
+}
+.newHouseRevenueManagement_search{
+  padding: 10px 0px;
+}

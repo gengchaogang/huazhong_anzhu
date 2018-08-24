@@ -1,0 +1,15 @@
+.shSellIntentsContractAudit{
+  position: relative;
+}
+.shSellIntentsContractAudit .dxSteps {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.dx_panel_mini .dx_valueList_padding_20{
+  padding-bottom:20px;
+}
+.timeAxisListItem_text_red{
+  color: #ff6a6a;
+}

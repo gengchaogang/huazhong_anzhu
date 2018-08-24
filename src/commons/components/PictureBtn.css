@@ -1,0 +1,22 @@
+.dx-pictuebtn{
+  display: inline-block;
+  width: 60px;
+  padding: 5px;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.dx-pictuebtn:hover{
+  background-color: #46B38D;
+}
+.dx-pictuebtn>.dx-pictuebtn-pic{
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+  background-size: 60px;
+}
+.dx-pictuebtn>.dx-pictuebtn-title{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}

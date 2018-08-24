@@ -1,0 +1,47 @@
+.dx_roomPic_item_content_tips_tag{
+  background-color: #46B38D;
+  cursor: default;
+  color: #FFF;
+}
+.dx_roomPic_item{
+  padding: 8px 10px;
+  height: 116px;
+  position: relative;
+}
+.dx_roomPic_item_content{
+  position: absolute;
+  left:190px;
+  top:50%;
+  height: 100px;
+  padding: 17px 0;
+  margin-top: -50px;
+}
+.dx_roomPic_item_content_name{
+  /*font-size: 14px;*/
+}
+.dx_roomPic_item_content_msg{
+
+}
+.dx_roomPic_item_content_name{
+  margin-right: 15px;
+}
+.dx_roomPic_item_content_msg_item{
+  margin-right: 15px;
+}
+.dx_roomPic_item_createTime{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top:50%;
+  height: 100px;
+  line-height: 100px;
+  margin-top: -50px;
+}
+.dx_roomPic_item_pic{
+  display: inline-block;
+  width: 150px;
+  height:100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}

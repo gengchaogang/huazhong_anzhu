@@ -1,0 +1,12 @@
+.mentorRole-houseSell{
+  padding: 10px 0;
+}
+.mentorRole-houseSell .tabs{
+  padding: 10px 0;
+}
+.mentorRole-houseSell .operation span{
+  display: inline-block;
+  margin:0 3px;
+  color: #009900;
+  cursor: pointer;
+}
