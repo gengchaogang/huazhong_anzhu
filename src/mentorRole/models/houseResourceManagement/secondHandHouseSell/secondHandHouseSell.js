@@ -478,8 +478,8 @@ export default {
         pageObj = cooperationPage;
       } else if (activeKey === 'pause') {
         typeName = 'getPauseList';
-        const { publishedHousePage } = mentorSecondHandHouseSell;
-        pageObj = publishedHousePage;
+        const { pausePage } = mentorSecondHandHouseSell;
+        pageObj = pausePage;
       }
 
       if (pageObj != null) {

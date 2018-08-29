@@ -36,9 +36,6 @@ export default {
       history.listen(location => {
         if (location.pathname === '/login') {
           dispatch({
-            type: "getCip"
-          })
-          dispatch({
             type: 'initLogin'
           })
         }

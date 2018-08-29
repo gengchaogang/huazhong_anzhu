@@ -806,7 +806,7 @@ function AgentGroups({ dispatch, agentGroups, form }) {
                     <Button type="agent_Buttons" onClick={addMember} className="addMember">+ 添加成员</Button>
                     <Button type="agent_Buttons" onClick={teamInvitation}>团队邀请</Button>
                     <Button type="agent_Buttons" onClick={adjustmentGroups} disabled={!hasSelected}>调整分组</Button>
-                    <Button type="agent_Buttons" onClick={deleteBrokers} disabled={!hasSelected}>踢出导师团队</Button>
+                    <Button type="agent_Buttons" onClick={deleteBrokers} disabled={!hasSelected}>踢出企管体系</Button>
                     <span style={{ marginLeft: 8 }}>{hasSelected ? `选中 ${selectedRowKeys.length} 项` : ''}</span>
                   </div>
                   <Table rowKey={record => record.id} rowSelection={rowSelection} loading={tableLoading} columns={columns} dataSource={pageInfo.content} pagination={paginationInfo} />

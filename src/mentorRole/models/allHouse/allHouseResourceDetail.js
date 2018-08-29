@@ -45,6 +45,7 @@ const initState = {
     previewImage: '',
     characteristics: '',
     fileList: [],
+    entryUserInfo: {},
     keyUserInfo: {},
     addUserInfo: {},
     addUserName: "",

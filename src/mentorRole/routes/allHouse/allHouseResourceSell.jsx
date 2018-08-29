@@ -45,6 +45,7 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
         teamList,//所有门店
         labels,//标签信息
     } = allHouseResourceSell;
+    console.log(teamList);
     //  tab分页数据 
     const paginationsecondHandHouseSell = {
         showQuickJumper: commonFinalCode.showQuickJumper,
@@ -81,7 +82,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -123,7 +125,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -165,7 +168,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -207,7 +211,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -249,7 +254,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -291,7 +297,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                             orientations: values.FYCX,
                             hasKeyHouse: values.isKey,
                             explorationHouse: values.isShiKan,
-                            decoration: values.zxqk
+                            decoration: values.zxqk,
+                            houseState: values.houseState,
                         }
                     })
                 }
@@ -349,7 +356,8 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                         orientations: values.FYCX,
                         hasKeyHouse: values.isKey,
                         explorationHouse: values.isShiKan,
-                        decoration: values.zxqk
+                        decoration: values.zxqk,
+                        houseState: values.houseState,
                     }
                 })
             }
@@ -456,6 +464,10 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                 }
             }
         })
+    }
+    // 房源状态 onChangeHouseState
+    const onChangeHouseState = () => {
+
     }
     // 列字段名
     const columns = [{
@@ -713,6 +725,27 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                                     </Col>
                                 </Row>
                                 <Row style={{ "marginLeft": "0" }}>
+                                    <Col span={7}>
+                                        <FormItem label="装修情况" labelCol={{ span: 6 }} wrapperCol={{ span: 18 }}>
+                                            {getFieldDecorator('zxqk', {
+                                                initialValue: [],
+                                                // rules: [{ required: true, message:'请选择房源特色',type:"array"},
+                                                rules: [
+                                                    { required: false },
+                                                    {
+                                                        validator(rule, value, callback, source, options) {
+                                                            var errors = [];
+                                                            callback(errors);
+                                                        }
+                                                    }
+                                                ],
+                                            })(
+                                                <CheckboxGroup options={labels["装修情况"].map(item => { return { label: item.name, value: item.value } })} onChange={onChangezxqk} />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                </Row>
+                                <Row style={{ "marginLeft": "0" }}>
                                     <Col span={6}>
                                         <FormItem label="钥匙房" labelCol={{ span: 8 }} wrapperCol={{ span: 12 }}>
                                             {getFieldDecorator('isKey', {
@@ -758,12 +791,12 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                                         </FormItem>
                                     </Col>
                                     <Col span={7}>
-                                        <FormItem label="装修情况" labelCol={{ span: 6 }} wrapperCol={{ span: 18 }}>
-                                            {getFieldDecorator('zxqk', {
-                                                initialValue: [],
+                                        <FormItem label="状态" labelCol={{ span: 8 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('houseState', {
+                                                initialValue: "已发布",
                                                 // rules: [{ required: true, message:'请选择房源特色',type:"array"},
                                                 rules: [
-                                                    { required: false },
+                                                    { required: true, message: "请选择房源状态" },
                                                     {
                                                         validator(rule, value, callback, source, options) {
                                                             var errors = [];
@@ -772,7 +805,10 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                                                     }
                                                 ],
                                             })(
-                                                <CheckboxGroup options={labels["装修情况"].map(item => { return { label: item.name, value: item.value } })} onChange={onChangezxqk} />
+                                                <RadioGroup onChange={onChangeHouseState}>
+                                                    <Radio key={0} value="已发布">已发布</Radio>
+                                                    <Radio key={1} value="暂缓">暂缓</Radio>
+                                                </RadioGroup>
                                             )}
                                         </FormItem>
                                     </Col>

@@ -42,7 +42,7 @@ function allHouseResourceDetail({ dispatch, form, allHouseResourceDetail, main }
         houseType,
         floorArea,
         resourcesNumber,
-        entryUserName, // 房源录入人姓名
+        entryUserInfo, // 房源录入人信息
         keyHasBroker, // 钥匙持有人姓名
         addUserName,//委托人姓名
         keyUserInfo,
@@ -72,7 +72,7 @@ function allHouseResourceDetail({ dispatch, form, allHouseResourceDetail, main }
         houseLogList,
         brokerModal,
         brokerModalData,
-        isFollowed
+        isFollowed,
     } = allHouseResourceDetail;
     const onOkCallBack = () => {
         if (promptObj.todo === 'closeModal') {
@@ -311,7 +311,7 @@ function allHouseResourceDetail({ dispatch, form, allHouseResourceDetail, main }
             dispatch({
                 type: 'allHouseResourceDetail/findOneBrief',
                 payload: {
-                    id: record.brokerId
+                    id: record.exUserId || record.brokerId
                 }
             })
         }
@@ -428,7 +428,7 @@ function allHouseResourceDetail({ dispatch, form, allHouseResourceDetail, main }
                     <div className="detailPartsPanel">
                         <p className="detailPartsPanelHeader">
                             业主信息
-                    </p>
+                        </p>
                         <div className="detailPartsPanelContent">
                             <p>
                                 姓名 ： <span>{yezhu.ownerName}</span>
@@ -447,13 +447,34 @@ function allHouseResourceDetail({ dispatch, form, allHouseResourceDetail, main }
                     </p>
                         <div className="detailPartsPanelContent">
                             <p>
-                                录入人 ： <span>{entryUserName}</span>
+                                录入人 ： <span style={{ "cursor": "pointer" }} onClick={() => {
+                                    dispatch({
+                                        type: 'allHouseResourceDetail/findOneBrief',
+                                        payload: {
+                                            id: entryUserInfo.brokerId
+                                        }
+                                    })
+                                }}>{entryUserInfo.name}</span>
                             </p>
                             <p>
-                                委托人 ： <span>{addUserName}</span>
+                                委托人 ： <span style={{ "cursor": "pointer" }} onClick={() => {
+                                    dispatch({
+                                        type: 'allHouseResourceDetail/findOneBrief',
+                                        payload: {
+                                            id: addUserInfo.brokerId
+                                        }
+                                    })
+                                }}>{addUserInfo.name}</span>
                             </p>
                             <p>
-                                钥匙人 ： <span>{keyHasBroker}</span>
+                                钥匙人 ：{keyUserInfo !== null ? <span style={{ "cursor": "pointer" }} onClick={() => {
+                                    dispatch({
+                                        type: 'allHouseResourceDetail/findOneBrief',
+                                        payload: {
+                                            id: keyUserInfo.brokerId
+                                        }
+                                    })
+                                }}>{keyUserInfo.name}</span> : <span></span>}
                             </p>
                         </div>
                     </div>

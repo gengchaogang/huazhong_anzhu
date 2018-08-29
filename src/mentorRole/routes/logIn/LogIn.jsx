@@ -106,7 +106,7 @@ function LogIn({ location, dispatch, login, form: {
           </div>
         </div>
         <div className='anzhu_login_footer'>
-          <span>保定市华屹网络科技有限公司 冀ICP备17024190号-1</span>
+          <span>保定市华屹网络科技有限公司    冀ICP备17024190号-1</span>
         </div>
       </div>
     </div>
