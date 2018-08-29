@@ -726,7 +726,7 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                                 </Row>
                                 <Row style={{ "marginLeft": "0" }}>
                                     <Col span={7}>
-                                        <FormItem label="装修情况" labelCol={{ span: 6 }} wrapperCol={{ span: 18 }}>
+                                        <FormItem label="装修情况" labelCol={{ span: 7 }} wrapperCol={{ span: 17 }}>
                                             {getFieldDecorator('zxqk', {
                                                 initialValue: [],
                                                 // rules: [{ required: true, message:'请选择房源特色',type:"array"},
