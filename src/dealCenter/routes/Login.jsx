@@ -50,7 +50,7 @@ function Login({ location, dispatch, login, form: {
             <b className='centerPic'></b>
           </div>
           <div className='anzhu_login_loginBox_right'>
-            <h1 className='anzhu_login_loginBox_title'>欢迎登录经纪人交易中心</h1>
+            <h1 className='anzhu_login_loginBox_title'>欢迎登录华中业财系统</h1>
             <Form>
               <FormItem>
                 {getFieldDecorator('loginName', {

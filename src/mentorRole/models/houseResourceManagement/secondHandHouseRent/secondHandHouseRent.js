@@ -151,7 +151,6 @@ export default {
             payload: {
               pageSize: commonFinalCode.pageSize,
               pageNo: 0,
-              houseState: "已发布",
               resourcesType: "住宅",
               saleWay: "出租",
               isCurrentUser: '是',

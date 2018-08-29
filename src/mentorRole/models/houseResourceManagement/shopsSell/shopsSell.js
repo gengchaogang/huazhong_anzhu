@@ -47,6 +47,12 @@ export default {
       pageSize: commonFinalCode.pageSize,
       content: [],
     },
+    pausePage: {
+      pageNo: 1,
+      total: 0,
+      pageSize: commonFinalCode.pageSize,
+      content: [],
+    },
     unassignedAgentPage: {      // 未指派经济人Page
       pageNo: 1,
       total: 0,
@@ -71,6 +77,16 @@ export default {
       pageSize: commonFinalCode.pageSize,
       content: [],
     },
+    entrustModal: {//委托弹窗
+      visible: false,
+      required: false,
+    },
+    houseStateModal: {//委托弹窗
+      visible: false,
+      required: false,
+    },
+    optionss: {},
+    record: {},//缓存当前行数据
   },
   reducers: { //action
     saveSearchArea(state, action) {
@@ -129,19 +145,21 @@ export default {
           dispatch({
             type: 'getUnassignedAgentList',
             payload: {
-              pageSize:commonFinalCode.pageSize,
-              pageNo:0,
-              houseState:"已发布",
-              resourcesType:"商铺",
-              saleWay:"出售",
-              isCurrentUser:'是',
-    //          isCooperationSale:'开启',
-      //        hasBroker:'是'
+              pageSize: commonFinalCode.pageSize,
+              pageNo: 0,
+              resourcesType: "商铺",
+              saleWay: "出售",
+              isCurrentUser: '是',
+              //          isCooperationSale:'开启',
+              //        hasBroker:'是'
             }
           });
           dispatch({
             type: 'getEopOptions',
           });
+          dispatch({
+            type: 'getCasOpt'
+          })
         }
       });
     },
@@ -252,7 +270,7 @@ export default {
         type: 'showProcess',
       });
       payload.isCooperationSale = "关闭";
-    //  payload.hasBroker = "是";
+      //  payload.hasBroker = "是";
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
       var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
@@ -365,6 +383,33 @@ export default {
           type: "saveResultData",
           payload: {
             cooperationPage: reObj,
+          }
+        });
+      } else {
+        yield put({
+          type: 'showPrompt',
+          payload: {
+            description: `${reObj.msg}`
+          }
+        });
+      }
+    },
+
+    /*暂缓列表*/
+    *getPauseList({ payload }, { call, put }) {
+      yield put({
+        type: 'showProcess',
+      });
+      //payload.hasBroker="是";
+      payload.houseState = "暂缓";
+      payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
+      const responseObj = yield call(requestApi, { ...payload });
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      if (reObj.isSuccess) {
+        yield put({
+          type: "saveResultData",
+          payload: {
+            pausePage: reObj,
           }
         });
       } else {
@@ -498,6 +543,10 @@ export default {
         typeName = 'getCooperationList';
         const { cooperationPage } = mentorShopsSell;
         pageObj = cooperationPage;
+      } else if (activeKey === 'pause') {
+        typeName = 'getPauseList';
+        const { pausePage } = mentorShopsSell;
+        pageObj = pausePage;
       }
 
       if (pageObj != null) {
@@ -542,7 +591,7 @@ export default {
           payload: {
             pageNo: pageNo,
             pageSize: pageSize,
-  //          hasBroker: "否",
+            //          hasBroker: "否",
             resourcesType: "商铺",
             saleWay: "出售",
             isCurrentUser: '是',
@@ -578,9 +627,157 @@ export default {
             keyword: payload.resourcesNumber,
           }
         })
+      } else if (activeKey === 'pause') {//暂缓房源
+        yield put({
+          type: typeName,
+          payload: {
+            pageNo: pageNo,
+            pageSize: pageSize,
+            houseState: "暂缓",
+            resourcesType: "商铺",
+            saleWay: "出售",
+            isCurrentUser: '是',
+            fullPath: payload.area,
+            keyword: payload.resourcesNumber,
+            houseRoom: payload.houseRoom,
+          }
+        })
       }
     },
+    *getCasOpt({ payload }, { call, put, select }) {//委托联动项
+      const responseObj = yield call(requestApi, {
+        apiName: "/miss-anzhu-tutor/tutors/broker/findTeamAndBroker",
+      });
+      const isBroker = yield select(({ main }) => main.isBroker);
 
+      const { data } = responseObj
+
+      yield put({
+        type: 'saveResultData',
+        payload: {
+          optionss: data.data,
+          userTypes: isBroker
+        }
+      });
+
+    },
+    *entrust({ payload }, { put, call, select }) {
+      const currentState = yield select(({ mentorShopsSell }) => mentorShopsSell);
+      const responseObj = yield call(requestApi, {
+        apiName: "/miss-anzhu-secdhouse-resource/main/UpdateHouseBailor",
+        houseId: currentState.record.id,
+        brokerId: payload.brokerId
+      });
+      const reObj = analysisUtil.analysisDataResponse(responseObj);
+      if (reObj.isSuccess) {
+        yield put({
+          type: "setState",
+          payload: {
+            entrustModal: {
+              visible: false,
+              required: false,
+            }
+          }
+        });
+        if (currentState.activeKey === "unassignedAgent") {
+          yield put({
+            type: "getUnassignedAgentList",
+            payload: {
+              pageNo: currentState.unassignedAgentPage.pageNo,
+              pageSize: currentState.unassignedAgentPage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "商铺",
+              saleWay: "出售",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
+        } else if (currentState.activeKey === "pause") {
+          yield put({
+            type: "getPauseList",
+            payload: {
+              pageNo: currentState.pausePage.pageNo,
+              pageSize: currentState.pausePage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "商铺",
+              saleWay: "出售",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
+        }
+      } else {
+        yield put({
+          type: 'showPrompt',
+          payload: {
+            description: `${reObj.msg}`
+          }
+        });
+      }
+    },
+    *houseStateSet({ payload }, { put, call, select }) {
+      const currentState = yield select(({ mentorShopsSell }) => mentorShopsSell);
+      console.log(currentState);
+      const responseObj = yield call(requestApi, {
+        apiName: "miss-anzhu-secdhouse-resource/main/UpdateHouseState",
+        houseId: currentState.record.id,
+        state: payload.state
+      });
+      const reObj = analysisUtil.analysisDataResponse(responseObj);
+      if (reObj.isSuccess) {
+        yield put({
+          type: "setState",
+          payload: {
+            houseStateModal: {
+              visible: false,
+              required: false,
+            }
+          }
+        });
+        if (currentState.activeKey === "unassignedAgent") {
+          yield put({
+            type: "getUnassignedAgentList",
+            payload: {
+              pageNo: currentState.unassignedAgentPage.pageNo,
+              pageSize: currentState.unassignedAgentPage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "商铺",
+              saleWay: "出售",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
+        } else if (currentState.activeKey === "pause") {
+          yield put({
+            type: "getPauseList",
+            payload: {
+              pageNo: currentState.pausePage.pageNo,
+              pageSize: currentState.pausePage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "商铺",
+              saleWay: "出售",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
+        }
+      } else {
+        yield put({
+          type: 'showPrompt',
+          payload: {
+            description: `${reObj.msg}`
+          }
+        });
+      }
+    }
     //*************************************effects end
   }
 }

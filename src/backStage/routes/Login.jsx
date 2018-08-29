@@ -46,7 +46,7 @@ function Login({ location, dispatch, login, form: {
       </div> */}
       <div className='anzhu_login_body' style={{ backgroundImage: `URL(${backgroundImage})` }}>
         <div className='anzhu_login_loginBox'>
-          <span className='anzhu_login_loginBox_title'>登录华中经纪总后台</span>
+          <span className='anzhu_login_loginBox_title'>登录华中经纪云后台管理系统</span>
           <Form>
             <FormItem>
               {getFieldDecorator('loginName', {
