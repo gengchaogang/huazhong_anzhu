@@ -170,7 +170,7 @@ export default {
       uploadData.ids = ids;
       uploadData.apiName = "/miss-anzhu-secdhouse-resource/todgo/synchronize"
       const responseObj = yield call(requestApi, { ...uploadData });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         reObj.urls.map(item => {
           window.open(item.url)
@@ -235,7 +235,7 @@ export default {
       //      payload.hasBroker="是";
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: "saveResultData",
@@ -261,7 +261,7 @@ export default {
       });
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: "saveResultData",
@@ -287,7 +287,7 @@ export default {
       });
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: "saveResultData",
@@ -313,7 +313,7 @@ export default {
       });
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: "saveResultData",
@@ -339,7 +339,7 @@ export default {
       payload.houseState = "已发布";
       payload.apiName = "/miss-anzhu-secdhouse-resource/main/findFilterAndOrderHouse";
       const responseObj = yield call(requestApi, { ...payload });
-      var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+      const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: "saveResultData",
@@ -365,7 +365,7 @@ export default {
       const responseObj = yield call(requestApi, {
         apiName: commonFinalCode.findAllAreasApiName,
       });
-      var reObj = analysisUtil.analysisDataResponse(responseObj);
+      const reObj = analysisUtil.analysisDataResponse(responseObj);
       if (reObj.isSuccess) {
         const eopData = commonUtil.createEopData(reObj.content);
         yield put({
@@ -422,7 +422,7 @@ export default {
       params['id'] = payload['id'];
       params.apiName = commonFinalCode.deleteSencondHouseApiName;
       const responseObj = yield call(requestApi, params);
-      var reObj = analysisUtil.analysisDataResponse(responseObj);
+      const reObj = analysisUtil.analysisDataResponse(responseObj);
       if (reObj.isSuccess) {
         yield put({
           type: 'hideProcess',
