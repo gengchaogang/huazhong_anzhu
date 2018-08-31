@@ -17,6 +17,7 @@
   position: relative;
   top:-8px;
   font-size: 12px;
+  cursor: pointer;
 }
 .mentorRole-houseSell .operation .entrust{
   background-color: #B59AC8;

@@ -1,0 +1,20 @@
+.customerManage .operation{
+    margin-top:0;
+}
+.customerManage .operation span{
+    height: 25px;
+    line-height: 25px;
+    color:#fff;
+    font-size: 12px;
+    cursor: pointer;
+    margin:0 3px;
+    width:auto;
+    padding:0 15px;
+}
+
+.customerManage span.handleManage{
+    background-color:#44C3DA;
+}
+.customerManage span.handleEdit{
+    background-color:#B59AC6;
+}

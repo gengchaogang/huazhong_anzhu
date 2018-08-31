@@ -1,0 +1,48 @@
+.managePage .header{
+    margin-top:10px;
+    padding:10px;
+    background-color:#fff;
+}
+.managePage .header .customerDetail{
+    font-size: 20px;
+    padding:5px 30px;
+    height: 40px;
+    line-height: 30px;
+}
+
+span.wantSell,span.wantRent{
+    display:inline-block;
+    padding:0 6px;
+    margin-left:5px;
+    font-size: 12px;
+    height: 20px;
+    line-height:20px;
+    border-radius: 3px;
+}
+span.wantSell{
+    color:#0008ff;
+    border:1px solid #0008ff;
+}
+span.wantRent{
+    color:#8d00ff;
+    border:1px solid #8d00ff;
+}
+
+.managePage .header .customerController{
+    font-size: 16px;
+    padding:0 30px;
+    height: 30px;
+    line-height: 30px;
+    color:#48B28C;
+    font-weight: bold;
+}
+
+.managePage .header .customerController button{
+    float:right;
+    margin-left:15px;
+}
+
+.managePage .managePageTabs{
+    padding:10px 5px;
+    border-top:1px solid #ddd;
+}

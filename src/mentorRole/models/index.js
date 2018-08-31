@@ -9,6 +9,10 @@ import remindMsgInfo from './remindMsgManagement/remindMsgInfo'
 //公司房源
 import allHouseResourceSell from './allHouse/allHouseResourceSell'
 import allHouseResourceDetail from './allHouse/allHouseResourceDetail'
+//客户管理
+import customerManage from './customerManage/customerManage'
+import managePage from './customerManage/managePage'
+import editPage from './customerManage/editPage'
 //二手房出售
 import secondHandHouseSell from './houseResourceManagement/secondHandHouseSell/secondHandHouseSell'
 import createSecondHandSellResource from './houseResourceManagement/secondHandHouseSell/createSecondHandSellResource'
@@ -144,6 +148,10 @@ export default [
   //公司房源
   allHouseResourceSell,
   allHouseResourceDetail,
+  //客户管理
+  customerManage,
+  managePage,
+  editPage,
   //二手房出售
   secondHandHouseSell,
   createSecondHandSellResource,

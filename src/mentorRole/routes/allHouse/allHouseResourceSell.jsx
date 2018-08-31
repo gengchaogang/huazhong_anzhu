@@ -598,7 +598,7 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
                                             rules: [{ required: false, message: '请选择门店' }],
                                         })(
                                             <Select placeholder="请选择门店">
-                                                {teamList.map((item, index) => { return <option key={index} value={item.id}>{item.name}</option> })}
+                                                {teamList.map((item, index) => { return <Option key={index} value={item.id}>{item.name}</Option> })}
                                             </Select>
                                         )}
                                     </FormItem>

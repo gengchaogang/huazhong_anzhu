@@ -128,6 +128,10 @@ import CommissionAdjustRecord from './routes/commissionSetting/CommissionAdjustR
 import BasicStatistics from './routes/dataStatistics/BasicStatistics'
 import BusinessStatistics from './routes/dataStatistics/BusinessStatistics'
 import DealStatistics from './routes/dataStatistics/DealStatistics'
+//客户管理
+import customerManage from './routes/customerManage/customerManage'
+import managePage from './routes/customerManage/managePage'
+import editPage from './routes/customerManage/editPage'
 //登陆页面
 import LogIn from './routes/logIn/LogIn'
 import MentorRegister from './routes/logIn/MentorRegister'
@@ -347,6 +351,16 @@ export default function ({ history }) {
             <IndexRoute component={MyNew} />
             <Route path="addMd" component={addMd} name='addMd' breadcrumbName='创建管理' />
 
+          </Route>
+        </Route>
+        {/* 客户管理相关路由 */}
+        <Route path='customerManage' name="customerManage" breadcrumbName="客户列表">
+          <IndexRoute component={customerManage} />
+          <Route path='managePage' name='managePage' breadcrumbName="客户管理" component={managePage}>
+            <IndexRoute componet={managePage}></IndexRoute>
+          </Route>
+          <Route path='editPage' name='editPage' breadcrumbName="编辑客户" component={editPage}>
+            <IndexRoute componet={editPage}></IndexRoute>
           </Route>
         </Route>
       </Route>

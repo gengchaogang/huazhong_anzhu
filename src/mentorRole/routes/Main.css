@@ -995,10 +995,13 @@ padding-top: 30px;
   margin-right: 10px;
 }
 #root .ant-radio-wrapper{
-  margin-bottom: 30px!important;
+  margin-bottom: 30px;
 }
 .listUserHeaderImage{
   height: 50px;
   width: 50px!important;
   border-radius: 50%;
+}
+div.container{
+  background-color: #fff;
 }
