@@ -769,7 +769,15 @@ function ShopsRent({ form, dispatch, mentorShopsRent }) {
                 */}
                 {
                   isBroker ?
-                    null
+                    <TabPane tab="私有房源" key="publishedHouse">
+                      <Table
+                        loading={tableLoading}
+                        dataSource={publishedHousePage.content}
+                        columns={columns}
+                        pagination={paginationPublishedHouse}
+                        rowSelection={isBroker ? rowSelection : null}
+                      />
+                    </TabPane>
                     :
                     <TabPane tab="全部房源" key="unassignedAgent">
                       <Table

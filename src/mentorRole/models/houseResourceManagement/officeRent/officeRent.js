@@ -146,6 +146,18 @@ export default {
               //      isCooperationSale:'开启',
             }
           });
+          dispatch({
+            type: 'getPublishedHouseList',
+            payload: {
+              pageSize: commonFinalCode.pageSize,
+              pageNo: 0,
+              resourcesType: "写字楼",
+              saleWay: "出租",
+              isCurrentUser: '是',
+              //          isCooperationSale:'开启',
+              //          hasBroker:"是",
+            }
+          });
 
           dispatch({
             type: 'getEopOptions',
@@ -219,13 +231,13 @@ export default {
         clearInterval(interval)
         yield put({
           type: "saveUserType",
-          payload: { isBroker: isBroker }
+          payload: { isBroker: isBroker, activeKey: "publishedHouse" }
         })
       } else if (isBroker === false) {
         clearInterval(interval)
         yield put({
           type: "saveUserType",
-          payload: { isBroker: isBroker }
+          payload: { isBroker: isBroker, activeKey: "unassignedAgent" }
         })
       }
     },
