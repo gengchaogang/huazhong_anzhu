@@ -15,3 +15,7 @@
 .editPage .ant-input-lg{
     height: 34px;
 }
+
+.editPage .formListController{
+    background-color: #fff;
+}

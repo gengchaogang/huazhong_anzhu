@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import { Form, DatePicker, Select, Row, Col, Input, Cascader, Radio, Button, Alert, message, Tabs, Table, Spin, Modal, Checkbox } from 'antd'
+import { Form, DatePicker, Select, Row, Col, Input, Cascader, Radio, Button, Alert, message, Tabs, Table, Spin, Modal, Checkbox, Icon } from 'antd'
 import Panel from '../../../commons/components/Panel'
 import DxPanel from '../../../commons/components/DxPanel'
 import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
@@ -121,6 +121,16 @@ function editPage({ dispatch, form, editPage }) {
                             </RadioGroup>
                         )}
                     </FormItem>
+                </Col>
+            </Row>
+        </div>
+        <div className="formListController">
+            <Row>
+                <Col span={19} offset={1}>
+                    <Icon type="plus-square" />
+                </Col>
+                <Col span={4}>
+                    <Button type="primary" htmlType="submit">确认提交</Button>
                 </Col>
             </Row>
         </div>
