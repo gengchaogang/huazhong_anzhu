@@ -8,7 +8,6 @@ import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import lodash from 'lodash';
 
 const initState = {
-    currentTab: "followCustomerTab",
     loadingShadow: false,
     promptObj: {
         visible: false,
@@ -19,26 +18,7 @@ const initState = {
         type: '',
         todo: '',
     },
-    customerList: {
-        pageNo: 1,
-        total: 0,
-        pageSize: commonFinalCode.pageSize,
-        content: [
-            {
-                name: "geng",
-                gender: "男",
-                want: "求购",
-                createDate: "2018/08/30",
-                phone: "17692349163"
-            }
-        ],
-    },
-    bringModal: {
-        visible: false
-    },
-    followModal: {
-        visible: false
-    }
+    eopOptions: [],
 };
 
 export default {
@@ -47,17 +27,57 @@ export default {
     reducers: {
         setState(state, action) {
             return { ...state, ...action.payload }
-        }
+        },
+        saveResultData(state, action) {
+            return { ...state, loadingShadow: false, ...action.payload }
+        },
     },
     subscriptions: {
         setup({ dispatch, history }) {
             history.listen(location => {
-
+                if (location.pathname === '/customerManage/editPage') {
+                    //   获取初始数据
+                    dispatch({
+                        type: 'initData',
+                    });
+                }
             })
         }
     },
     effects: {
-
+        // 初始化
+        *initData({ payload }, { put, call }) {
+            yield put({
+                type: "showProcess"
+            });
+            // 加载所在区域信息
+            yield put({
+                type: "getEopOptions"
+            });
+        },
+        // 加载区域信息
+        *getEopOptions({ payload }, { put, call }) {
+            const responseObj = yield call(requestApi, {
+                apiName: "/miss-anzhu-operation/service-regions/findAllProvinces",
+            });
+            var reObj = analysisUtil.analysisDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                const eopData = commonUtil.createEopData(reObj.content);
+                yield put({
+                    type: 'saveResultData',
+                    payload: {
+                        eopOptions: eopData
+                    }
+                });
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        },
     }
 
 }
