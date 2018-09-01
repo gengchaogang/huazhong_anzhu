@@ -31,7 +31,7 @@ export default {
     selectedRowRecord: [],//选中项
     selectedRowKeys: [],//选中keys
     isBroker: null,
-    activeKey: 'unassignedAgent',     //Tabs当前值
+    activeKey: "unassignedAgent",     //Tabs当前值
     tableLoading: false,             //table loading状态
     currentPage: 1,                 //当前页
     total: null,                    // 当前页总条数
@@ -159,6 +159,18 @@ export default {
             }
           });
           dispatch({
+            type: 'getPublishedHouseList',
+            payload: {
+              pageSize: commonFinalCode.pageSize,
+              pageNo: 0,
+              resourcesType: "住宅",
+              saleWay: "出租",
+              isCurrentUser: '是',
+              //          isCooperationSale:'开启',
+              //          hasBroker:"是",
+            }
+          });
+          dispatch({
             type: 'getEopOptions',
           });
           dispatch({
@@ -234,13 +246,13 @@ export default {
         clearInterval(interval)
         yield put({
           type: "saveUserType",
-          payload: { isBroker: isBroker }
+          payload: { isBroker: isBroker, activeKey: "publishedHouse" }
         })
       } else if (isBroker === false) {
         clearInterval(interval)
         yield put({
           type: "saveUserType",
-          payload: { isBroker: isBroker }
+          payload: { isBroker: isBroker, activeKey: "unassignedAgent" }
         })
       }
     },

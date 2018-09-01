@@ -808,7 +808,6 @@ function SecondHandHouseRent({ form, dispatch, mentorSecondHandHouseRent }) {
                 activeKey={activeKey}
                 onChange={onTabsChange}
                 type="card"
-                defaultActivKey="publishedHouse"
                 className="tabs"
                 animated={false}
               >
@@ -836,7 +835,15 @@ function SecondHandHouseRent({ form, dispatch, mentorSecondHandHouseRent }) {
 */}
                 {
                   isBroker ?
-                    null
+                    <TabPane tab="私有房源" key="publishedHouse">
+                      <Table
+                        loading={tableLoading}
+                        dataSource={publishedHousePage.content}
+                        columns={columns}
+                        pagination={paginationPublishedHouse}
+                        rowSelection={isBroker ? rowSelection : null}
+                      />
+                    </TabPane>
                     :
                     <TabPane tab="全部房源" key="unassignedAgent">
                       <Table
