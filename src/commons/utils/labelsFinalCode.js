@@ -47,6 +47,8 @@ labelsFinalCode.labelShopsPmlx = "铺面类型";
 labelsFinalCode.labelShopsSpkjyfw = "经营类目";
 labelsFinalCode.labelShopsCzts = "商铺出租特色";
 labelsFinalCode.labelShops_czzjdw = "出租租金单位";              // 元/月、元/㎡/月
+labelsFinalCode.labelShops_spmj = "商铺面积";              // 商铺面积
+labelsFinalCode.labelShops_spzj = "商铺租金";              // 商铺租金
 
 //--------------------------商铺标签 end
 
@@ -56,6 +58,10 @@ labelsFinalCode.labelHouseOffice_xzljb = "写字楼级别";
 labelsFinalCode.labelXzlcsts = "写字楼出售特色";
 labelsFinalCode.labelXzlczts = "写字楼出租特色";
 labelsFinalCode.labelHouse_wylx = "物业类型";
+labelsFinalCode.labelHouse_xzlmj = "写字楼面积";
+labelsFinalCode.labelHouse_xzlcszj = "写字楼出售总价";
+labelsFinalCode.labelHouse_xzlzj = "写字楼租金";
+labelsFinalCode.labelHouse_xzlqzfkfs = "求租付款方式";
 
 
 //--------------------------写字楼标签 end

@@ -28,7 +28,8 @@ function managePage({ dispatch, form, managePage }) {
         loadingShadow,
         customerList,
         followModal,
-        bringModal
+        bringModal,
+        record,
     } = managePage;
     //对话框的关闭操作
     const onOkCallBack = () => {
@@ -139,10 +140,10 @@ function managePage({ dispatch, form, managePage }) {
             <Panel title={"客户管理"} />
             <div className="header">
                 <div className="customerDetail">
-                    陈一发（先生）<span className="wantSell">求购</span><span className="wantRent">求租</span>
+                    {record.name}（{record.gender}）<span className="wantSell">求购</span><span className="wantRent">求租</span>
                 </div>
                 <div className="customerController">
-                    客户电话：17692349163
+                    客户电话：{record.phone}
                     <Button style={{ "fontSize": "12px" }} type="primary" onClick={bringCustomer} icon="plus">客户带看</Button>
                     <Button style={{ "fontSize": "12px" }} type="primary" onClick={followCustomer} icon="plus">客户跟进</Button>
                 </div>

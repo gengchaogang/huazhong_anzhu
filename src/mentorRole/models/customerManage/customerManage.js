@@ -23,13 +23,6 @@ const initState = {
         total: 0,
         pageSize: commonFinalCode.pageSize,
         content: [
-            {
-                name: "geng",
-                gender: "男",
-                want: "求购",
-                createDate: "2018/08/30",
-                phone: "17692349163"
-            }
         ],
     },
 };
@@ -40,17 +33,68 @@ export default {
     reducers: {
         setState(state, action) {
             return { ...state, ...action.payload }
-        }
+        },
+        showProcess(state, action) {
+            return { ...state, loadingShadow: true }
+        },
+        hideProcess(state, action) {
+            return { ...state, loadingShadow: false }
+        },
+        showPrompt(state, action) {
+            return {
+                ...state, loadingShadow: false,
+                promptObj: Object.assign({}, state.promptObj, { ...{ type: "error", title: "", visible: true, todo: "closeModal" } },
+                    { ...action.payload })
+            }
+        },
+        togglePrompt(state, action) {
+            return { ...state, promptObj: Object.assign({}, state.promptObj, { ...action.payload }) }
+        },
+        changeVisible(state, action) {
+            return { ...state, ...action.payload }
+        },
+        saveResultData(state, action) {
+            return { ...state, loadingShadow: false, ...action.payload }
+        },
     },
     subscriptions: {
         setup({ dispatch, history }) {
             history.listen(location => {
-
+                dispatch({
+                    type: "getAllCustomerList",
+                    payload: {
+                        pageSize: commonFinalCode.pageSize,
+                        pageNo: 0,
+                    }
+                })
             })
         }
     },
     effects: {
-
+        //获取客户列表/miss-anzhu-broker/customers/findAllCustomerList
+        *getAllCustomerList({ payload }, { put, call, select }) {
+            yield put({
+                type: 'showProcess',
+            });
+            payload.apiName = "/miss-anzhu-broker/customers/findAllCustomerList";
+            const responseObj = yield call(requestApi, { ...payload });
+            var reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                yield put({
+                    type: "saveResultData",
+                    payload: {
+                        customerList: reObj,
+                    }
+                });
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        }
     }
 
 }

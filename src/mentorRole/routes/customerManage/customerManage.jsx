@@ -27,23 +27,33 @@ function customerManage({ dispatch, form, customerManage }) {
         loadingShadow,
         customerList,
     } = customerManage;
-    //对话框的关闭操作
-    const onOkCallBack = () => {
-
-    }
-    const onCancelCallBack = (event) => {
-        event.preventDefault();
-    }
     //表单提交
     const handleSubmit = () => {
-
+        form.validateFields((err, values) => {
+            if (!err) {
+                const payload = {
+                    pageNo: 0,
+                    pageSize: customerList.pageSize,
+                }
+                values.keyword && (payload.keyword = values.keyword);
+                values.intentionType && (payload.intentionType = values.intentionType);
+                if (values.dateTimePicker) {
+                    payload.startTime = new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd');
+                    payload.endTime = new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd');
+                }
+                dispatch({
+                    type: "customerManage/getAllCustomerList",
+                    payload
+                })
+            }
+        });
     }
     //添加客户
     const addCustomer = () => {
         dispatch(routerRedux.push({
             pathname: '/customerManage/editPage',
             state: {
-                record: {}
+                id: null
             }
         }))
     }
@@ -58,7 +68,20 @@ function customerManage({ dispatch, form, customerManage }) {
         onChange: (page, pageSize) => {
             form.validateFields((err, values) => {
                 if (!err) {
-
+                    const payload = {
+                        pageNo: page - 1,
+                        pageSize: pageSize,
+                    }
+                    values.keyword && (payload.keyword = values.keyword);
+                    values.intentionType && (payload.intentionType = values.intentionType);
+                    if (values.dateTimePicker) {
+                        payload.startTime = new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd');
+                        payload.endTime = new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd');
+                    }
+                    dispatch({
+                        type: "customerManage/getAllCustomerList",
+                        payload
+                    })
                 }
             })
         }
@@ -75,10 +98,13 @@ function customerManage({ dispatch, form, customerManage }) {
             dataIndex: 'phone',
         }, {
             title: '需求方式',
-            dataIndex: 'want',
+            dataIndex: "intentionTypes"
         }, {
             title: '创建时间',
             dataIndex: 'createDate',
+            render: (text, record, index) => {
+                return new Date(text).format('yyyy.MM.dd hh:mm:ss');
+            }
         }, {
             title: '操作',
             render: (text, record, index) => {
@@ -101,10 +127,54 @@ function customerManage({ dispatch, form, customerManage }) {
         dispatch(routerRedux.push({
             pathname: '/customerManage/editPage',
             state: {
-                record: record
+                id: record.id
             }
         }))
     }
+    Date.prototype.format = function (format) {
+        var o = {
+            "M+": this.getMonth() + 1, //month
+            "d+": this.getDate(),    //day
+            "h+": this.getHours(),   //hour
+            "m+": this.getMinutes(), //minute
+            "s+": this.getSeconds(), //second
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds() //millisecond
+        }
+        if (/(y+)/.test(format)) format = format.replace(RegExp.$1,
+            (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o) if (new RegExp("(" + k + ")").test(format))
+            format = format.replace(RegExp.$1,
+                RegExp.$1.length == 1 ? o[k] :
+                    ("00" + o[k]).substr(("" + o[k]).length));
+        return format;
+    }
+    // PromptModal
+    const onOkCallBack = () => {
+        if (promptObj.todo === 'closeModal') {
+            dispatch({
+                type: "allHouseResourceSell/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+        }
+        if (promptObj.todo === 'closeModalAndWritePass') {
+            dispatch({
+                type: "allHouseResourceSell/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+            dispatch({
+                type: "allHouseResourceSell/changeVisible",
+                payload: {
+                    tudiGongVisible: true,
+                }
+            })
+        }
+    }
+    const onCancelCallBack = () => { }
     return <div>
         <div className="customerManage">
             <PromptModal {...promptObj} onOk={onOkCallBack} onCancel={onCancelCallBack} />
@@ -130,7 +200,7 @@ function customerManage({ dispatch, form, customerManage }) {
                                 labelCol={{ span: 6 }}
                                 wrapperCol={{ span: 18 }}
                             >
-                                {getFieldDecorator('want', {
+                                {getFieldDecorator('intentionType', {
                                     rules: [{ required: false, message: '请选择需求方式' }],
                                 })(
                                     <Select placeholder="请选择需求方式">
