@@ -275,7 +275,8 @@ function ShopsSell({ form, dispatch, mentorShopsSell }) {
           <div className="operation">
             {!isBroker && <span onClick={() => checkeAgent(text, record, index)} className="searchIcon"></span>}
             <span onClick={() => handleEdit(text, record, index)} className="edit"></span>
-            <span onClick={() => handleDelete(text, record, index)} className="delete"></span>
+            <span onClick={() => handleEntrust(text, record, index)} className="entrust">委托</span>
+            <span onClick={() => setHouseState(text, record, index)} className="setHouseState">设置状态</span>
           </div>
         )
       } else if (activeKey === 'unassignedAgent') {
@@ -709,7 +710,7 @@ function ShopsSell({ form, dispatch, mentorShopsSell }) {
                             <RadioGroup onChange={houseStateChange}>
                               <Radio key={0} value="已发布">在售</Radio>
                               <Radio key={1} value="暂缓">暂缓</Radio>
-                              <Radio key={2} value="下架">下架</Radio>
+                              <Radio key={2} value="已下架">下架</Radio>
                             </RadioGroup>
                           )}
                         </FormItem>

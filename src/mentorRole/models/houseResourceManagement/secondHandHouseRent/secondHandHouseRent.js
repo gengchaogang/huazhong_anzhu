@@ -700,6 +700,21 @@ export default {
               houseRoom: currentState.houseRoom,
             }
           });
+        } else if (currentState.activeKey === "publishedHouse") {
+          yield put({
+            type: "getPublishedHouseList",
+            payload: {
+              pageNo: currentState.publishedHousePage.pageNo,
+              pageSize: currentState.publishedHousePage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "住宅",
+              saleWay: "出租",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
         }
       } else {
         yield put({
@@ -750,6 +765,21 @@ export default {
             payload: {
               pageNo: currentState.pausePage.pageNo,
               pageSize: currentState.pausePage.pageSize,
+              //hasBroker:"否",
+              resourcesType: "住宅",
+              saleWay: "出租",
+              isCurrentUser: '是',
+              fullPath: currentState.area,
+              keyword: currentState.resourcesNumber,
+              houseRoom: currentState.houseRoom,
+            }
+          });
+        } else if (currentState.activeKey === "publishedHouse") {
+          yield put({
+            type: "getPublishedHouseList",
+            payload: {
+              pageNo: currentState.publishedHousePage.pageNo,
+              pageSize: currentState.publishedHousePage.pageSize,
               //hasBroker:"否",
               resourcesType: "住宅",
               saleWay: "出租",
