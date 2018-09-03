@@ -246,7 +246,7 @@ const menuKeys_borker = [ //经纪人登陆显示的左侧导航
     child: [
       {
         title: '客户管理',
-        key: '/customerManage/customerManage',
+        key: '/customerManage',
       }
     ]
   },

@@ -19,7 +19,15 @@ const initState = {
         type: '',
         todo: '',
     },
-    customerList: {
+    followUpList: {
+        pageNo: 1,
+        total: 0,
+        pageSize: commonFinalCode.pageSize,
+        content: [
+
+        ],
+    },
+    guideList: {
         pageNo: 1,
         total: 0,
         pageSize: commonFinalCode.pageSize,
@@ -77,12 +85,65 @@ export default {
                             record: location.state.record
                         }
                     })
+                    dispatch({
+                        type: "findAllFollowUpProcess",
+                        payload: location.state.record
+                    })
+                    dispatch({
+                        type: "findAllGuide",
+                        payload: location.state.record
+                    })
                 }
             })
         }
     },
     effects: {
-
+        //根据客户ID 查询跟进miss-anzhu-broker/followUp/findAllFollowUpProcess
+        *findAllFollowUpProcess({ payload }, { put, call, select }) {
+            const responseObj = yield call(requestApi, {
+                apiName: "/miss-anzhu-broker/followUp/findAllFollowUpProcess",
+                customerId: payload.id
+            });
+            const reObj = analysisUtil.analysisDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                yield put({
+                    type: 'saveResultData',
+                    payload: {
+                        followUpList: reObj
+                    }
+                })
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        },
+        //查询带看列表 miss-anzhu-broker/customerBroker/findAllGuideProcess
+        *findAllGuide({ payload }, { put, call, select }) {
+            const responseObj = yield call(requestApi, {
+                apiName: "/miss-anzhu-broker/customerBroker/findAllGuide",
+                customerId: payload.id
+            });
+            const reObj = analysisUtil.analysisDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                yield put({
+                    type: 'saveResultData',
+                    payload: {
+                        guideList: reObj
+                    }
+                })
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        },
     }
 
 }

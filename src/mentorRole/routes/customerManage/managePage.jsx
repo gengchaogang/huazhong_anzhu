@@ -26,18 +26,11 @@ function managePage({ dispatch, form, managePage }) {
         currentTab,
         promptObj,
         loadingShadow,
-        customerList,
+        followUpList,
         followModal,
         bringModal,
         record,
     } = managePage;
-    //对话框的关闭操作
-    const onOkCallBack = () => {
-
-    }
-    const onCancelCallBack = (event) => {
-        event.preventDefault();
-    }
     //表单提交
     const handleSubmit = () => {
 
@@ -47,37 +40,39 @@ function managePage({ dispatch, form, managePage }) {
 
     }
     //客户数据分页
-    const paginationCustomerList = {
+    const paginationFollowUpList = {
         showQuickJumper: commonFinalCode.showQuickJumper,
-        pageSize: customerList.pageSize,
-        current: customerList.current,
+        pageSize: followUpList.pageSize,
+        current: followUpList.current,
         defaultCurrent: 1,
-        total: customerList.total,
+        total: followUpList.total,
         showTotal: total => `共${total}条数据`,
         onChange: (page, pageSize) => {
             form.validateFields((err, values) => {
                 if (!err) {
+                    dispatch({
 
+                    })
                 }
             })
         }
     }
     const columns = [
         {
-            title: '客户姓名',
-            dataIndex: 'name',
+            title: '意向房源',
+            dataIndex: 'houseBaseInfo',
         }, {
-            title: '性别',
-            dataIndex: 'gender',
+            title: '房源类型',
+            dataIndex: 'houseType',
         }, {
-            title: '电话',
-            dataIndex: 'phone',
+            title: '跟进方式',
+            dataIndex: 'followUpName',
         }, {
-            title: '需求方式',
-            dataIndex: 'want',
+            title: '跟进内容',
+            dataIndex: 'message',
         }, {
-            title: '创建时间',
-            dataIndex: 'createDate',
+            title: '跟进时间',
+            dataIndex: 'followUpTime',
         },
     ]
     //跟进和带看的modal等方法
@@ -133,6 +128,32 @@ function managePage({ dispatch, form, managePage }) {
             }
         })
     }
+    // PromptModal
+    const onOkCallBack = () => {
+        if (promptObj.todo === 'closeModal') {
+            dispatch({
+                type: "managePage/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+        }
+        if (promptObj.todo === 'closeModalAndWritePass') {
+            dispatch({
+                type: "managePage/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+            dispatch({
+                type: "managePage/changeVisible",
+                payload: {
+                    tudiGongVisible: true,
+                }
+            })
+        }
+    }
+    const onCancelCallBack = () => { }
     return <div>
         <div className="managePage">
             <PromptModal {...promptObj} onOk={onOkCallBack} onCancel={onCancelCallBack} />
@@ -183,7 +204,13 @@ function managePage({ dispatch, form, managePage }) {
                                         <Button type='primary' htmlType="submit" size='large'>查询</Button>
                                     </Col>
                                     <Col span={10}>
-                                        <Button type='reset' htmlType="submit" size='large'>重置</Button>
+                                        <Button
+                                            type='reset'
+                                            size='large'
+                                            onClick={() => {
+                                                form.resetFields()
+                                            }}
+                                        >重置</Button>
                                     </Col>
                                 </Row>
                             </Col>
@@ -271,9 +298,9 @@ function managePage({ dispatch, form, managePage }) {
                         >
                             <Table
                                 loading={false}
-                                dataSource={customerList.content}
+                                dataSource={followUpList.content}
                                 columns={columns}
-                                pagination={paginationCustomerList}
+                                pagination={paginationFollowUpList}
                             >
 
                             </Table>
@@ -284,9 +311,9 @@ function managePage({ dispatch, form, managePage }) {
                         >
                             <Table
                                 loading={false}
-                                dataSource={customerList.content}
+                                dataSource={followUpList.content}
                                 columns={columns}
-                                pagination={paginationCustomerList}
+                                pagination={paginationFollowUpList}
                             >
 
                             </Table>

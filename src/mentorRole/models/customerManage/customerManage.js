@@ -60,13 +60,15 @@ export default {
     subscriptions: {
         setup({ dispatch, history }) {
             history.listen(location => {
-                dispatch({
-                    type: "getAllCustomerList",
-                    payload: {
-                        pageSize: commonFinalCode.pageSize,
-                        pageNo: 0,
-                    }
-                })
+                if (location.pathname === '/customerManage') {
+                    dispatch({
+                        type: "getAllCustomerList",
+                        payload: {
+                            pageSize: commonFinalCode.pageSize,
+                            pageNo: 0,
+                        }
+                    })
+                }
             })
         }
     },
