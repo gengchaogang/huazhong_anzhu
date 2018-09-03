@@ -19,6 +19,7 @@ const initState = {
         todo: '',
     },
     eopOptions: [],
+    wantTotal: 1,
 };
 
 export default {
