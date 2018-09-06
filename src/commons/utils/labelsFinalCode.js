@@ -49,6 +49,7 @@ labelsFinalCode.labelShopsCzts = "商铺出租特色";
 labelsFinalCode.labelShops_czzjdw = "出租租金单位";              // 元/月、元/㎡/月
 labelsFinalCode.labelShops_spmj = "商铺面积";              // 商铺面积
 labelsFinalCode.labelShops_spzj = "商铺租金";              // 商铺租金
+labelsFinalCode.labelShops_spcszj = "商铺出售总价";              // 商铺出售总价
 
 //--------------------------商铺标签 end
 

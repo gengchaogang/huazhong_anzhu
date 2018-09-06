@@ -22,7 +22,6 @@ const RadioGroup = Radio.Group;
 
 function editPage({ dispatch, form, editPage }) {
     const { getFieldDecorator } = form;
-    console.log(editPage);
     const {
         wantTotal,//需求数，最大3，最小1
         promptObj,
@@ -49,6 +48,15 @@ function editPage({ dispatch, form, editPage }) {
     const num = wantTotal;
     const onSelectChange = () => {
 
+    }
+    //提交客户及意向信息
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        form.validateFields((err, values) => {
+            if (!err) {
+                console.log(values);
+            }
+        })
     }
     const addWant = () => {
         form.validateFields((err, values) => {
@@ -142,7 +150,7 @@ function editPage({ dispatch, form, editPage }) {
         {
             labels === null ? <div className="mentorDataLoading">
                 <Spin />
-            </div> : <Form className="editPage">
+            </div> : <Form className="editPage" onSubmit={handleSubmit}>
                     <Panel title={"客户信息"} />
                     <div className="customerInfo">
                         <Row>
@@ -328,16 +336,26 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('sellPrice1', {
                                                 rules: [{ required: false, message: '' }],
+                                                initialValue: want1.budgetUpperLimit ? `${want1.budgetLowerLimit}-${want1.budgetUpperLimit}` : `${want1.budgetLowerLimit}+`,
                                             })(
                                                 <RadioGroup>
                                                     {want1.propertyType === "写字楼" ?
                                                         labels["写字楼出售总价"].map(item => {
                                                             return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                         })
-                                                        :
+                                                        : null
+                                                    }
+                                                    {want1.propertyType === "住宅" ?
                                                         labels["住宅出售总价"].map(item => {
                                                             return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                         })
+                                                        : null
+                                                    }
+                                                    {want1.propertyType === "商铺" ?
+                                                        labels["商铺出售总价"].map(item => {
+                                                            return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
+                                                        })
+                                                        : null
                                                     }
                                                 </RadioGroup>
                                             )}
@@ -348,7 +366,7 @@ function editPage({ dispatch, form, editPage }) {
                                             labelCol={{ span: 2 }}
                                             wrapperCol={{ span: 10 }}
                                         >
-                                            {getFieldDecorator('paySellType1', {
+                                            {getFieldDecorator('paymentMethod1', {
                                                 initialValue: want1.paymentMethod,
                                                 rules: [{ required: false, message: '' }],
                                             })(
@@ -441,6 +459,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('shopType1', {
                                                 rules: [{ required: false, message: '' }],
+                                                initialValue: want1.shopType,
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -459,6 +478,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('shopRunType1', {
                                                 rules: [{ required: false, message: '' }],
+                                                initialValue: want1.businessScope,
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -530,8 +550,8 @@ function editPage({ dispatch, form, editPage }) {
                                     </FormItem>
                                 </Col>
                                 {
-                                    wantTotal === 2 ? <Col span={1} onClick={deleteWant} style={{ "cursor": "pointer" }}>
-                                        <Icon type="delete" theme="outlined" theme="filter" style={{ "fontSize": "16px" }} />
+                                    wantTotal === 2 ? <Col span={1} onClick={deleteWant} style={{ "cursor": "pointer" }} title="删除意向">
+                                        <Icon type="delete" style={{ "fontSize": "16px" }} />
                                     </Col> : null
                                 }
                                 <Col span={24}>
@@ -622,17 +642,26 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('sellPrice1', {
                                                     rules: [{ required: false, message: '' }],
-                                                    initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : `${want2.budgetLowerLimit}+`
+                                                    initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : `${want2.budgetLowerLimit}+`,
                                                 })(
                                                     <RadioGroup>
                                                         {want2.propertyType === "写字楼" ?
                                                             labels["写字楼出售总价"].map(item => {
                                                                 return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                             })
-                                                            :
+                                                            : null
+                                                        }
+                                                        {want2.propertyType === "住宅" ?
                                                             labels["住宅出售总价"].map(item => {
                                                                 return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                             })
+                                                            : null
+                                                        }
+                                                        {want2.propertyType === "商铺" ?
+                                                            labels["商铺出售总价"].map(item => {
+                                                                return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
+                                                            })
+                                                            : null
                                                         }
                                                     </RadioGroup>
                                                 )}
@@ -643,7 +672,7 @@ function editPage({ dispatch, form, editPage }) {
                                                 labelCol={{ span: 2 }}
                                                 wrapperCol={{ span: 10 }}
                                             >
-                                                {getFieldDecorator('paySellType2', {
+                                                {getFieldDecorator('paymentMethod2', {
                                                     rules: [{ required: false, message: '' }],
                                                     initialValue: want2.paymentMethod
                                                 })(
@@ -736,6 +765,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('shopType2', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want2.shopType,
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -754,6 +784,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('shopRunType2', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want2.businessScope,
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -825,8 +856,8 @@ function editPage({ dispatch, form, editPage }) {
                                     </FormItem>
                                 </Col>
                                 {
-                                    wantTotal === 3 ? <Col span={1} style={{ "cursor": "pointer" }} onClick={deleteWant}>
-                                        <Icon type="delete" theme="outlined" theme="filter" style={{ "fontSize": "16px" }} />
+                                    wantTotal === 3 ? <Col span={1} style={{ "cursor": "pointer" }} onClick={deleteWant} title="删除意向">
+                                        <Icon type="delete" style={{ "fontSize": "16px" }} />
                                     </Col> : null
                                 }
                                 <Col span={24}>
@@ -864,6 +895,7 @@ function editPage({ dispatch, form, editPage }) {
                                         wrapperCol={{ span: 22 }}
                                     >
                                         {getFieldDecorator('area3', {
+                                            initialValue: want3.areaUpperLimit ? `${want3.areaLowerLimit}-${want3.areaUpperLimit}` : `${want3.areaLowerLimit}+`,
                                             rules: [{ required: false, message: '' }],
                                         })(
                                             <RadioGroup>
@@ -894,6 +926,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('houseRoom3', {
                                                 rules: [{ required: false, message: '' }],
+                                                initialValue: want3.room + ""
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -922,10 +955,19 @@ function editPage({ dispatch, form, editPage }) {
                                                             labels["写字楼出售总价"].map(item => {
                                                                 return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                             })
-                                                            :
+                                                            : null
+                                                        }
+                                                        {want3.propertyType === "住宅" ?
                                                             labels["住宅出售总价"].map(item => {
                                                                 return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
                                                             })
+                                                            : null
+                                                        }
+                                                        {want3.propertyType === "商铺" ?
+                                                            labels["商铺出售总价"].map(item => {
+                                                                return <Radio style={{ "marginBottom": "0" }} key={item.value} value={item.value}>{item.name}</Radio>
+                                                            })
+                                                            : null
                                                         }
                                                     </RadioGroup>
                                                 )}
@@ -936,8 +978,9 @@ function editPage({ dispatch, form, editPage }) {
                                                 labelCol={{ span: 2 }}
                                                 wrapperCol={{ span: 10 }}
                                             >
-                                                {getFieldDecorator('paySellType3', {
+                                                {getFieldDecorator('paymentMethod3', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want3.paymentMethod
                                                 })(
                                                     <RadioGroup>
                                                         <Radio style={{ "marginBottom": "0" }} key="全款" value="全款">全款</Radio>
@@ -984,6 +1027,7 @@ function editPage({ dispatch, form, editPage }) {
                                                 >
                                                     {getFieldDecorator('payRentType3', {
                                                         rules: [{ required: false, message: '' }],
+                                                        initialValue: want3.paymentMethod
                                                     })(
                                                         <RadioGroup>
                                                             {
@@ -1026,6 +1070,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('shopType3', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want3.shopType,
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -1044,6 +1089,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('shopRunType3', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want3.businessScope,
                                                 })(
                                                     <RadioGroup>
                                                         {

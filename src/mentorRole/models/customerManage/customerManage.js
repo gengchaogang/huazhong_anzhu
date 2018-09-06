@@ -25,6 +25,7 @@ const initState = {
         content: [
         ],
     },
+    isBroker: true
 };
 
 export default {
@@ -62,6 +63,9 @@ export default {
             history.listen(location => {
                 if (location.pathname === '/customerManage') {
                     dispatch({
+                        type: 'getIsBroker'
+                    })
+                    dispatch({
                         type: "getAllCustomerList",
                         payload: {
                             pageSize: commonFinalCode.pageSize,
@@ -96,7 +100,16 @@ export default {
                     }
                 });
             }
-        }
+        },
+        *getIsBroker({ payload }, { put, call, select }) {
+            const isBroker = yield select(({ main }) => { return main.isBroker });
+            yield put({
+                type: 'setState',
+                payload: {
+                    isBroker: isBroker
+                }
+            });
+        },
     }
 
 }

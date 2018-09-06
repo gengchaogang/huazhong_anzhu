@@ -26,9 +26,11 @@ function customerManage({ dispatch, form, customerManage }) {
         promptObj,
         loadingShadow,
         customerList,
+        isBroker,
     } = customerManage;
     //表单提交
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         form.validateFields((err, values) => {
             if (!err) {
                 const payload = {
@@ -37,7 +39,7 @@ function customerManage({ dispatch, form, customerManage }) {
                 }
                 values.keyword && (payload.keyword = values.keyword);
                 values.intentionType && (payload.intentionType = values.intentionType);
-                if (values.dateTimePicker) {
+                if (values.dateTimePicker && values.dateTimePicker.length > 1) {
                     payload.startTime = new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd');
                     payload.endTime = new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd');
                 }
@@ -228,7 +230,18 @@ function customerManage({ dispatch, form, customerManage }) {
                                     <Button type='primary' htmlType="submit" size='large'>查询</Button>
                                 </Col>
                                 <Col span={10}>
-                                    <Button type='reset' htmlType="submit" size='large'>重置</Button>
+                                    <Button type='reset' size='large'
+                                        onClick={() => {
+                                            form.resetFields();
+                                            dispatch({
+                                                type: "customerManage/getAllCustomerList",
+                                                payload: {
+                                                    pageNo: 0,
+                                                    pageSize: commonFinalCode.pageSize
+                                                }
+                                            })
+                                        }}
+                                    >重置</Button>
                                 </Col>
                             </Row>
                         </Col>
@@ -237,7 +250,7 @@ function customerManage({ dispatch, form, customerManage }) {
             </div>
             <div className="container">
                 {
-                    true ? <Row style={{ "padding": "10px", "marginTop": "10px" }}>
+                    isBroker ? <Row style={{ "padding": "10px", "marginTop": "10px" }}>
                         <Col span={24}>
                             <Button size='large' type="primary" onClick={addCustomer} icon="plus">新增客户</Button>
                         </Col>

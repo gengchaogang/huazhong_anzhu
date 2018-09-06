@@ -6,6 +6,7 @@ import commonFinalCode from '../../../commons/utils/commonFinalCode.js';
 import commonUtil from '../../../commons/utils/commonUtil.js';
 import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import lodash from 'lodash';
+import managePage from '../../routes/customerManage/managePage';
 
 const initState = {
     currentTab: "followCustomerTab",
@@ -36,10 +37,12 @@ const initState = {
         ],
     },
     bringModal: {
-        visible: false
+        visible: false,
+        required: false,
     },
     followModal: {
-        visible: false
+        visible: false,
+        required: false,
     },
     record: null,//客户信息
 };
@@ -78,19 +81,8 @@ export default {
         setup({ dispatch, history }) {
             history.listen(location => {
                 if (location.pathname === '/customerManage/managePage') {
-                    console.log(location.state.record);
                     dispatch({
-                        type: "setState",
-                        payload: {
-                            record: location.state.record
-                        }
-                    })
-                    dispatch({
-                        type: "findAllFollowUpProcess",
-                        payload: location.state.record
-                    })
-                    dispatch({
-                        type: "findAllGuide",
+                        type: "initData",
                         payload: location.state.record
                     })
                 }
@@ -98,20 +90,78 @@ export default {
         }
     },
     effects: {
-        //根据客户ID 查询跟进miss-anzhu-broker/followUp/findAllFollowUpProcess
+        *initData({ payload }, { put, call, select }) {
+            yield put({
+                type: "showProcess"
+            })
+            yield put({
+                type: "setState",
+                payload: {
+                    record: payload
+                }
+            })
+            yield put({
+                type: "loadList",
+                payload: {
+                    id: payload.id,
+                    type: "跟进",
+                    currentTab: "followCustomerTab",
+                }
+            })
+        },
+        //加载数据的公用方法
+        *loadList({ payload }, { put, call, select }) {
+            const currentState = yield select(({ managePage }) => managePage);
+            const pageSize = commonFinalCode.pageSize;
+            const customerId = payload.id;
+            let type;
+            const pageNo = payload.pageNo || 0;
+            if (payload.currentTab === "followCustomerTab") {
+                type = "跟进";
+            } else if (payload.currentTab === "bringCustomerTab") {
+                type = "带看";
+            } else {
+                return;
+            }
+            yield put({
+                type: "findAllFollowUpProcess",
+                payload: {
+                    pageNo,
+                    pageSize,
+                    type,
+                    customerId,
+                    startTime: currentState.startTime,
+                    endTime: currentState.endTime,
+                    keyword: currentState.keyword,
+                }
+            })
+        },
+        //根据客户ID和type  查询跟进或带看miss-anzhu-broker/followUp/findAllFollowUpProcess
         *findAllFollowUpProcess({ payload }, { put, call, select }) {
+            yield put({
+                type: "showProcess",
+            })
             const responseObj = yield call(requestApi, {
                 apiName: "/miss-anzhu-broker/followUp/findAllFollowUpProcess",
-                customerId: payload.id
+                ...payload
             });
-            const reObj = analysisUtil.analysisDataResponse(responseObj);
+            const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
             if (reObj.isSuccess) {
-                yield put({
-                    type: 'saveResultData',
-                    payload: {
-                        followUpList: reObj
-                    }
-                })
+                if (payload.type === "跟进") {
+                    yield put({
+                        type: 'saveResultData',
+                        payload: {
+                            followUpList: reObj
+                        }
+                    })
+                } else {
+                    yield put({
+                        type: 'saveResultData',
+                        payload: {
+                            guideList: reObj
+                        }
+                    })
+                }
             } else {
                 yield put({
                     type: 'showPrompt',
@@ -121,26 +171,64 @@ export default {
                 });
             }
         },
-        //查询带看列表 miss-anzhu-broker/customerBroker/findAllGuideProcess
-        *findAllGuide({ payload }, { put, call, select }) {
+        //添加跟进miss-anzhu-broker/followUp/addFollowProcess
+        *addFollowProcess({ payload }, { put, call, select }) {
+            yield put({
+                type: "showProcess",
+            })
+            const currentState = yield select(({ managePage }) => { return managePage });
             const responseObj = yield call(requestApi, {
-                apiName: "/miss-anzhu-broker/customerBroker/findAllGuide",
-                customerId: payload.id
+                apiName: "/miss-anzhu-broker/followUp/addFollowProcessForPC",
+                ...payload
             });
-            const reObj = analysisUtil.analysisDataResponse(responseObj);
-            if (reObj.isSuccess) {
-                yield put({
-                    type: 'saveResultData',
-                    payload: {
-                        guideList: reObj
+            yield put({
+                type: 'hideProcess'
+            })
+            yield put({
+                type: 'setState',
+                payload: {
+                    followModal: {
+                        visible: false,
+                        required: false
+                    },
+                    bringModal: {
+                        visible: false,
+                        required: false
                     }
-                })
-            } else {
+                }
+            });
+            if (responseObj.data.data.result === true) {
+                if (currentState.currentTab === "followCustomerTab") {
+                    yield put({
+                        type: 'loadList',
+                        payload: {
+                            currentTab: "followCustomerTab",
+                            pageSize: commonFinalCode.pageSize,
+                            pageNo: 0,
+                            type: "跟进",
+                            id: currentState.record.id,
+                            startTime: null,
+                            endTime: null
+                        }
+                    });
+                } else if (currentState.currentTab === "bringCustomerTab") {
+                    yield put({
+                        type: 'loadList',
+                        payload: {
+                            currentTab: "bringCustomerTab",
+                            pageSize: commonFinalCode.pageSize,
+                            pageNo: 0,
+                            type: "带看",
+                            id: currentState.record.id,
+                            startTime: null,
+                            endTime: null
+                        }
+                    });
+                }
+            } else if (responseObj.data.data.result === false) {
                 yield put({
-                    type: 'showPrompt',
-                    payload: {
-                        description: `${reObj.msg}`
-                    }
+                    type: 'addFollowProcess',
+                    payload
                 });
             }
         },

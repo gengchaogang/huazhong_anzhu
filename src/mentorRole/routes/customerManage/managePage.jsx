@@ -27,13 +27,45 @@ function managePage({ dispatch, form, managePage }) {
         promptObj,
         loadingShadow,
         followUpList,
+        guideList,
         followModal,
         bringModal,
         record,
     } = managePage;
     //表单提交
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        form.validateFields((err, values) => {
+            if (!err) {
+                const keyword = values.keyword ? values.keyword : null;
+                const startTime = values.dateTimePicker[0] ? new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd') : null;
+                const endTime = values.dateTimePicker[1] ? new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd') : null;
+                dispatch({
+                    type: "managePage/setState",
+                    payload: {
+                        keyword,
+                        startTime,
+                        endTime,
+                    }
+                })
+                let type;
+                if (currentTab === "followCustomerTab") {
+                    type = "跟进";
+                } else if (currentTab == "bringCustomerTab") {
+                    type = "带看";
+                }
+                dispatch({
+                    type: "managePage/loadList",
+                    payload: {
+                        pageNo: 0,
+                        pageSize: commonFinalCode.pageSize,
+                        id: record.id,
+                        type,
+                        currentTab: currentTab,
+                    }
+                })
+            }
+        })
     }
     //添加客户
     const addCustomer = () => {
@@ -51,13 +83,63 @@ function managePage({ dispatch, form, managePage }) {
             form.validateFields((err, values) => {
                 if (!err) {
                     dispatch({
-
+                        type: "managePage/loadList",
+                        payload: {
+                            pageNo: page - 1,
+                            pageSize: commonFinalCode.pageSize,
+                            id: record.id,
+                            type: "跟进",
+                            currentTab: "followCustomerTab",
+                        }
                     })
                 }
             })
         }
     }
-    const columns = [
+    //客户数据分页
+    const paginationGuideList = {
+        showQuickJumper: commonFinalCode.showQuickJumper,
+        pageSize: guideList.pageSize,
+        current: guideList.current,
+        defaultCurrent: 1,
+        total: guideList.total,
+        showTotal: total => `共${total}条数据`,
+        onChange: (page, pageSize) => {
+            form.validateFields((err, values) => {
+                if (!err) {
+                    dispatch({
+                        type: "managePage/loadList",
+                        payload: {
+                            pageNo: page - 1,
+                            pageSize: commonFinalCode.pageSize,
+                            id: record.id,
+                            type: "带看",
+                            currentTab: "bringCustomerTab",
+                        }
+                    })
+                }
+            })
+        }
+    }
+    const columnsFollow = [
+        {
+            title: '意向房源',
+            dataIndex: 'houseBaseInfo',
+        }, {
+            title: '房源类型',
+            dataIndex: 'houseType',
+        }, {
+            title: '跟进方式',
+            dataIndex: 'followUpName',
+        }, {
+            title: '跟进内容',
+            dataIndex: 'message',
+        }, {
+            title: '跟进时间',
+            dataIndex: 'followUpTime',
+        },
+    ];
+    const columnsGuide = [
         {
             title: '意向房源',
             dataIndex: 'houseBaseInfo',
@@ -77,24 +159,81 @@ function managePage({ dispatch, form, managePage }) {
     ]
     //跟进和带看的modal等方法
     const bringCustomer = () => {
-
+        dispatch({
+            type: "managePage/setState",
+            payload: {
+                bringModal: {
+                    visible: true,
+                    required: true
+                }
+            }
+        })
     }
     const followCustomer = () => {
         dispatch({
             type: "managePage/setState",
             payload: {
                 followModal: {
-                    visible: true
+                    visible: true,
+                    required: true
                 }
             }
         })
     }
+    const followSubmit = () => {
+        form.validateFields((err, values) => {
+            if (!err) {
+                dispatch({
+                    type: "managePage/addFollowProcess",
+                    payload: {
+                        customerId: record.id,
+                        houseNum: values.houseNum,
+                        processWay: values.processWay,
+                        message: values.message,
+                        type: "跟进"
+                    }
+                })
+                form.resetFields(["houseNum", "processWay", "message"]);
+            }
+        });
+    }
     const followModalClose = () => {
+        form.resetFields(["houseNum", "processWay", "message"]);
         dispatch({
             type: "managePage/setState",
             payload: {
                 followModal: {
-                    visible: false
+                    visible: false,
+                    required: false
+                }
+            }
+        })
+    }
+    const guideSubmit = () => {
+        form.validateFields((err, values) => {
+            if (!err) {
+                dispatch({
+                    type: "managePage/addFollowProcess",
+                    payload: {
+                        customerId: record.id,
+                        houseNum: values.houseNum,
+                        processWay: values.processWay,
+                        message: values.message,
+                        type: "带看"
+                    }
+                })
+                form.resetFields(["houseNum", "processWay", "message"]);
+            }
+        });
+    }
+    const bringModalClose = () => {
+        form.resetFields(["houseNum", "processWay", "message"]);
+        dispatch({
+            type: "managePage/setState",
+            payload: {
+                bringModal: {
+                    visible: false,
+                    required: false
                 }
             }
         })
@@ -109,22 +248,35 @@ function managePage({ dispatch, form, managePage }) {
     const handleSelectBlur = () => {
 
     }
-    const showCommunityData = (data) => {//显示联想结果
-        if (data.length) {
-            return data.map((item, index) => {
-                return (<Option key={item.id} value={item.name}>{item.name}</Option>)
-            })
-        }
-    }
+
     const handleFollowType = () => {
 
     }
     //tab切换事件
     const onTabsChange = (key) => {
+        let type;
+        if (key === "followCustomerTab") {
+            type = "跟进";
+        } else {
+            type = "带看";
+        }
         dispatch({
             type: "managePage/setState",
             payload: {
                 currentTab: key
+            }
+        })
+        form.resetFields();
+        dispatch({
+            type: "managePage/loadList",
+            payload: {
+                currentTab: key,
+                pageSize: commonFinalCode.pageSize,
+                pageNo: 0,
+                type,
+                id: record.id,
+                startTime: null,
+                endTime: null
             }
         })
     }
@@ -153,6 +305,24 @@ function managePage({ dispatch, form, managePage }) {
             })
         }
     }
+    Date.prototype.format = function (format) {
+        var o = {
+            "M+": this.getMonth() + 1, //month
+            "d+": this.getDate(),    //day
+            "h+": this.getHours(),   //hour
+            "m+": this.getMinutes(), //minute
+            "s+": this.getSeconds(), //second
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds() //millisecond
+        }
+        if (/(y+)/.test(format)) format = format.replace(RegExp.$1,
+            (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o) if (new RegExp("(" + k + ")").test(format))
+            format = format.replace(RegExp.$1,
+                RegExp.$1.length == 1 ? o[k] :
+                    ("00" + o[k]).substr(("" + o[k]).length));
+        return format;
+    }
     const onCancelCallBack = () => { }
     return <div>
         <div className="managePage">
@@ -161,7 +331,15 @@ function managePage({ dispatch, form, managePage }) {
             <Panel title={"客户管理"} />
             <div className="header">
                 <div className="customerDetail">
-                    {record.name}（{record.gender}）<span className="wantSell">求购</span><span className="wantRent">求租</span>
+                    {record.name}（{record.gender}）{["求购", "求租"].filter(item => {
+                        return record.intentionTypes.indexOf(item) !== -1
+                    }).map((item, index) => {
+                        if (item === "求租") {
+                            return <span className="wantRent">{item}</span>
+                        } else if (item === "求购") {
+                            return <span className="wantSell">{item}</span>
+                        }
+                    })}
                 </div>
                 <div className="customerController">
                     客户电话：{record.phone}
@@ -179,9 +357,9 @@ function managePage({ dispatch, form, managePage }) {
                                     wrapperCol={{ span: 19 }}
                                 >
                                     {getFieldDecorator('keyword', {
-                                        rules: [{ required: false, message: '请选择需求方式' }],
+                                        rules: [{ required: false, message: '' }],
                                     })(
-                                        <Input placeholder="搜索客户名称" className="searchName" size='large' />
+                                        <Input placeholder="按关键字搜索" className="searchName" size='large' />
                                     )}
                                 </FormItem>
                             </Col>
@@ -208,7 +386,31 @@ function managePage({ dispatch, form, managePage }) {
                                             type='reset'
                                             size='large'
                                             onClick={() => {
-                                                form.resetFields()
+                                                form.resetFields();
+                                                dispatch({
+                                                    type: 'managePage/setState',
+                                                    payload: {
+                                                        startTime: null,
+                                                        endTime: null,
+                                                        keyword: null
+                                                    }
+                                                })
+                                                let type;
+                                                if (currentTab === "followCustomerTab") {
+                                                    type = "跟进"
+                                                } else if (currentTab === "bringCustomerTab") {
+                                                    type = "带看"
+                                                }
+                                                dispatch({
+                                                    type: "managePage/loadList",
+                                                    payload: {
+                                                        pageNo: 0,
+                                                        pageSize: commonFinalCode.pageSize,
+                                                        id: record.id,
+                                                        type,
+                                                        currentTab: currentTab,
+                                                    }
+                                                })
                                             }}
                                         >重置</Button>
                                     </Col>
@@ -225,27 +427,17 @@ function managePage({ dispatch, form, managePage }) {
                                 <Row style={{ "paddingBottom": "15px", "marginTop": "-20px" }}>
                                     <Col span={24}>
                                         <FormItem label="客户意向房源" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
-                                            {getFieldDecorator('wantHouse', {
-                                                rules: [{ required: true, message: '请选择客户意向房源' }],
+                                            {getFieldDecorator('houseNum', {
+                                                rules: [{ required: followModal.required, message: '请输入客户意向房源编号' }],
                                             })(
-                                                <Select
-                                                    onChange={handleKeywordChange}
-                                                    mode="combobox"
-                                                    optionFilterProp="children"
-                                                    optionLabelProp="children"
-                                                    onSelect={handleSelect}
-                                                    onBlur={handleSelectBlur}
-                                                    placeholder='请选择或输入小区名称!'
-                                                >
-                                                    {showCommunityData([])}
-                                                </Select>
+                                                <Input placeholder="请输入客户意向房源编号" size='large' />
                                             )}
                                         </FormItem>
                                     </Col>
                                     <Col span={24}>
                                         <FormItem label="选择跟进方式" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
-                                            {getFieldDecorator('followType', {
-                                                rules: [{ required: true, message: '请选择跟进方式' }],
+                                            {getFieldDecorator('processWay', {
+                                                rules: [{ required: followModal.required, message: '请选择跟进方式' }],
                                             })(
                                                 <Select
                                                     placeholder='请选择跟进方式!'
@@ -261,8 +453,8 @@ function managePage({ dispatch, form, managePage }) {
                                     </Col>
                                     <Col span={24}>
                                         <FormItem label="填写跟进内容" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
-                                            {getFieldDecorator('followType', {
-                                                rules: [{ required: true, message: '请填写跟进内容' }],
+                                            {getFieldDecorator('message', {
+                                                rules: [{ required: followModal.required, message: '请填写跟进内容' }],
                                             })(
                                                 <Input type="textarea" rows={4} placeholder='请填写跟进内容！' />
                                             )}
@@ -271,7 +463,64 @@ function managePage({ dispatch, form, managePage }) {
                                 </Row>
                                 <Row>
                                     <Col span={3} offset={16}>
-                                        <Button type='primary' htmlType="submit" style={{ "fontSize": "12px" }}>保存</Button>
+                                        <Button type='primary' style={{ "fontSize": "12px" }} onClick={followSubmit}>保存</Button>
+                                    </Col>
+                                    <Col span={3} offset={2}>
+                                        <Button
+                                            onClick={followModalClose}
+                                            style={{ "fontSize": "12px" }}
+                                        >取消</Button>
+                                    </Col>
+                                </Row>
+                            </DxPanel>
+                        </Modal>
+                        {/* 带看弹窗  DxPanel公用组件 */}
+                        <Modal
+                            visible={bringModal.visible}
+                            footer={false}
+                            onCancel={bringModalClose}
+                        >
+                            <DxPanel title="客户带看">
+                                <Row style={{ "paddingBottom": "15px", "marginTop": "-20px" }}>
+                                    <Col span={24}>
+                                        <FormItem label="客户意向房源" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
+                                            {getFieldDecorator('houseNum', {
+                                                rules: [{ required: bringModal.required, message: '请选择客户意向房源' }],
+                                            })(
+                                                <Input placeholder="请输入客户意向房源" size='large' />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={24}>
+                                        <FormItem label="选择跟进方式" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
+                                            {getFieldDecorator('processWay', {
+                                                rules: [{ required: bringModal.required, message: '请选择跟进方式' }],
+                                            })(
+                                                <Select
+                                                    placeholder='请选择跟进方式!'
+                                                >
+                                                    <Option value="来电">来电</Option>
+                                                    <Option value="去电">去电</Option>
+                                                    <Option value="到访">到访</Option>
+                                                    <Option value="接待">接待</Option>
+                                                    <Option value="其他">其他</Option>
+                                                </Select>
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={24}>
+                                        <FormItem label="填写跟进内容" labelCol={{ span: 24 }} wrapperCol={{ span: 24 }}>
+                                            {getFieldDecorator('message', {
+                                                rules: [{ required: bringModal.required, message: '请填写跟进内容' }],
+                                            })(
+                                                <Input type="textarea" rows={4} placeholder='请填写跟进内容！' />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col span={3} offset={16}>
+                                        <Button type='primary' style={{ "fontSize": "12px" }} onClick={guideSubmit}>保存</Button>
                                     </Col>
                                     <Col span={3} offset={2}>
                                         <Button
@@ -299,7 +548,7 @@ function managePage({ dispatch, form, managePage }) {
                             <Table
                                 loading={false}
                                 dataSource={followUpList.content}
-                                columns={columns}
+                                columns={columnsFollow}
                                 pagination={paginationFollowUpList}
                             >
 
@@ -311,9 +560,9 @@ function managePage({ dispatch, form, managePage }) {
                         >
                             <Table
                                 loading={false}
-                                dataSource={followUpList.content}
-                                columns={columns}
-                                pagination={paginationFollowUpList}
+                                dataSource={guideList.content}
+                                columns={columnsGuide}
+                                pagination={paginationGuideList}
                             >
 
                             </Table>

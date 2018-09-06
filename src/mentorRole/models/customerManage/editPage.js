@@ -63,6 +63,10 @@ const typeGroups = [
     },
     {
         "areaPath": "",
+        "typeName": labelsFinalCode.labelShops_spcszj,    // 商铺出售总价
+    },
+    {
+        "areaPath": "",
         "typeName": labelsFinalCode.labelHouse_xzlzj,    // 写字楼租金
     },
     {
@@ -151,6 +155,10 @@ export default {
             yield put({
                 type: "showProcess"
             });
+            yield put({
+                type: "setState",
+                payload: initState
+            })
             // 加载所在区域信息
             yield put({
                 type: "getEopOptions"
