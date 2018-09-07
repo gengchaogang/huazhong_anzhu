@@ -140,7 +140,18 @@ const menuKeys = [  //导师登陆时显示的左侧导航
         key: '/businessManagement/businessInfos',
       }
     ],
-  }
+  },
+  {
+    title: '客户管理',
+    icon: jjrgl,
+    key: '/customerManage',
+    child: [
+      {
+        title: '客户列表',
+        key: '/customerManage',
+      }
+    ]
+  },
 ];
 const businessKeys = [  //导师登陆时状态为审核失败显示的左侧导航
   {
@@ -226,6 +237,16 @@ const menuKeys_borker = [ //经纪人登陆显示的左侧导航
       }, {
         title: '写字楼出租',
         key: '/houseResourceRentManagement/officeRent',
+      }
+    ]
+  }, {
+    title: '客户管理',
+    icon: jjrgl,
+    key: '/customerManage',
+    child: [
+      {
+        title: '客户管理',
+        key: '/customerManage',
       }
     ]
   },
