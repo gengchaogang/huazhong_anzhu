@@ -55,6 +55,116 @@ function editPage({ dispatch, form, editPage }) {
         form.validateFields((err, values) => {
             if (!err) {
                 console.log(values);
+                let price1;
+                let price2;
+                let price3;
+                if (want1.type === "求租") {
+                    price1 = values.rentPrice1;
+                } else if (want1.type === "求购") {
+                    price1 = values.sellPrice1;
+                }
+                const param = {
+                    name: values.customerName,
+                    idNumber: values.customerID ? values.customerID : null,
+                    phone: values.phone,
+                    gender: values.gender,
+                    level: values.level,
+                    intentionList: [
+                        {
+                            type: values.wantType1,
+                            propertyType: values.propertyType1,
+                            city: values.fullPath1 ? values.fullPath1.join('/') : null,
+                            rentType: values.rentType1 ? values.rentType1 : null,
+                            room: values.houseRoom1 ? values.houseRoom1 : null,
+                            shopType: values.shopType1 ? values.shopType1 : null,
+                            officeBuildingType: values.officeType1 ? values.officeType1 : null,
+                            areaLowerLimit: values.area1 ? (values.area1.indexOf('+') === -1 ? values.area1.split('-')[0] : values.area1) : null,
+                            areaUpperLimit: values.area1 ? (values.area1.indexOf('+') === -1 ? values.area1.split('-')[1] : null) : null,
+                            budgetLowerLimit: price1 ? (price1.indexOf('+') === -1 ? price1.split('-')[0] : price1) : null,
+                            budgetUpperLimit: price1 ? (price1.indexOf('+') === -1 ? price1.split('-')[1] : null) : null,
+                            businessScope: values.shopRunType1 ? values.shopRunType1 : null,
+                            canRegister: values.canRegister1 ? values.canRegister1 : null,
+                            paymentMethod: values.paymentMethod1 ? values.paymentMethod1 : null,
+                        }
+                    ]
+                };
+                switch (wantTotal) {
+                    case 2:
+                        if (want2.type === "求租") {
+                            price2 = values.rentPrice2;
+                        } else if (want2.type === "求购") {
+                            price2 = values.sellPrice2;
+                        }
+                        param.intentionList.push(
+                            {
+                                type: values.wantType2,
+                                propertyType: values.propertyType2,
+                                city: values.fullPath2 ? values.fullPath2.join('/') : null,
+                                rentType: values.rentType2 ? values.rentType2 : null,
+                                room: values.houseRoom2 ? values.houseRoom2 : null,
+                                shopType: values.shopType2 ? values.shopType2 : null,
+                                officeBuildingType: values.officeType2 ? values.officeType2 : null,
+                                areaLowerLimit: values.area2 ? (values.area2.indexOf('+') === -1 ? values.area2.split('-')[0] : values.area2) : null,
+                                areaUpperLimit: values.area2 ? (values.area2.indexOf('+') === -1 ? values.area2.split('-')[1] : null) : null,
+                                budgetLowerLimit: price2 ? (price2.indexOf('+') === -1 ? price2.split('-')[0] : price2) : null,
+                                budgetUpperLimit: price2 ? (price2.indexOf('+') === -1 ? price2.split('-')[1] : null) : null,
+                                businessScope: values.shopRunType2 ? values.shopRunType2 : null,
+                                canRegister: values.canRegister2 ? values.canRegister2 : null,
+                                paymentMethod: values.paymentMethod2 ? values.paymentMethod2 : null,
+                            }
+                        );
+                        break;
+                    case 3:
+                        if (want3.type === "求租") {
+                            price2 = values.rentPrice2;
+                            price3 = values.rentPrice3;
+                        } else if (want3.type === "求购") {
+                            price2 = values.sellPrice3;
+                            price3 = values.sellPrice3;
+                        }
+                        param.intentionList.push(
+                            {
+                                type: values.wantType2,
+                                propertyType: values.propertyType2,
+                                city: values.fullPath2 ? values.fullPath2.join('/') : null,
+                                rentType: values.rentType2 ? values.rentType2 : null,
+                                room: values.houseRoom2 ? values.houseRoom2 : null,
+                                shopType: values.shopType2 ? values.shopType2 : null,
+                                officeBuildingType: values.officeType2 ? values.officeType2 : null,
+                                areaLowerLimit: values.area2 ? (values.area2.indexOf('+') === -1 ? values.area2.split('-')[0] : values.area2) : null,
+                                areaUpperLimit: values.area2 ? (values.area2.indexOf('+') === -1 ? values.area2.split('-')[1] : null) : null,
+                                budgetLowerLimit: price2 ? (price2.indexOf('+') === -1 ? price2.split('-')[0] : price2) : null,
+                                budgetUpperLimit: price2 ? (price2.indexOf('+') === -1 ? price2.split('-')[1] : null) : null,
+                                businessScope: values.shopRunType2 ? values.shopRunType2 : null,
+                                canRegister: values.canRegister2 ? values.canRegister2 : null,
+                                paymentMethod: values.paymentMethod2 ? values.paymentMethod2 : null,
+                            },
+                            {
+                                type: values.wantType3,
+                                propertyType: values.propertyType3,
+                                city: values.fullPath3 ? values.fullPath3.join('/') : null,
+                                rentType: values.rentType3 ? values.rentType3 : null,
+                                room: values.houseRoom3 ? values.houseRoom3 : null,
+                                shopType: values.shopType3 ? values.shopType3 : null,
+                                officeBuildingType: values.officeType3 ? values.officeType3 : null,
+                                areaLowerLimit: values.area3 ? (values.area3.indexOf('+') === -1 ? values.area3.split('-')[0] : values.area3) : null,
+                                areaUpperLimit: values.area3 ? (values.area3.indexOf('+') === -1 ? values.area3.split('-')[1] : null) : null,
+                                budgetLowerLimit: price3 ? (price3.indexOf('+') === -1 ? price3.split('-')[0] : price3) : null,
+                                budgetUpperLimit: price3 ? (price3.indexOf('+') === -1 ? price3.split('-')[1] : null) : null,
+                                businessScope: values.shopRunType3 ? values.shopRunType3 : null,
+                                canRegister: values.canRegister3 ? values.canRegister3 : null,
+                                paymentMethod: values.paymentMethod3 ? values.paymentMethod3 : null,
+                            }
+                        );
+                        break;
+                    default:
+                        break;
+                }
+                console.log('param', price2);
+                dispatch({
+                    type: 'editPage/saveCustomerInfo',
+                    payload: param
+                })
             }
         })
     }
@@ -145,12 +255,32 @@ function editPage({ dispatch, form, editPage }) {
             }
         })
     }
-
+    // PromptModal
+    const onOkCallBack = () => {
+        if (promptObj.todo === 'closeModal') {
+            dispatch({
+                type: "editPage/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+        }
+        if (promptObj.todo === 'closeModalAndWritePass') {
+            dispatch({
+                type: "editPage/togglePrompt",
+                payload: {
+                    visible: false
+                }
+            })
+        }
+    }
+    const onCancelCallBack = () => { }
     return <div>
         {
             labels === null ? <div className="mentorDataLoading">
                 <Spin />
             </div> : <Form className="editPage" onSubmit={handleSubmit}>
+                    <PromptModal {...promptObj} onOk={onOkCallBack} onCancel={onCancelCallBack} />
                     <Panel title={"客户信息"} />
                     <div className="customerInfo">
                         <Row>
@@ -190,7 +320,10 @@ function editPage({ dispatch, form, editPage }) {
                                 >
                                     {getFieldDecorator('phone', {
                                         initialValue: preInfo ? preInfo.phone : null,
-                                        rules: [{ required: true, message: '请输入手机号码' }],
+                                        rules: [
+                                            { required: true, message: '请输入手机号码' },
+                                            { pattern: /^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199)\d{8}$/, message: '请输入正确的手机号码！' }
+                                        ],
                                     })(
                                         <Input placeholder="手机号码" size='large' />
                                     )}
@@ -202,7 +335,10 @@ function editPage({ dispatch, form, editPage }) {
                                     wrapperCol={{ span: 6 }}
                                 >
                                     {getFieldDecorator('customerID', {
-                                        rules: [{ required: false, message: '' }],
+                                        rules: [
+                                            { required: false, message: '' },
+                                            { pattern: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/, message: '身份证号码不合法' }
+                                        ],
                                         initialValue: preInfo ? preInfo.idNumber : null,
                                     })(
                                         <Input placeholder="身份证号" size='large' />
@@ -254,7 +390,7 @@ function editPage({ dispatch, form, editPage }) {
                                 >
                                     {getFieldDecorator('fullPath1', {
                                         rules: [{ required: false, message: '' }],
-                                        initialValue: splitArea(want1.area)
+                                        initialValue: splitArea(want1.city),
                                     })(
                                         <Cascader options={eopOptions} onChange={onSelectChange} changeOnSelect={true} placeholder="请选择城市列表" />
                                     )}
@@ -283,7 +419,7 @@ function editPage({ dispatch, form, editPage }) {
                                     wrapperCol={{ span: 22 }}
                                 >
                                     {getFieldDecorator('area1', {
-                                        initialValue: want1.areaUpperLimit ? `${want1.areaLowerLimit}-${want1.areaUpperLimit}` : `${want1.areaLowerLimit}+`,
+                                        initialValue: want1.areaUpperLimit ? `${want1.areaLowerLimit}-${want1.areaUpperLimit}` : (want1.areaLowerLimit ? `${want1.areaLowerLimit}+` : null),
                                         rules: [{ required: false, message: '' }],
                                     })(
                                         <RadioGroup>
@@ -314,7 +450,7 @@ function editPage({ dispatch, form, editPage }) {
                                     >
                                         {getFieldDecorator('houseRoom1', {
                                             rules: [{ required: false, message: '' }],
-                                            initialValue: want1.room + ""
+                                            initialValue: want1.room ? want1.room + "" : null
                                         })(
                                             <RadioGroup>
                                                 {
@@ -336,7 +472,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('sellPrice1', {
                                                 rules: [{ required: false, message: '' }],
-                                                initialValue: want1.budgetUpperLimit ? `${want1.budgetLowerLimit}-${want1.budgetUpperLimit}` : `${want1.budgetLowerLimit}+`,
+                                                initialValue: want1.budgetUpperLimit ? `${want1.budgetLowerLimit}-${want1.budgetUpperLimit}` : (want1.budgetLowerLimit ? `${want1.budgetLowerLimit}+` : null),
                                             })(
                                                 <RadioGroup>
                                                     {want1.propertyType === "写字楼" ?
@@ -386,7 +522,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('rentPrice1', {
                                                     rules: [{ required: false, message: '' }],
-                                                    initialValue: want1.budgetUpperLimit ? `${want1.budgetLowerLimit}-${want1.budgetUpperLimit}` : `${want1.budgetLowerLimit}+`
+                                                    initialValue: want1.budgetUpperLimit ? `${want1.budgetLowerLimit}-${want1.budgetUpperLimit}` : (want1.budgetLowerLimit ? `${want1.budgetLowerLimit}+` : null)
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -413,7 +549,7 @@ function editPage({ dispatch, form, editPage }) {
                                                 labelCol={{ span: 2 }}
                                                 wrapperCol={{ span: 10 }}
                                             >
-                                                {getFieldDecorator('payRentType1', {
+                                                {getFieldDecorator('paymentMethod1', {
                                                     rules: [{ required: false, message: '' }],
                                                     initialValue: want1.paymentMethod
                                                 })(
@@ -478,7 +614,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('shopRunType1', {
                                                 rules: [{ required: false, message: '' }],
-                                                initialValue: want1.businessScope,
+                                                initialValue: want1.businessScope ? want1.businessScope : null,
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -518,8 +654,9 @@ function editPage({ dispatch, form, editPage }) {
                                             labelCol={{ span: 2 }}
                                             wrapperCol={{ span: 22 }}
                                         >
-                                            {getFieldDecorator('shopRunType1', {
+                                            {getFieldDecorator('canRegister1', {
                                                 rules: [{ required: false, message: '' }],
+                                                initialValue: want1.canRegister ? want1.canRegister : null,
                                             })(
                                                 <RadioGroup>
                                                     <Radio style={{ "marginBottom": "0" }} key="是" value="是">是</Radio>
@@ -561,6 +698,7 @@ function editPage({ dispatch, form, editPage }) {
                                     >
                                         {getFieldDecorator('fullPath2', {
                                             rules: [{ required: false, message: '' }],
+                                            initialValue: splitArea(want2.city),
                                         })(
                                             <Cascader options={eopOptions} onChange={onSelectChange} changeOnSelect={true} placeholder="请选择城市列表" />
                                         )}
@@ -589,7 +727,7 @@ function editPage({ dispatch, form, editPage }) {
                                         wrapperCol={{ span: 22 }}
                                     >
                                         {getFieldDecorator('area2', {
-                                            initialValue: want2.areaUpperLimit ? `${want2.areaLowerLimit}-${want2.areaUpperLimit}` : `${want2.areaLowerLimit}+`,
+                                            initialValue: want2.areaUpperLimit ? `${want2.areaLowerLimit}-${want2.areaUpperLimit}` : (want2.areaLowerLimit ? `${want2.areaLowerLimit}+` : null),
                                             rules: [{ required: false, message: '' }],
                                         })(
                                             <RadioGroup>
@@ -620,7 +758,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('houseRoom2', {
                                                 rules: [{ required: false, message: '' }],
-                                                initialValue: want2.room + ""
+                                                initialValue: want2.room ? want2.room + "" : null
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -642,7 +780,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('sellPrice1', {
                                                     rules: [{ required: false, message: '' }],
-                                                    initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : `${want2.budgetLowerLimit}+`,
+                                                    initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : (want2.budgetLowerLimit ? `${want2.budgetLowerLimit}+` : null),
                                                 })(
                                                     <RadioGroup>
                                                         {want2.propertyType === "写字楼" ?
@@ -692,7 +830,7 @@ function editPage({ dispatch, form, editPage }) {
                                                 >
                                                     {getFieldDecorator('rentPrice2', {
                                                         rules: [{ required: false, message: '' }],
-                                                        initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : `${want2.budgetLowerLimit}+`
+                                                        initialValue: want2.budgetUpperLimit ? `${want2.budgetLowerLimit}-${want2.budgetUpperLimit}` : (want2.budgetLowerLimit ? `${want2.budgetLowerLimit}+` : null)
                                                     })(
                                                         <RadioGroup>
                                                             {
@@ -719,7 +857,7 @@ function editPage({ dispatch, form, editPage }) {
                                                     labelCol={{ span: 2 }}
                                                     wrapperCol={{ span: 10 }}
                                                 >
-                                                    {getFieldDecorator('payRentType2', {
+                                                    {getFieldDecorator('paymentMethod2', {
                                                         rules: [{ required: false, message: '' }],
                                                         initialValue: want2.paymentMethod
                                                     })(
@@ -807,6 +945,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('officeType2', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want2.officeBuildingType ? want2.officeBuildingType : null
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -823,8 +962,9 @@ function editPage({ dispatch, form, editPage }) {
                                                 labelCol={{ span: 2 }}
                                                 wrapperCol={{ span: 22 }}
                                             >
-                                                {getFieldDecorator('shopRunType2', {
+                                                {getFieldDecorator('canRegister2', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want2.canRegister ? want2.canRegister : null,
                                                 })(
                                                     <RadioGroup>
                                                         <Radio style={{ "marginBottom": "0" }} key="是" value="是">是</Radio>
@@ -867,6 +1007,7 @@ function editPage({ dispatch, form, editPage }) {
                                     >
                                         {getFieldDecorator('fullPath3', {
                                             rules: [{ required: false, message: '' }],
+                                            initialValue: splitArea(want3.city),
                                         })(
                                             <Cascader options={eopOptions} onChange={onSelectChange} changeOnSelect={true} placeholder="请选择城市列表" />
                                         )}
@@ -895,7 +1036,7 @@ function editPage({ dispatch, form, editPage }) {
                                         wrapperCol={{ span: 22 }}
                                     >
                                         {getFieldDecorator('area3', {
-                                            initialValue: want3.areaUpperLimit ? `${want3.areaLowerLimit}-${want3.areaUpperLimit}` : `${want3.areaLowerLimit}+`,
+                                            initialValue: want3.areaUpperLimit ? `${want3.areaLowerLimit}-${want3.areaUpperLimit}` : (want3.areaLowerLimit ? `${want3.areaLowerLimit}+` : null),
                                             rules: [{ required: false, message: '' }],
                                         })(
                                             <RadioGroup>
@@ -926,7 +1067,7 @@ function editPage({ dispatch, form, editPage }) {
                                         >
                                             {getFieldDecorator('houseRoom3', {
                                                 rules: [{ required: false, message: '' }],
-                                                initialValue: want3.room + ""
+                                                initialValue: want3.room ? want3.room + "" : null
                                             })(
                                                 <RadioGroup>
                                                     {
@@ -948,7 +1089,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('sellPrice3', {
                                                     rules: [{ required: false, message: '' }],
-                                                    initialValue: want3.budgetUpperLimit ? `${want3.budgetLowerLimit}-${want3.budgetUpperLimit}` : `${want3.budgetLowerLimit}+`
+                                                    initialValue: want3.budgetUpperLimit ? `${want3.budgetLowerLimit}-${want3.budgetUpperLimit}` : (want3.budgetLowerLimit ? `${want3.budgetLowerLimit}+` : null)
                                                 })(
                                                     <RadioGroup>
                                                         {want3.propertyType === "写字楼" ?
@@ -998,7 +1139,7 @@ function editPage({ dispatch, form, editPage }) {
                                                 >
                                                     {getFieldDecorator('rentPrice3', {
                                                         rules: [{ required: false, message: '' }],
-                                                        initialValue: want3.budgetUpperLimit ? `${want3.budgetLowerLimit}-${want3.budgetUpperLimit}` : `${want3.budgetLowerLimit}+`
+                                                        initialValue: want3.budgetUpperLimit ? `${want3.budgetLowerLimit}-${want3.budgetUpperLimit}` : (want3.budgetLowerLimit ? `${want3.budgetLowerLimit}+` : null)
                                                     })(
                                                         <RadioGroup>
                                                             {
@@ -1025,7 +1166,7 @@ function editPage({ dispatch, form, editPage }) {
                                                     labelCol={{ span: 2 }}
                                                     wrapperCol={{ span: 10 }}
                                                 >
-                                                    {getFieldDecorator('payRentType3', {
+                                                    {getFieldDecorator('paymentMethod3', {
                                                         rules: [{ required: false, message: '' }],
                                                         initialValue: want3.paymentMethod
                                                     })(
@@ -1112,6 +1253,7 @@ function editPage({ dispatch, form, editPage }) {
                                             >
                                                 {getFieldDecorator('officeType3', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want3.officeBuildingType ? want3.officeBuildingType : null
                                                 })(
                                                     <RadioGroup>
                                                         {
@@ -1128,8 +1270,9 @@ function editPage({ dispatch, form, editPage }) {
                                                 labelCol={{ span: 2 }}
                                                 wrapperCol={{ span: 22 }}
                                             >
-                                                {getFieldDecorator('shopRunType3', {
+                                                {getFieldDecorator('canRegister3', {
                                                     rules: [{ required: false, message: '' }],
+                                                    initialValue: want3.canRegister ? want3.canRegister : null,
                                                 })(
                                                     <RadioGroup>
                                                         <Radio style={{ "marginBottom": "0" }} key="是" value="是">是</Radio>

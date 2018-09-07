@@ -6,6 +6,7 @@ import commonFinalCode from '../../../commons/utils/commonFinalCode.js';
 import commonUtil from '../../../commons/utils/commonUtil.js';
 import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import lodash from 'lodash';
+import { routerRedux } from 'dva/router';
 
 // 加载标签信息
 const typeGroups = [
@@ -256,6 +257,29 @@ export default {
                         eopOptions: eopData
                     }
                 });
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        },
+        //保存客户意向
+        *saveCustomerInfo({ payload }, { put, call, select }) {
+            const currentState = yield select(({ editPage }) => { return editPage })
+            const _url = currentState.preInfo ? '/miss-anzhu-broker/customers/edit' : '/miss-anzhu-broker/customers/add';
+            const responseObj = yield call(requestApi, {
+                apiName: _url,
+                ...payload,
+                id: currentState.preInfo ? currentState.preInfo.id : null
+            });
+            const reObj = analysisUtil.analysisDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                yield put(routerRedux.push({
+                    pathname: '/customerManage',
+                }))
             } else {
                 yield put({
                     type: 'showPrompt',

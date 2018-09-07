@@ -31,6 +31,7 @@ function managePage({ dispatch, form, managePage }) {
         followModal,
         bringModal,
         record,
+        isBroker,
     } = managePage;
     //表单提交
     const handleSubmit = (e) => {
@@ -305,6 +306,7 @@ function managePage({ dispatch, form, managePage }) {
             })
         }
     }
+    const onCancelCallBack = () => { }
     Date.prototype.format = function (format) {
         var o = {
             "M+": this.getMonth() + 1, //month
@@ -323,7 +325,6 @@ function managePage({ dispatch, form, managePage }) {
                     ("00" + o[k]).substr(("" + o[k]).length));
         return format;
     }
-    const onCancelCallBack = () => { }
     return <div>
         <div className="managePage">
             <PromptModal {...promptObj} onOk={onOkCallBack} onCancel={onCancelCallBack} />
@@ -343,8 +344,12 @@ function managePage({ dispatch, form, managePage }) {
                 </div>
                 <div className="customerController">
                     客户电话：{record.phone}
-                    <Button style={{ "fontSize": "12px" }} type="primary" onClick={bringCustomer} icon="plus">客户带看</Button>
-                    <Button style={{ "fontSize": "12px" }} type="primary" onClick={followCustomer} icon="plus">客户跟进</Button>
+                    {
+                        isBroker ? <div style={{ 'float': 'right' }}>
+                            <Button style={{ "fontSize": "12px" }} type="primary" onClick={bringCustomer} icon="plus">客户带看</Button>
+                            <Button style={{ "fontSize": "12px" }} type="primary" onClick={followCustomer} icon="plus">客户跟进</Button>
+                        </div> : null
+                    }
                 </div>
             </div>
             <div className="container">

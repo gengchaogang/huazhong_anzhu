@@ -88,6 +88,22 @@ function customerManage({ dispatch, form, customerManage }) {
             })
         }
     }
+    const handleManage = (text, record, index) => {
+        dispatch(routerRedux.push({
+            pathname: '/customerManage/managePage',
+            state: {
+                record: record
+            }
+        }))
+    }
+    const handleEdit = (text, record, index) => {
+        dispatch(routerRedux.push({
+            pathname: '/customerManage/editPage',
+            state: {
+                id: record.id
+            }
+        }))
+    }
     const columns = [
         {
             title: '客户姓名',
@@ -112,27 +128,12 @@ function customerManage({ dispatch, form, customerManage }) {
             render: (text, record, index) => {
                 return <div className="operation">
                     <span onClick={() => handleManage(text, record, index)} className="handleManage">客户管理</span>
-                    <span onClick={() => handleEdit(text, record, index)} className="handleEdit">编辑</span>
+                    {isBroker ? <span onClick={() => handleEdit(text, record, index)} className="handleEdit">编辑</span> : null}
                 </div>
             }
         },
     ]
-    const handleManage = (text, record, index) => {
-        dispatch(routerRedux.push({
-            pathname: '/customerManage/managePage',
-            state: {
-                record: record
-            }
-        }))
-    }
-    const handleEdit = (text, record, index) => {
-        dispatch(routerRedux.push({
-            pathname: '/customerManage/editPage',
-            state: {
-                id: record.id
-            }
-        }))
-    }
+
     Date.prototype.format = function (format) {
         var o = {
             "M+": this.getMonth() + 1, //month

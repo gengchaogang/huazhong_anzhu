@@ -8,6 +8,7 @@ import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import lodash from 'lodash';
 import managePage from '../../routes/customerManage/managePage';
 
+let interval = null;
 const initState = {
     currentTab: "followCustomerTab",
     loadingShadow: false,
@@ -45,6 +46,7 @@ const initState = {
         required: false,
     },
     record: null,//客户信息
+    isBroker: null,
 };
 
 export default {
@@ -81,9 +83,17 @@ export default {
         setup({ dispatch, history }) {
             history.listen(location => {
                 if (location.pathname === '/customerManage/managePage') {
+                    interval = setInterval(() => {  //每秒去获取用户信息 获取之后清空定时器
+                        dispatch({
+                            type: "getIsBroker"
+                        })
+                    }, 1000);
                     dispatch({
                         type: "initData",
                         payload: location.state.record
+                    })
+                    dispatch({
+                        type: "getIsBroker"
                     })
                 }
             })
@@ -174,17 +184,6 @@ export default {
         //添加跟进miss-anzhu-broker/followUp/addFollowProcess
         *addFollowProcess({ payload }, { put, call, select }) {
             yield put({
-                type: "showProcess",
-            })
-            const currentState = yield select(({ managePage }) => { return managePage });
-            const responseObj = yield call(requestApi, {
-                apiName: "/miss-anzhu-broker/followUp/addFollowProcessForPC",
-                ...payload
-            });
-            yield put({
-                type: 'hideProcess'
-            })
-            yield put({
                 type: 'setState',
                 payload: {
                     followModal: {
@@ -197,6 +196,17 @@ export default {
                     }
                 }
             });
+            yield put({
+                type: "showProcess",
+            })
+            const currentState = yield select(({ managePage }) => { return managePage });
+            const responseObj = yield call(requestApi, {
+                apiName: "/miss-anzhu-broker/followUp/addFollowProcessForPC",
+                ...payload
+            });
+            yield put({
+                type: 'hideProcess'
+            })
             if (responseObj.data.data.result === true) {
                 if (currentState.currentTab === "followCustomerTab") {
                     yield put({
@@ -231,6 +241,24 @@ export default {
                     payload
                 });
             }
+        },
+        //查看是否是经纪人角色
+        *getIsBroker({ payload }, { put, call, select }) {
+            const isBroker = yield select(({ main }) => { return main.isBroker });
+            if (isBroker) {
+                clearInterval(interval)
+                yield put({
+                    type: "setState",
+                    payload: { isBroker: isBroker }
+                })
+            } else if (isBroker === false) {
+                clearInterval(interval)
+                yield put({
+                    type: "setState",
+                    payload: { isBroker: isBroker }
+                })
+            }
+
         },
     }
 

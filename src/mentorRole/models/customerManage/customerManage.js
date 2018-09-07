@@ -7,6 +7,7 @@ import commonUtil from '../../../commons/utils/commonUtil.js';
 import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import lodash from 'lodash';
 
+let interval = null;
 const initState = {
     loadingShadow: false,
     promptObj: {
@@ -62,6 +63,11 @@ export default {
         setup({ dispatch, history }) {
             history.listen(location => {
                 if (location.pathname === '/customerManage') {
+                    interval = setInterval(() => {  //每秒去获取用户信息 获取之后清空定时器
+                        dispatch({
+                            type: "getIsBroker"
+                        })
+                    }, 1000);
                     dispatch({
                         type: 'getIsBroker'
                     })
@@ -103,12 +109,19 @@ export default {
         },
         *getIsBroker({ payload }, { put, call, select }) {
             const isBroker = yield select(({ main }) => { return main.isBroker });
-            yield put({
-                type: 'setState',
-                payload: {
-                    isBroker: isBroker
-                }
-            });
+            if (isBroker) {
+                clearInterval(interval)
+                yield put({
+                    type: "setState",
+                    payload: { isBroker: isBroker }
+                })
+            } else if (isBroker === false) {
+                clearInterval(interval)
+                yield put({
+                    type: "setState",
+                    payload: { isBroker: isBroker }
+                })
+            }
         },
     }
 
