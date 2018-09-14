@@ -38,6 +38,10 @@ function HouseImgs({ dispatch, houseImgs }) {
     showDetail: true,
     changeList: (data) => {
       dispatch({
+        type: "houseImgs/deletePic",
+        payload: data
+      })
+      dispatch({
         type: "houseImgs/showPicList",
         payload: data
       })

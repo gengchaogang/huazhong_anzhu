@@ -38,16 +38,17 @@ function managePage({ dispatch, form, managePage }) {
         e.preventDefault();
         form.validateFields((err, values) => {
             if (!err) {
-                const keyword = values.keyword ? values.keyword : null;
-                const startTime = values.dateTimePicker[0] ? new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd') : null;
-                const endTime = values.dateTimePicker[1] ? new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd') : null;
+                const payload = {};
+                if (values.keyword) {
+                    payload.keyword = values.keyword;
+                }
+                if (values.dateTimePicker && values.dateTimePicker.length > 1) {
+                    payload.startTime = new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd');
+                    payload.endTime = new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd');
+                }
                 dispatch({
                     type: "managePage/setState",
-                    payload: {
-                        keyword,
-                        startTime,
-                        endTime,
-                    }
+                    payload,
                 })
                 let type;
                 if (currentTab === "followCustomerTab") {
@@ -529,7 +530,7 @@ function managePage({ dispatch, form, managePage }) {
                                     </Col>
                                     <Col span={3} offset={2}>
                                         <Button
-                                            onClick={followModalClose}
+                                            onClick={bringModalClose}
                                             style={{ "fontSize": "12px" }}
                                         >取消</Button>
                                     </Col>

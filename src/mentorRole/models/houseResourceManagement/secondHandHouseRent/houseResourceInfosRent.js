@@ -435,8 +435,8 @@ export default {
             }
           });
           yield put(routerRedux.push({
-            pathname: '/houseResourceRentManagement/secondHandHouseRent',
-            //                    pathname:'/houseResourceRentManagement/secondHandHouseRent/createSecondHandRentResource/houseImgsRent',
+            // pathname: '/houseResourceRentManagement/secondHandHouseRent',
+            pathname: '/houseResourceRentManagement/secondHandHouseRent/createSecondHandRentResource/houseImgsRent',
             state: { //这里传入projectId 跳转到下一个页面时监听路由把值存在state中
               houseBaseInfo: houseBaseInfo,
             }

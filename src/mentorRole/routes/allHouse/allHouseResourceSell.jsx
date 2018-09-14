@@ -532,9 +532,9 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
         }
     }, {
         title: '所属门店',
-        dataIndex: '',
+        dataIndex: 'addUserInfo',
         render: (text, record, index) => {
-            return <span>所属门店字段</span>
+            return <span>{text.teamName}</span>
         }
     }, {
         title: '创建时间',

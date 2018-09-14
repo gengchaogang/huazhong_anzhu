@@ -127,24 +127,21 @@ export default {
     },
 
     *deletePic({ payload }, { call, put, select }) {
-      yield put({
-        type: "showProcess"
-      });
-      payload.apiName = "/miss-anzhu-secdhouse-resource/main/delHouseImage";
-      const responseObj = yield call(requestApi, payload);
-      var reObj = analysisUtil.analysisDataResponse(responseObj);
-      if (reObj.isSuccess) {
-        message.info('删除成功')
-        yield put({
-          type: "initUpdate"
-        })
-      } else {
-        yield put({
-          type: 'showPrompt',
-          payload: {
-            title: '失败!',
-            description: `${reObj.msg}`
+      const currentPicList = yield select(({ houseImgs }) => houseImgs.showPicList);
+      var deleteItem = currentPicList.filter((item) => {
+        for (let index = 0; index < payload.length; index++) {
+          if (Number(item.id) !== Number(payload[index].id)) {
+            continue;
+          } else {
+            return false
           }
+        }
+        return true;
+      })
+      if (!isNaN(deleteItem[0].id)) {
+        const responseObj = yield call(requestApi, {
+          apiName: "/miss-anzhu-secdhouse-resource/main/deleteMyHousePic",
+          id: deleteItem[0].id
         });
       }
     },
