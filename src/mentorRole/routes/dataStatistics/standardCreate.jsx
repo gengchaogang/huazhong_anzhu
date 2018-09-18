@@ -127,38 +127,94 @@ function standardCreate({ dispatch, form, standardCreate }) {
                             <Panel title="资源考核"></Panel>
                             <div className="content">
                                 <Row>
-                                    <Col span={9} offset={2}>
-                                        <FormItem label="选择达标线方案" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-                                            {getFieldDecorator('checkProgramme', {
-                                                rules: [{ required: true, message: '请选择跟进方式' }],
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="二手房出售新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('secondHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
                                             })(
-                                                <Select placeholder="请选择达标线方案">
-                                                    <Option value="来电">来电</Option>
-                                                    <Option value="去电">去电</Option>
-                                                    <Option value="到访">到访</Option>
-                                                    <Option value="接待">接待</Option>
-                                                    <Option value="其他">其他</Option>
-                                                </Select>
+                                                <Input addonAfter="套" placeholder="" size="samll" />
                                             )}
                                         </FormItem>
                                     </Col>
-                                    <Col span={9} offset={2}>
-                                        <FormItem label="选择达标线方案" labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
-                                            {getFieldDecorator('checkProgramme', {
-                                                rules: [{ required: true, message: '请选择跟进方式' }],
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="钥匙房源新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('keyHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
                                             })(
-                                                <Select placeholder="请选择达标线方案">
-                                                    <Option value="来电">来电</Option>
-                                                    <Option value="去电">去电</Option>
-                                                    <Option value="到访">到访</Option>
-                                                    <Option value="接待">接待</Option>
-                                                    <Option value="其他">其他</Option>
-                                                </Select>
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="二手房出售新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('secondHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="钥匙房源新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('keyHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
                                             )}
                                         </FormItem>
                                     </Col>
                                 </Row>
                             </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col span={24}>
+                            <Panel title="资源考核"></Panel>
+                            <div className="content">
+                                <Row>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="二手房出售新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('secondHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="钥匙房源新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('keyHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="二手房出售新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('secondHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                    <Col span={12} offset={0} style={{ "margin-bottom": "10px" }}>
+                                        <FormItem label="钥匙房源新增" labelCol={{ span: 6 }} wrapperCol={{ span: 12 }}>
+                                            {getFieldDecorator('keyHouseAdd', {
+                                                rules: [{ required: false, message: '' }],
+                                            })(
+                                                <Input addonAfter="套" placeholder="" size="samll" />
+                                            )}
+                                        </FormItem>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row style={{ "backgroundColor": "#fff", "padding": "5px" }}>
+                        <Col span={24}>
+                            <Button size="small" type="primary" style={{ "fontSize": "12px" }} htmlType="submit">确认提交</Button>
                         </Col>
                     </Row>
                 </div>

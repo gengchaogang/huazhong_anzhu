@@ -65,7 +65,7 @@ export default {
     subscriptions: {     //路由监听
         setup({ dispatch, history }) {
             history.listen(location => {
-                if (location.pathname === '/dataStatistics/standardCreate') {
+                if (location.pathname === '/dataStatistics/standardHome/standardCreate') {
 
                 }
             })

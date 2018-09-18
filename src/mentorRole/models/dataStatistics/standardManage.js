@@ -18,13 +18,10 @@ const initState = {
         type: '',
         todo: '',
     },//对话框参数
-    modalConfig: {
-        visible: false,
-    },
     programmeList: {
         pageNo: 1,
         total: 0,
-        pageSize: commonFinalCode.pageSize,
+        pageSize: 3,
         content: [],
     },
     loadingShadow: false,
@@ -65,13 +62,50 @@ export default {
     subscriptions: {     //路由监听
         setup({ dispatch, history }) {
             history.listen(location => {
-                if (location.pathname === '/dataStatistics/standardManage') {
-
+                if (location.pathname === '/dataStatistics/standardHome/standardManage') {
+                    dispatch({
+                        type: 'initState'
+                    })
+                    dispatch({
+                        type: 'getAssessList',
+                        payload: {
+                            pageNo: 0
+                        }
+                    })
                 }
             })
         }
     },
-    effcts: {
-
+    effects: {
+        //获取方案列表miss-anzhu-statistics/assess/getAssessList
+        *getAssessList({ payload }, { put, call, select }) {
+            yield put({
+                type: "showProcess"
+            });
+            const responseObj = yield call(requestApi, {
+                apiName: "/miss-anzhu-statistics/assess/getAssessList",
+                pageNo: payload.pageNo,
+                pageSize: initState.programmeList.pageSize,
+            });
+            const reObj = analysisUtil.analysisGetPageDataResponse(responseObj);
+            if (reObj.isSuccess) {
+                yield put({
+                    type: 'setState',
+                    payload: {
+                        programmeList: reObj
+                    }
+                });
+                yield put({
+                    type: "hideProcess"
+                });
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${reObj.msg}`
+                    }
+                });
+            }
+        },
     }
 }
