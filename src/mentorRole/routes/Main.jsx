@@ -105,7 +105,11 @@ const menuKeys = [  //导师登陆时显示的左侧导航
       {
         title: '基础统计',
         key: '/dataStatistics/basicStatistics'
-      }
+      },
+      {
+        title: '考核达标线设置',
+        key: '/dataStatistics/standardHome'
+      },
     ]
   }, {
     title: '佣金设置',

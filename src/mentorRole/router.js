@@ -128,6 +128,9 @@ import CommissionAdjustRecord from './routes/commissionSetting/CommissionAdjustR
 import BasicStatistics from './routes/dataStatistics/BasicStatistics'
 import BusinessStatistics from './routes/dataStatistics/BusinessStatistics'
 import DealStatistics from './routes/dataStatistics/DealStatistics'
+import standardHome from './routes/dataStatistics/standardHome'
+import standardManage from './routes/dataStatistics/standardManage'
+import standardCreate from './routes/dataStatistics/standardCreate'
 //客户管理
 import customerManage from './routes/customerManage/customerManage'
 import managePage from './routes/customerManage/managePage'
@@ -344,6 +347,13 @@ export default function ({ history }) {
               breadcrumbName="业务数据" component={BusinessStatistics} />
             <Route path='dealStatistics' name="dealStatistics"
               breadcrumbName="成交数据" component={DealStatistics} />
+          </Route>
+          <Route path='standardHome' name="standardHome" breadcrumbName="考核达标线设置">
+            <IndexRoute component={standardHome} />
+            <Route path='standardManage' name="standardManage"
+              breadcrumbName="达标线管理" component={standardManage} />
+              <Route path='standardCreate' name="standardCreate"
+              breadcrumbName="编辑方案" component={standardCreate} />
           </Route>
         </Route>
         <Route path='agentmd' name="agentmd" breadcrumbName="经纪门店管理">

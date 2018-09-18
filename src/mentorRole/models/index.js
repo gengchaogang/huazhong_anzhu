@@ -81,6 +81,9 @@ import commissionAdjustRecord from './commissionSetting/commissionAdjustRecord'
 import basicStatistics from './dataStatistics/basicStatistics'
 import businessStatistics from './dataStatistics/businessStatistics'
 import dealStatistics from './dataStatistics/dealStatistics'
+import standardHome from './dataStatistics/standardHome'
+import standardManage from './dataStatistics/standardManage'
+import standardCreate from './dataStatistics/standardCreate'
 //登陆
 import login from './logIn/logIn'
 import mentorRegister from './logIn/mentorRegister'
@@ -217,6 +220,9 @@ export default [
   basicStatistics,
   businessStatistics,
   dealStatistics,
+  standardHome,//达标线
+  standardManage,
+  standardCreate,
   //登陆
   login,
   mentorRegister,

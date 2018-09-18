@@ -1,0 +1,16 @@
+div.standardManage{
+    background-color: transparent;
+}
+
+div.standardManage .currentProgramme{
+    background-color: #fff;
+    padding:10px 15px;
+    font-size: 15px;
+}
+
+div.standardManage .standardTable{
+    background-color: #fff;
+    margin-top:3px;
+    padding:15px;
+}
+
