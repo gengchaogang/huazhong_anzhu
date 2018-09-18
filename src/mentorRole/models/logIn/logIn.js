@@ -86,7 +86,7 @@ export default {
           // clearCookie();
           // //注入cookie
           // setCookie(loginData.data["sessionKey"],'');
-          const debug = true;//是否是测试环境
+          const debug = false;//是否是测试环境
           if (!!debug) {
             //测试环境
             //第二步  将输入的用户名和密码发给后端
