@@ -50,7 +50,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
             title: '确认删除吗?',
             // content: 'When clicked the OK button, this dialog will be closed after 1 second',
             onOk() {
-
+                message.success("删除成功")
             },
             onCancel() { },
         });
