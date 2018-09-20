@@ -378,7 +378,7 @@ function standardHome({ dispatch, form, standardHome }) {
                                             <Select placeholder="请选择达标线方案">
                                                 {
                                                     programmeList.content.map(item => {
-                                                        return <Option key={item.id} value={item.id + ''} disabled={item.id === currentProgramme.id}>{item.assessName}</Option>
+                                                        return <Option key={item.id} value={item.id + ''} disabled={item.id === currentProgramme ? currentProgramme.id : false}>{item.assessName}</Option>
                                                     })
                                                 }
                                             </Select>

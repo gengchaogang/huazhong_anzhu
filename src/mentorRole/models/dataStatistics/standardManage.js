@@ -118,7 +118,7 @@ export default {
                 keyword: "delete"
             })
             const resObj = analysisUtil.analysisDataResponse(responseObj);
-            if (resObj) {
+            if (resObj.isSuccess) {
                 yield put({
                     type: "hideProcess"
                 });
@@ -133,7 +133,7 @@ export default {
                 yield put({
                     type: 'showPrompt',
                     payload: {
-                        description: `${resObj.msg}`
+                        description: `删除失败，当前方案已启用`,
                     }
                 });
             }

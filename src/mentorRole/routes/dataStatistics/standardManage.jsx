@@ -27,7 +27,6 @@ function standardManage({ dispatch, form, standardManage }) {
         promptObj,
         loadingShadow,
     } = standardManage;
-    console.log(programmeList);
     //点击修改方案
     const createNewProgramme = () => {
         dispatch(routerRedux.push({

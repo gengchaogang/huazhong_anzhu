@@ -1,5 +1,5 @@
 import { requestApi } from '../../services/common'
-
+import { routerRedux } from 'dva/router';
 import { message } from 'antd'
 import analysisUtil from '../../../commons/utils/commonApiResponseAnalysis.js';
 import commonFinalCode from '../../../commons/utils/commonFinalCode.js';
@@ -67,6 +67,9 @@ export default {
         setup({ dispatch, history }) {
             history.listen(location => {
                 if (location.pathname === '/dataStatistics/standardHome/standardManage/standardCreate') {
+                    dispatch({
+                        type: "initState",
+                    })
                     if (location.state !== null) {
                         dispatch({
                             type: "setState",
@@ -79,7 +82,61 @@ export default {
             })
         }
     },
-    effcts: {
-
+    effects: {
+        //修改已有方案 
+        *editProgramme({ payload }, { put, call, select }) {
+            yield put({
+                type: 'showProcess'
+            })
+            const responseObj = yield call(requestApi, {
+                apiName: '/miss-anzhu-statistics/assess/updateAssessStatus',
+                keyword: "data",
+                ...payload
+            })
+            const resObj = analysisUtil.analysisDataResponse(responseObj);
+            if (resObj) {
+                yield put({
+                    type: "hideProcess"
+                });
+                message.success("保存方案成功");
+                yield put(routerRedux.push({
+                    pathname: '/dataStatistics/standardHome/standardManage',
+                }))
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${resObj.msg}`
+                    }
+                });
+            }
+        },
+        //增加方案
+        *addProgramme({ payload }, { put, call, select }) {
+            yield put({
+                type: 'showProcess'
+            })
+            const responseObj = yield call(requestApi, {
+                apiName: '/miss-anzhu-statistics/assess/addAssess',
+                ...payload
+            })
+            const resObj = analysisUtil.analysisDataResponse(responseObj);
+            if (resObj) {
+                yield put({
+                    type: "hideProcess"
+                });
+                message.success("保存方案成功");
+                yield put(routerRedux.push({
+                    pathname: '/dataStatistics/standardHome/standardManage',
+                }))
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${resObj.msg}`
+                    }
+                });
+            }
+        }
     }
 }

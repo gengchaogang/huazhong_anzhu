@@ -1,99 +1,63 @@
 import React from 'react';
 import { connect } from 'dva';
-import { routerRedux } from 'dva/router';
-import { Form, DatePicker, Select, Row, Col, Input, Cascader, Radio, Button, Alert, message, Tabs, Table, Spin, Modal, Checkbox } from 'antd'
+import { Form, Row, Col, Input, Button, message, Spin, } from 'antd'
 import Panel from '../../../commons/components/Panel'
-import DxPanel from '../../../commons/components/DxPanel'
 import './standardCreate.css'
-import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import DxLoadingShadow from '../../../commons/UI/DxLoadingShadow';
-import commonFinalCode from '../../../commons/utils/commonFinalCode.js';
 import PromptModal from '../../../commons/View/PromptModal';
 
 const FormItem = Form.Item;
-const { RangePicker } = DatePicker;
-const Option = Select.Option;
-const TabPane = Tabs.TabPane;
-const confirm = Modal.confirm;
-const CheckboxGroup = Checkbox.Group;
-const RadioGroup = Radio.Group;
+
 
 
 function standardCreate({ dispatch, form, standardCreate }) {
     const { getFieldDecorator } = form;
     const {
         record,
-        modalConfig,
-        programmeList,
         promptObj,
         loadingShadow,
     } = standardCreate;
 
-    //点击修改方案
-    const createNewProgramme = () => {
-        dispatch(routerRedux.push({
-            pathname: '/dataStatistics/standardHome/standardCreate',
-        }))
-    }
-    const modalClose = () => {
-        dispatch({
-            type: "standardCreate/setState",
-            payload: {
-                modalConfig: {
-                    visible: false
+    //表单提交事件
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        form.validateFields((err, values) => {
+            if (!err) {
+                let canSubmit = false;
+                for (const key in values) {
+                    if (values.hasOwnProperty(key)) {
+                        if (key === "assessName") {
+                            continue;
+                        } else if (values[key] === null || values[key] === "") {
+                            continue;
+                        } else if (values[key] !== null && values[key] !== "") {
+                            canSubmit = true;
+                            break;
+                        }
+                    }
+                }
+                if (canSubmit) {
+                    if (record !== null) {
+                        dispatch({
+                            type: 'standardCreate/editProgramme',
+                            payload: {
+                                id: record.id,
+                                ...values
+                            }
+                        })
+                    } else {
+                        dispatch({
+                            type: 'standardCreate/addProgramme',
+                            payload: values
+                        })
+                    }
+                } else {
+                    message.error("请至少填写一条考核数据！");
                 }
             }
         })
     }
-    // 确认删除的弹出层
-    let openCity = () => {
-        confirm({
-            title: '确认删除吗?',
-            // content: 'When clicked the OK button, this dialog will be closed after 1 second',
-            onOk() {
-                message.success("删除成功")
-            },
-            onCancel() {
-                message.error("取消")
-            },
-        });
-    };
-    //表单提交事件
-    const handleSubmit = () => {
 
-    }
-    //分页
-    const pageController = {
-        showQuickJumper: commonFinalCode.showQuickJumper,
-        pageSize: programmeList.pageSize,
-        current: programmeList.current,
-        defaultCurrent: 1,
-        total: programmeList.total,
-        showTotal: total => `共${total}条数据`,
-        onChange: (page, pageSize) => {
-            form.validateFields((err, values) => {
-                if (!err) {
-                }
-            })
-        },
-    };
-    const handleEdit = () => {
-
-    }
-    const handleDelete = () => {
-
-    }
-    // 列字段名
-    const columns = [{
-        title: '序号',
-        dataIndex: 'indexXh',
-        render: (text, record, index) => {
-            return <div className="operation">
-                <span onClick={() => handleEdit(text, record, index)} className="edit"></span>
-                <span onClick={() => handleDelete(text, record, index)} className="delete"></span>
-            </div>
-        }
-    }];
     const onOkCallBack = () => {
         if (promptObj.todo === 'closeModal') {
             dispatch({
@@ -108,12 +72,6 @@ function standardCreate({ dispatch, form, standardCreate }) {
                 type: "standardCreate/togglePrompt",
                 payload: {
                     visible: false
-                }
-            })
-            dispatch({
-                type: "standardCreate/changeVisible",
-                payload: {
-                    tudiGongVisible: true,
                 }
             })
         }
@@ -132,7 +90,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                     rules: [{ required: true, message: '请填写方案名称' }],
                                     initialValue: record ? record.assessName : null
                                 })(
-                                    <Input placeholder="" size="normal" />
+                                    <Input placeholder="" size="default" />
                                 )}
                             </FormItem>
                         </Col>
@@ -146,7 +104,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesFouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -156,7 +114,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesFouseLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -166,7 +124,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesCustomerSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -176,7 +134,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesCustomerLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -186,7 +144,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesFouseEntrust : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -196,7 +154,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.resourcesFouseKey : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -215,7 +173,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceFouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -225,7 +183,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceFouseLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -235,7 +193,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceCustomerSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -245,7 +203,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceCustomerLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -255,7 +213,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceHouse : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -265,7 +223,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.traceHouseFact : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -284,7 +242,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.lookHouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -294,7 +252,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.lookHouseLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -304,7 +262,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.lookNewHouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -323,7 +281,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.assessHouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -333,7 +291,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.assessHouseLease : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -343,7 +301,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                                                 rules: [{ required: false, message: '' }],
                                                 initialValue: record ? record.assessNewHouseSell : null
                                             })(
-                                                <Input addonAfter="套" placeholder="" size="normal" />
+                                                <Input addonAfter="套" placeholder="" size="default" />
                                             )}
                                         </FormItem>
                                     </Col>
@@ -353,7 +311,7 @@ function standardCreate({ dispatch, form, standardCreate }) {
                     </Row>
                     <Row style={{ "backgroundColor": "#fff", "padding": "5px" }}>
                         <Col span={24}>
-                            <Button size="normal" type="primary" style={{ "fontSize": "12px" }} htmlType="submit">确认提交</Button>
+                            <Button size="default" type="primary" style={{ "fontSize": "12px" }} htmlType="submit">确认提交</Button>
                         </Col>
                     </Row>
                 </div>
