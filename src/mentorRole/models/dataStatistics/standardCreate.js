@@ -28,6 +28,7 @@ const initState = {
         content: [],
     },
     loadingShadow: false,
+    record: null,
 }
 export default {
     namespace: "standardCreate",
@@ -65,8 +66,15 @@ export default {
     subscriptions: {     //路由监听
         setup({ dispatch, history }) {
             history.listen(location => {
-                if (location.pathname === '/dataStatistics/standardHome/standardCreate') {
-
+                if (location.pathname === '/dataStatistics/standardHome/standardManage/standardCreate') {
+                    if (location.state !== null) {
+                        dispatch({
+                            type: "setState",
+                            payload: {
+                                record: location.state.record
+                            }
+                        })
+                    }
                 }
             })
         }

@@ -107,5 +107,36 @@ export default {
                 });
             }
         },
+        //删除方案 
+        *deletePro({ payload }, { put, call, select }) {
+            yield put({
+                type: 'showProcess'
+            })
+            const responseObj = yield call(requestApi, {
+                apiName: '/miss-anzhu-statistics/assess/updateAssessStatus',
+                id: payload.id,
+                keyword: "delete"
+            })
+            const resObj = analysisUtil.analysisDataResponse(responseObj);
+            if (resObj) {
+                yield put({
+                    type: "hideProcess"
+                });
+                message.success("删除方案成功");
+                yield put({
+                    type: 'getAssessList',
+                    payload: {
+                        pageNo: 0
+                    }
+                })
+            } else {
+                yield put({
+                    type: 'showPrompt',
+                    payload: {
+                        description: `${resObj.msg}`
+                    }
+                });
+            }
+        }
     }
 }

@@ -37,6 +37,16 @@ div.standardHome .proLine .bottom{
     color:rgb(163, 163, 163);
 }
 
+div.standardHome .noCurrentPro{
+    width:100%;
+    background-color: #fff;
+    padding:30px 0;
+    text-align: center;
+    font-size: 15px;
+    margin-top:3px;
+    color:rgb(163, 163, 163);
+}
+
 div.standardHome .tips{
     padding:15px;
     background-color: transparent;

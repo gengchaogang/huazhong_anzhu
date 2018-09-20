@@ -9,6 +9,7 @@ import labelsFinalCode from '../../../commons/utils/labelsFinalCode.js';
 import DxLoadingShadow from '../../../commons/UI/DxLoadingShadow';
 import commonFinalCode from '../../../commons/utils/commonFinalCode.js';
 import PromptModal from '../../../commons/View/PromptModal';
+import { renderCustomerInfo } from '../../../commons/utils/currencyFunction';
 
 const FormItem = Form.Item;
 const { RangePicker } = DatePicker;
@@ -30,7 +31,8 @@ function standardManage({ dispatch, form, standardManage }) {
     //点击修改方案
     const createNewProgramme = () => {
         dispatch(routerRedux.push({
-            pathname: '/dataStatistics/standardHome/standardCreate',
+            pathname: '/dataStatistics/standardHome/standardManage/standardCreate',
+            state: null
         }))
     }
     const modalClose = () => {
@@ -43,17 +45,6 @@ function standardManage({ dispatch, form, standardManage }) {
             }
         })
     }
-    // 确认删除的弹出层
-    let openCity = () => {
-        confirm({
-            title: '确认删除吗?',
-            // content: 'When clicked the OK button, this dialog will be closed after 1 second',
-            onOk() {
-
-            },
-            onCancel() { },
-        });
-    };
     //表单提交事件
     const handleSubmit = () => {
 
@@ -79,11 +70,29 @@ function standardManage({ dispatch, form, standardManage }) {
             })
         },
     };
-    const handleEdit = () => {
-
-    }
-    const handleDelete = () => {
-
+    // 确认删除的弹出层
+    let handleDelete = (text, record, index) => {
+        confirm({
+            title: '确认删除吗?',
+            // content: 'When clicked the OK button, this dialog will be closed after 1 second',
+            onOk() {
+                dispatch({
+                    type: 'standardManage/deletePro',
+                    payload: {
+                        id: record.id,
+                    }
+                })
+            },
+            onCancel() { },
+        });
+    };
+    const handleEdit = (text, record, index) => {
+        dispatch(routerRedux.push({
+            pathname: '/dataStatistics/standardHome/standardManage/standardCreate',
+            state: {
+                record: record
+            }
+        }))
     }
     // 列字段名
     const columns = [

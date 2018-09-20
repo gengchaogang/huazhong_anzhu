@@ -351,9 +351,11 @@ export default function ({ history }) {
           <Route path='standardHome' name="standardHome" breadcrumbName="考核达标线设置">
             <IndexRoute component={standardHome} />
             <Route path='standardManage' name="standardManage"
-              breadcrumbName="达标线管理" component={standardManage} />
+              breadcrumbName="达标线管理">
+              <IndexRoute component={standardManage} />
               <Route path='standardCreate' name="standardCreate"
               breadcrumbName="编辑方案" component={standardCreate} />
+              </Route>
           </Route>
         </Route>
         <Route path='agentmd' name="agentmd" breadcrumbName="经纪门店管理">

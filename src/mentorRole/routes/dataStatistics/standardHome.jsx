@@ -23,8 +23,9 @@ function standardHome({ dispatch, form, standardHome }) {
     const { getFieldDecorator } = form;
     const {
         modalConfig,
+        currentProgramme,
+        programmeList,//所有方案下拉
     } = standardHome;
-
     //点击修改方案
     const changeProgramme = () => {
         dispatch({
@@ -37,6 +38,7 @@ function standardHome({ dispatch, form, standardHome }) {
         })
     }
     const modalClose = () => {
+        form.resetFields();
         dispatch({
             type: "standardHome/setState",
             payload: {
@@ -47,8 +49,27 @@ function standardHome({ dispatch, form, standardHome }) {
         })
     }
     //表单提交事件
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        form.validateFields((err, values) => {
+            if (!err) {
+                dispatch({
+                    type: 'standardHome/changeCurrentPro',
+                    payload: {
+                        id: values.checkProgramme,
+                    }
+                })
+                dispatch({
+                    type: "standardHome/setState",
+                    payload: {
+                        modalConfig: {
+                            visible: false
+                        }
+                    }
+                })
+                form.resetFields();
+            }
+        });
     }
     //点击管理  跳到达标线管理页面
     const goManage = () => {
@@ -61,275 +82,279 @@ function standardHome({ dispatch, form, standardHome }) {
             true ? <Form onSubmit={handleSubmit}>
                 <div className="standardHome">
                     <div className="currentProgramme">
-                        当前已选方案：<span style={{ "fontWeight": "bold", "display": "inlineBlock", "margin": "0 8px" }}>9月业绩考核目标</span> <Button size="small" type="primary" onClick={changeProgramme} style={{ "fontSize": "12px" }}>修改方案</Button>
+                        当前已选方案：<span style={{ "fontWeight": "bold", "display": "inlineBlock", "margin": "0 8px" }}>{currentProgramme !== null ? currentProgramme.assessName : "无"}</span> <Button size="small" type="primary" onClick={changeProgramme} style={{ "fontSize": "12px" }}>修改方案</Button>
                         <Button size="small" type="primary" style={{ "fontSize": "12px", "float": "right" }} onClick={goManage}>达标线方案管理</Button>
                     </div>
-                    <div className="currentProContent">
-                        <Row className="proLine">
-                            <Col span={3}>
-                                <div className="top">
-                                    考核标准
+                    {
+                        currentProgramme !== null ? <div className="currentProContent">
+                            <Row className="proLine">
+                                <Col span={3}>
+                                    <div className="top">
+                                        考核标准
                                 </div>
-                                <div className="bottom">
-                                    资源考核
+                                    <div className="bottom">
+                                        资源考核
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    二手房出售新增
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出售新增
                                 </div>
-                                <div className="bottom">
-                                    9
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    二手房出租新增
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesFouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出租新增
                             </div>
-                                <div className="bottom">
-                                    9
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesFouseLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        求购客户新增
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    委托房源数
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesCustomerSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        求租客户新增
                             </div>
-                                <div className="bottom">
-                                    10
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesCustomerLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        委托房源数
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    钥匙房源数
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesFouseEntrust}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        钥匙房源数
                             </div>
-                                <div className="bottom">
-                                    10
+                                    <div className="bottom">
+                                        {currentProgramme.resourcesFouseKey}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+
+                                    </div>
+                                    <div className="bottom">
+
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row className="proLine">
+                                <Col span={3}>
+                                    <div className="top">
+                                        考核标准
+                                </div>
+                                    <div className="bottom">
+                                        跟进考核
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    求购客户新增
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出售跟进
+                                </div>
+                                    <div className="bottom">
+                                        {currentProgramme.traceFouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出租跟进
                             </div>
-                                <div className="bottom">
-                                    10
+                                    <div className="bottom">
+                                        {currentProgramme.traceFouseLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        求购客户跟进
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-                                    求租客户新增
+                                    <div className="bottom">
+                                        {currentProgramme.traceCustomerSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        求租客户跟进
                             </div>
-                                <div className="bottom">
-                                    10
+                                    <div className="bottom">
+                                        {currentProgramme.traceCustomerLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        新房跟进
                             </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    <div className="bottom">
+                                        {currentProgramme.traceHouse}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        实勘跟进
+                            </div>
+                                    <div className="bottom">
+                                        {currentProgramme.traceHouseFact}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row className="proLine">
+                                <Col span={3}>
+                                    <div className="top">
+                                        考核标准
                                 </div>
-                            </Col>
-                        </Row>
-                        <Row className="proLine">
-                            <Col span={3}>
-                                <div className="top">
+                                    <div className="bottom">
+                                        带看考核
+                            </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出售带看
+                                </div>
+                                    <div className="bottom">
+                                        {currentProgramme.lookHouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出租带看
+                            </div>
+                                    <div className="bottom">
+                                        {currentProgramme.lookHouseLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        新房带看
+                                </div>
+                                    <div className="bottom">
+                                        {currentProgramme.lookNewHouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row className="proLine">
+                                <Col span={3}>
+                                    <div className="top">
+                                        考核标准
                                 </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    <div className="bottom">
+                                        成交考核
+                            </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出售成交
+                                </div>
+                                    <div className="bottom">
+                                        {currentProgramme.assessHouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        二手房出租成交
+                            </div>
+                                    <div className="bottom">
+                                        {currentProgramme.assessHouseLease}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
+                                        新房成交
+                                </div>
+                                    <div className="bottom">
+                                        {currentProgramme.assessNewHouseSell}
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
+                                    </div>
+                                </Col>
+                                <Col span={3}>
+                                    <div className="top">
 
-                                </div>
-                                <div className="bottom">
+                                    </div>
+                                    <div className="bottom">
 
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row className="proLine">
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row className="proLine">
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                            <Col span={3}>
-                                <div className="top">
-
-                                </div>
-                                <div className="bottom">
-
-                                </div>
-                            </Col>
-                        </Row>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div> : <div className="noCurrentPro">
+                                ----------- 暂未选择当前方案 -----------
                     </div>
+                    }
                     <div className="tips">
                         <p>方案说明</p>
                         <p>1、点击“设置达标线”按钮，可以阵对已有考核项，面向旗下所有经纪人进行达标线设置，设置完成后，进行方案命名并完成保存。</p>
@@ -351,11 +376,11 @@ function standardHome({ dispatch, form, standardHome }) {
                                             rules: [{ required: true, message: '请选择跟进方式' }],
                                         })(
                                             <Select placeholder="请选择达标线方案">
-                                                <Option value="来电">来电</Option>
-                                                <Option value="去电">去电</Option>
-                                                <Option value="到访">到访</Option>
-                                                <Option value="接待">接待</Option>
-                                                <Option value="其他">其他</Option>
+                                                {
+                                                    programmeList.content.map(item => {
+                                                        return <Option key={item.id} value={item.id + ''} disabled={item.id === currentProgramme.id}>{item.assessName}</Option>
+                                                    })
+                                                }
                                             </Select>
                                         )}
                                     </FormItem>
@@ -363,7 +388,7 @@ function standardHome({ dispatch, form, standardHome }) {
                             </Row>
                             <Row>
                                 <Col span={3} offset={16}>
-                                    <Button type='primary' htmlType="submit" style={{ "fontSize": "12px" }}>保存</Button>
+                                    <Button type='primary' onClick={handleSubmit} style={{ "fontSize": "12px" }}>保存</Button>
                                 </Col>
                                 <Col span={3} offset={2}>
                                     <Button

@@ -3,6 +3,7 @@
     background-color: #fff;
     padding:20px;
 }
-.standardCreate .content:last-child{
-    margin-bottom: 2px;
+
+.standardCreate .formItem{
+    margin-bottom:10px;
 }
