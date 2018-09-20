@@ -53,7 +53,9 @@ function standardCreate({ dispatch, form, standardCreate }) {
             onOk() {
                 message.success("删除成功")
             },
-            onCancel() { },
+            onCancel() {
+                message.error("取消")
+            },
         });
     };
     //表单提交事件
