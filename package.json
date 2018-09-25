@@ -2,7 +2,7 @@
   "name": "DxEmpWeb",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.10.20:83/",
+  "proxy": "http://partner.bdhykeji.com/",
   "devDependencies": {
     "busboy": "^0.2.13",
     "foreman": "^2.0.0",

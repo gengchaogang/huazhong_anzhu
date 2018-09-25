@@ -117,8 +117,7 @@ export default {
                 id: payload.id,
                 keyword: "delete"
             })
-            const resObj = analysisUtil.analysisDataResponse(responseObj);
-            if (resObj.isSuccess) {
+            if (responseObj.data.data == true) {
                 yield put({
                     type: "hideProcess"
                 });
@@ -129,7 +128,7 @@ export default {
                         pageNo: 0
                     }
                 })
-            } else {
+            } else if (responseObj.data.data == false) {
                 yield put({
                     type: 'showPrompt',
                     payload: {
