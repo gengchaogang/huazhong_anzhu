@@ -84,6 +84,8 @@ import dealStatistics from './dataStatistics/dealStatistics'
 import standardHome from './dataStatistics/standardHome'
 import standardManage from './dataStatistics/standardManage'
 import standardCreate from './dataStatistics/standardCreate'
+import dailyCount from './dataStatistics/dailyCount'
+import dailyCountOne from './dataStatistics/dailyCountOne'
 //登陆
 import login from './logIn/logIn'
 import mentorRegister from './logIn/mentorRegister'
@@ -223,6 +225,8 @@ export default [
   standardHome,//达标线
   standardManage,
   standardCreate,
+  dailyCount,
+  dailyCountOne,
   //登陆
   login,
   mentorRegister,

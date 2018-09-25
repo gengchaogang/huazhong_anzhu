@@ -337,7 +337,7 @@ function allHouseResourceSell({ dispatch, form, allHouseResourceSell }) {
             if (!err) {
                 let startTime;
                 let endTime;
-                if (values.dateTimePicker) {
+                if (values.dateTimePicker && values.dateTimePicker.length > 1) {
                     startTime = new Date(values.dateTimePicker[0]._d).format('yyyy-MM-dd');
                     endTime = new Date(values.dateTimePicker[1]._d).format('yyyy-MM-dd');
                 }

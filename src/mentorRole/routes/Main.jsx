@@ -110,6 +110,10 @@ const menuKeys = [  //导师登陆时显示的左侧导航
         title: '考核达标线设置',
         key: '/dataStatistics/standardHome'
       },
+      {
+        title: '全员日报统计',
+        key: '/dataStatistics/dailyCount'
+      },
     ]
   }, {
     title: '佣金设置',

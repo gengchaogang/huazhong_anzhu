@@ -239,7 +239,7 @@ function standardHome({ dispatch, form, standardHome }) {
                                 <Col span={3}>
                                     <div className="top">
                                         二手房出租带看
-                            </div>
+                                    </div>
                                     <div className="bottom">
                                         {currentProgramme.lookHouseLease}
                                     </div>

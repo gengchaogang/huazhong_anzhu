@@ -131,6 +131,8 @@ import DealStatistics from './routes/dataStatistics/DealStatistics'
 import standardHome from './routes/dataStatistics/standardHome'
 import standardManage from './routes/dataStatistics/standardManage'
 import standardCreate from './routes/dataStatistics/standardCreate'
+import dailyCount from './routes/dataStatistics/dailyCount'
+import dailyCountOne from './routes/dataStatistics/dailyCountOne'
 //客户管理
 import customerManage from './routes/customerManage/customerManage'
 import managePage from './routes/customerManage/managePage'
@@ -354,8 +356,12 @@ export default function ({ history }) {
               breadcrumbName="达标线管理">
               <IndexRoute component={standardManage} />
               <Route path='standardCreate' name="standardCreate"
-              breadcrumbName="编辑方案" component={standardCreate} />
-              </Route>
+                breadcrumbName="编辑方案" component={standardCreate} />
+            </Route>
+          </Route>
+          <Route path='dailyCount' name="dailyCount" breadcrumbName="全员日报统计">
+            <IndexRoute component={dailyCount} />
+            <Route path='dailyCountOne' name='dailyCountOne' breadcrumbName='门店数据统计' component={dailyCountOne}></Route>
           </Route>
         </Route>
         <Route path='agentmd' name="agentmd" breadcrumbName="经纪门店管理">
